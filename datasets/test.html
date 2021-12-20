@@ -1,0 +1,250 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+<button onclick="showNetwork=!showNetwork;toggleNetwork(showNetwork)">
+    显示/隐藏网络图
+</button>
+
+</body>
+<script>
+    let showNetwork=true;
+    let edges = [];
+    let lastStatus = showNetwork;
+        let nodes = [];
+
+        //初始化边和节点
+        for (let i = 0; i < 500; i++) {
+            nodes.push({
+                id: i
+            });
+            for (let j = 0; j < 500; j++) {
+                if(Math.random()<0.05)
+                edges.push({
+                    source: i,
+                    target: j
+                });
+            }
+        }
+
+        for (let i = 500; i < 1000; i++) {
+            nodes.push({
+                id: i
+            });
+            for (let j = 500; j < 1000; j++) {
+                if (Math.random() < 0.05)
+                    edges.push({
+                        source: i,
+                        target: j
+                    });
+            }
+        }
+
+        for (let i = 1000; i < 1500; i++) {
+                nodes.push({
+                    id: i
+                });
+                for (let j = 1000; j < 1500; j++) {
+                    if (Math.random() < 0.05)
+                        edges.push({
+                            source: i,
+                            target: j
+                        });
+                }
+            }
+
+        const width = 800;
+        const height = 600;
+        const svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            // .attr("viewBox", [-width / 2, -height / 2, width, height])
+            .attr("viewBox", [0, 0, width, height])
+
+            // .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+    let zoomT = d3.zoomTransform(svg.node());
+        let contours = d3.contourDensity()
+                .x(d => d.x)
+                .y(d => d.y)
+                .size([width, height])
+                .bandwidth(30)
+                .thresholds(30)
+                (nodes);
+
+        function ticked() {
+            if(showNetwork){
+            link
+                .attr("x1", d => x(d.source.x))
+                .attr("y1", d => y(d.source.y))
+                .attr("x2", d => x(d.target.x))
+                .attr("y2", d => y(d.target.y));
+
+            node
+                .attr("cx", d => x(d.x))
+                .attr("cy", d => y(d.y));
+            }
+            contours = d3.contourDensity()
+                .x(d => x(d.x))
+                .y(d => y(d.y))
+                .size([width, height])
+                .bandwidth(30)
+                .thresholds(30)
+                (nodes)
+            density
+                .selectAll("path")
+                .data(contours)
+                .join("path")
+                .attr("stroke-width", (d, i) => i % 5 ? 0.25 : 1)
+                .attr("d", d3.geoPath());
+            // console.log(contours)
+        }
+
+        function drag(simulation) {
+            function dragstarted(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+                console.log(event.x,rx(zoomT.invertX(0)));
+                // console.log(zoomT.invert([0,0]));
+                // console.log(zoomT.invert([800, 600]));
+            }
+
+            function dragended(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+
+            return d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended);
+        }
+
+        const forceLinks = d3.forceLink(edges);
+        const forceManyBody = d3.forceManyBody();
+        simulation = d3.forceSimulation(nodes)
+            .force("link", forceLinks)
+            .force("charge", forceManyBody)
+            .force("x", d3.forceX())
+            .force("y", d3.forceY())
+            .force("center",d3.forceCenter(0,0))
+            .on("tick", ticked);
+
+        const g = svg.append("g");
+        
+        let link = g.append("g")
+            .attr("stroke", "#999")
+            .attr("stroke-opacity", 0.6)
+            .attr("stroke-width", 1.5)
+            .attr("stroke-linecap", "round")
+            .attr("class","link")
+            .selectAll("line")
+            .data(edges)
+            .join("line");
+
+        let node = g.append("g")
+            .attr("fill", "#111")
+            .attr("stroke", "#fff")
+            .attr("stroke-opacity", 1.0)
+            .attr("stroke-width", 1.5)
+            .attr("class","node")
+            .selectAll("circle")
+            .data(nodes)
+            .join("circle")
+            .attr("r", 5)
+            .call(drag(simulation));
+
+        const density= g.append("g")
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-linejoin", "round");
+        density
+            .selectAll("path")
+            .data(contours)
+            .join("path")
+            .attr("stroke-width", (d, i) => i % 5 ? 0.25 : 1)
+            // .attr("d", d3.geoPath());
+        const x=d3.scaleLinear()
+            .domain([-300,300])
+            .range([100,width-100]);
+        const rx=d3.scaleLinear()
+            .range([-300,300])
+            .domain([100,width-100]);
+        const y=d3.scaleLinear()
+            .domain([-300,300])
+            .range([100,height-100]);
+        const ry=d3.scaleLinear()
+            .range([-300,300])
+            .domain([100,height-100]);
+        const xAxis = g => g
+            .attr("transform", `translate(0,${height-100})`)
+            .call(d3.axisBottom(x));
+        const yAxis = g => g
+            .attr("transform", `translate(100,0)`)
+            .call(d3.axisLeft(y));
+
+        const zoom = d3.zoom().on("zoom", e => {
+            zoomT=e.transform;
+            // let t=d3.zoomTransform(svg.node());
+            // t.rescaleX(x);
+            g.attr("transform", (transform = e.transform));
+            // g.style("stroke-width", 3 / Math.sqrt(transform.k));
+            // // points.attr("r", 3 / Math.sqrt(transform.k));
+            let vx = [rx(zoomT.invertX(0)), rx(zoomT.invertX(width))];
+            let vy = [ry(zoomT.invertY(0)), ry(zoomT.invertY(height))];
+            const nodesVisable= nodes.filter(d => d.x > vx[0] && d.x < vx[1] && d.y > vy[0] && d.y < vy[1]).length;
+            if(nodesVisable<50){
+                showNetwork=true;
+                toggleNetwork(showNetwork);
+            }else{
+                showNetwork=false;
+                toggleNetwork(showNetwork);
+            }
+            });
+
+        // svg.append("g").call(xAxis);
+        // svg.append("g").call(yAxis);
+        svg.call(zoom).call(zoom.transform, d3.zoomIdentity);
+        
+        
+
+        function toggleNetwork(flag){
+            if(lastStatus==flag) return;
+            if(!flag){
+                // link.transition().attr("opacity",0).remove();
+                link.data([]).join("line");
+                link=g.select(".link");
+                // node.transition().attr("opacity",0).remove();
+                node.data([]).join("circle");
+                node=g.select(".node");
+
+                // showNetwork=false;
+            }
+            else{
+                link.selectAll("line").data(edges).join("line");
+                node=node.selectAll("circle")
+                    .data(nodes)
+                    .join("circle")
+                    .attr("r", 5)
+                    .attr("cx", d => x(d.x))
+                    .attr("cy", d => y(d.y))
+                    .call(drag(simulation));
+                link=link.selectAll("line")
+                    .data(edges)
+                    .join("line")
+                    .attr("x1", d => x(d.source.x))
+                    .attr("y1", d => y(d.source.y))
+                    .attr("x2", d => x(d.target.x))
+                    .attr("y2", d => y(d.target.y));
+                // showNetwork=true;
+            }
+            lastStatus=flag;
+        }
+
+</script>

@@ -1,0 +1,21 @@
+<script>
+    var sortFilterDataWorker = function () {
+            onmessage = function image2compare(ev) {
+                postMessage('hi');
+            };
+        }.toString();
+
+        /* PREPARE WORKER AS STRING TO CREATE JS BLOB FILE */
+        sortFilterDataWorker = sortFilterDataWorker.slice(sortFilterDataWorker.indexOf('{') + 1, -1).trim();
+
+        var blob = new Blob([sortFilterDataWorker]) // create blob file with worker code
+            , blobUrl = window.URL.createObjectURL(blob) // create pseudo url to blob file
+            , compareWorker = new Worker(blobUrl)
+            ;
+
+        setInterval(function () {
+            var oneMB = new ArrayBuffer(8388608);
+            compareWorker.postMessage(oneMB, [oneMB]); // transpile ArrayBuffer
+            console.log("1");
+        }, 250);
+</script>
