@@ -1,0 +1,3883 @@
+{
+    "diseases": [
+        {
+            "DOID": "DOID:8712",
+            "Name": "neurofibromatosis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:11717",
+            "Name": "neonatal diabetes",
+            "Definition": "A diabetes mellitus that is characterized by hyperglycemia occuring within the first 6 months of life.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5928785/"
+            ]
+        },
+        {
+            "DOID": "DOID:74",
+            "Name": "hematopoietic system disease",
+            "Definition": "A disease of anatomical entity that has_material_basis_in hematopoietic cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hematopathology",
+                "https://www.ncbi.nlm.nih.gov/books/NBK1741/"
+            ]
+        },
+        {
+            "DOID": "DOID:680",
+            "Name": "tauopathy",
+            "Definition": "A neurodegenerative disease that has_material_basis_in the pathological aggregation of tau protein in so-called neurofibrillary tangles (NFT) in the human brain.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Tauopathy"
+            ]
+        },
+        {
+            "DOID": "DOID:2152",
+            "Name": "ovary epithelial cancer",
+            "Definition": "An ovarian cancer that is derives_from ovarian surface epithelium.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Ovarian_cancer",
+                "http://en.wikipedia.org/wiki/Surface_epithelial-stromal_tumor"
+            ]
+        },
+        {
+            "DOID": "DOID:1319",
+            "Name": "brain cancer",
+            "Definition": "A central nervous system cancer that is characterized by the growth of abnormal cells in the tissues of the brain.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=387264"
+            ]
+        },
+        {
+            "DOID": "DOID:4085",
+            "Name": "trophoblastic neoplasm",
+            "Definition": "A germ cell and embryonal cancer that derives_from trophoblastic tissue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Trophoblastic_neoplasm"
+            ]
+        },
+        {
+            "DOID": "DOID:1287",
+            "Name": "cardiovascular system disease",
+            "Definition": "A disease of anatomical entity which occurs in the blood, heart, blood vessels or the lymphatic system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells or lymph to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Circulatory_system"
+            ]
+        },
+        {
+            "DOID": "DOID:1602",
+            "Name": "lymphadenitis",
+            "Definition": "A lymph node disease that is characterized by an acute or chronic inflammation of one or more lymph nodes.",
+            "urls": [
+                "https://www.hopkinsmedicine.org/health/conditions-and-diseases/lymphadenitis"
+            ]
+        },
+        {
+            "DOID": "DOID:4676",
+            "Name": "uremia",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:3008",
+            "Name": "invasive ductal carcinoma",
+            "Definition": "A breast ductal carcinoma that is characterized by infiltration into the fibrous or fatty tissue of the breast outside of the duct where it originated.",
+            "urls": [
+                "https://www.hopkinsmedicine.org/breast_center/breast_cancers_other_conditions/invasive_ductal_carcinoma.html",
+                "https://www.ncbi.nlm.nih.gov/pubmed/25343550"
+            ]
+        },
+        {
+            "DOID": "DOID:9970",
+            "Name": "obesity",
+            "Definition": "An overnutrition that is characterized by excess body fat, traditionally defined as an elevated ratio of weight to height (specifically 30 kilograms per meter squared), has_material_basis_in a multifactorial etiology related to excess nutrition intake, decreased caloric utilization, and genetic susceptibility, and possibly medications and certain disorders of metabolism, endocrine function, and mental illness.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Obesity"
+            ]
+        },
+        {
+            "DOID": "DOID:3996",
+            "Name": "urinary system cancer",
+            "Definition": "An organ system cancer that is located_in the kidneys, ureteres, bladder or urethra.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Urinary_system"
+            ]
+        },
+        {
+            "DOID": "DOID:1596",
+            "Name": "mental depression",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0050866",
+            "Name": "oral squamous cell carcinoma",
+            "Definition": "An oral cavity cancer that has_material_basis_in squamous cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Squamous-cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:3594",
+            "Name": "choriocarcinoma",
+            "Definition": "A placenta cancer that has_material_basis_in trophoblastic cells.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Choriocarcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:0050615",
+            "Name": "respiratory system cancer",
+            "Definition": "An organ system cancer located_in the respiratory system that is characterized by uncontrolled cellular proliferation in the respiratory tract.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Respiratory_tract_neoplasm"
+            ]
+        },
+        {
+            "DOID": "DOID:178",
+            "Name": "vascular disease",
+            "Definition": "A cardiovascular system disease that primarily affects the blood vessels which includes the arteries, veins and capillaries that carry blood to and from the heart.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Vascular_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:9120",
+            "Name": "amyloidosis",
+            "Definition": "A disease of metabolsism that is characterized by extracellular tissue deposition of mis-folded amyloid fibrils built up by twisted protofilaments, deposited in the spaces between the cells of vital organs, causing disruption of organ tissue structure and function. These deposits may result in a wide range of clinical manifestations depending upon their type, location, and the amount of deposition.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Amyloidosis",
+                "https://pubmed.ncbi.nlm.nih.gov/33100054/",
+                "https://pubmed.ncbi.nlm.nih.gov/33787033/",
+                "https://www.tandfonline.com/doi/pdf/10.1080/13506129.2020.1835263?needAccess=true"
+            ]
+        },
+        {
+            "DOID": "DOID:0050338",
+            "Name": "primary bacterial infectious disease",
+            "Definition": "A bacterial infectious disease that results_in infection by bacteria as a result of their presence or activity within the normal, healthy host, and their intrinsic virulence is, in part, a necessary consequence of their need to reproduce and spread.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Infectious_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:4074",
+            "Name": "pancreatic adenocarcinoma",
+            "Definition": "A pancreatic carcinoma that derives_from epithelial cells of glandular origin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adenocarcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:987",
+            "Name": "alopecia",
+            "Definition": "A hypotrichosis that is characterized by a loss of hair from the head or body.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Alopecia",
+                "http://www.omim.org/entry/109200?search=109200&highlight=109200"
+            ]
+        },
+        {
+            "DOID": "DOID:1787",
+            "Name": "pericarditis",
+            "Definition": "A pericardium disease that is characterized by an inflammation of the pericardium and has_symptom chest pain.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pericarditis"
+            ]
+        },
+        {
+            "DOID": "DOID:898",
+            "Name": "autosomal dominant polycystic kidney disease",
+            "Definition": "A polycystic kidney disease characterized by the presence of multiple cysts located_in the kidney resulting from ciliopathy that disrupts the function of primary cilium, inherited in an autosomal dominant fashion.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Ciliopathy#cite_note-davenport2008-4",
+                "https://rarediseases.info.nih.gov/diseases/10413/autosomal-dominant-polycystic-kidney-disease"
+            ]
+        },
+        {
+            "DOID": "DOID:10584",
+            "Name": "retinitis pigmentosa",
+            "Definition": "A retinal degeneration characterized by the gradual deterioration of the photoreceptors or the retinal pigment epithelium of the retina leading to progressive sight loss.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Retinitis_pigmentosa",
+                "http://ghr.nlm.nih.gov/condition/retinitis-pigmentosa",
+                "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4043609/"
+            ]
+        },
+        {
+            "DOID": "DOID:0060158",
+            "Name": "acquired metabolic disease",
+            "Definition": "A disease of metabolism that has _material_basis_in enzyme deficiency or accumulation of enzymes or toxins which interfere with normal function due to an endocrine organ disease, organ malfunction, inadequate intake, dietary deficiency, or malabsorption.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Inborn_error_of_metabolism",
+                "http://www.ncbi.nlm.nih.gov/mesh/68008659"
+            ]
+        },
+        {
+            "DOID": "DOID:1936",
+            "Name": "atherosclerosis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:66",
+            "Name": "muscle tissue disease",
+            "Definition": "A muscular disease located in the muscle tissue.",
+            "urls": [
+                "https://medlineplus.gov/muscledisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:5517",
+            "Name": "stomach carcinoma",
+            "Definition": "A stomach cancer that is located_in the stomach.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Stomach_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:5572",
+            "Name": "Beckwith-Wiedemann syndrome",
+            "Definition": "A syndrome characterized by overgrowth (macrosomia), an increased risk of childhood cancer and congenital malformations.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Beckwith%E2%80%93Wiedemann_syndrome",
+                "http://ghr.nlm.nih.gov/condition/beckwith-wiedemann-syndrome",
+                "https://www.rarediseases.org/rare-disease-information/rare-diseases/byID/52/viewAbstract"
+            ]
+        },
+        {
+            "DOID": "DOID:1307",
+            "Name": "dementia",
+            "Definition": "A cognitive disorder resulting from a loss of brain function affecting memory, thinking, language, judgement and behavior.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000739.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:3069",
+            "Name": "malignant astrocytoma",
+            "Definition": "A malignant glioma that is has_material_basis_in astrocyte cells, a type of star-shaped glial cell, located in the brain and spinal cord.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Astrocytoma",
+                "http://www.cancer.org/Cancer/BrainCNSTumorsinAdults/DetailedGuide/brain-and-spinal-cord-tumors-in-adults-what-are-brain-spinal-tumors"
+            ]
+        },
+        {
+            "DOID": "DOID:0080012",
+            "Name": "X-linked recessive disease",
+            "Definition": "A X-linked monogenic disease that has_material_basis_in recessive inheritance.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/X-linked_recessive_inheritance"
+            ]
+        },
+        {
+            "DOID": "DOID:6050",
+            "Name": "esophageal disease",
+            "Definition": "A gastrointestinal system disease that is located_in the esophagus.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Esophageal_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:771",
+            "Name": "retinal cell cancer",
+            "Definition": "A malignant neoplasm that derives_from the retina.",
+            "urls": [
+                "http://www.wrongdiagnosis.com/medical/retinal_cancer.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:2671",
+            "Name": "transitional cell carcinoma",
+            "Definition": "A carcinoma that derives_from transitional epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Transitional_cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:399",
+            "Name": "tuberculosis",
+            "Definition": "A primary bacterial infectious disease that is located_in lungs, located_in lymph nodes, located_in pericardium, located_in brain, located_in pleura or located_in gastrointestinal tract, has_material_basis_in Mycobacterium tuberculosis, which is transmitted_by droplets released into the air when an infected person coughs or sneezes.",
+            "urls": [
+                "http://www.merckmanuals.com/home/sec17/ch193/ch193a.html",
+                "http://www.uphs.upenn.edu/bugdrug/antibiotic_manual/atstbdx99.pdf"
+            ]
+        },
+        {
+            "DOID": "DOID:0014667",
+            "Name": "disease of metabolism",
+            "Definition": "A disease that involving errors in metabolic processes of building or degradation of molecules.",
+            "urls": [
+                "http://www.ncbi.nlm.nih.gov/books/NBK22259/"
+            ]
+        },
+        {
+            "DOID": "DOID:962",
+            "Name": "neurofibroma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:8986",
+            "Name": "narcolepsy",
+            "Definition": "A sleep disorder that involves an excessive urge to sleep at inappropriate times, such as while at work.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Narcolepsy"
+            ]
+        },
+        {
+            "DOID": "DOID:0060429",
+            "Name": "chromosomal duplication syndrome",
+            "Definition": "A chromosomal disease that has_material_basis_in extra copies of a chromosomal region.",
+            "urls": [
+                "https://www.nature.com/scitable/topicpage/dna-deletion-and-duplication-and-the-associated-331/"
+            ]
+        },
+        {
+            "DOID": "DOID:0060041",
+            "Name": "autism spectrum disorder",
+            "Definition": "A pervasive developmental disorder that is a spectrum of psychological conditions. The disease has_symptom widespread abnormalities of social interactions and communication, has_symptom severely restricted interests and has_symptom highly repetitive behavior.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Autism_spectrum_disorder",
+                "http://www.neurodevnet.ca"
+            ]
+        },
+        {
+            "DOID": "DOID:9119",
+            "Name": "acute myeloid leukemia",
+            "Definition": "A myeloid leukemia that is characterized by the rapid growth of abnormal white blood cells that accumulate in the bone marrow and interfere with the production of normal blood cells.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/acutemyeloidleukemia",
+                "http://en.wikipedia.org/wiki/Acute_myeloid_leukemia",
+                "http://www.cancer.gov/dictionary?cdrid=44363",
+                "https://www.cancer.org/cancer/acute-myeloid-leukemia/detection-diagnosis-staging/how-classified.html"
+            ]
+        },
+        {
+            "DOID": "DOID:1542",
+            "Name": "head and neck carcinoma",
+            "Definition": "A head and neck cancer that has_material_basis_in epithelial cells and is located in the upper aerodigestive tract, including the lip, oral cavity (mouth), nasal cavity, paranasal sinuses, pharynx, and larynx.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Head_and_neck_cancer",
+                "http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=14.09e&code=C35850&ns=NCI_Thesaurus&key=153772862&b=1&n=null",
+                "http://www.cancer.gov/cancertopics/factsheet/Sites-Types/head-and-neck"
+            ]
+        },
+        {
+            "DOID": "DOID:170",
+            "Name": "endocrine gland cancer",
+            "Definition": "An organ system cancer located_in endocrine system that is characterized by uncontrolled cellular proliferation of the hormone producing glands of the endocrine system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Endocrine_system"
+            ]
+        },
+        {
+            "DOID": "DOID:438",
+            "Name": "autoimmune disease of the nervous system",
+            "Definition": "An autoimmune disease affecting the nervous system.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1003353/",
+                "https://www.ncbi.nlm.nih.gov/pubmed/21619947"
+            ]
+        },
+        {
+            "DOID": "DOID:1793",
+            "Name": "pancreatic cancer",
+            "Definition": "An endocrine gland cancer located_in the pancreas.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pancreatic"
+            ]
+        },
+        {
+            "DOID": "DOID:5353",
+            "Name": "colonic disease",
+            "Definition": "A intestinal disease located in the colon.",
+            "urls": [
+                "https://www.nature.com/subjects/colonic-diseases"
+            ]
+        },
+        {
+            "DOID": "DOID:4001",
+            "Name": "ovarian carcinoma",
+            "Definition": "An ovarian cancer that has_material_basis_in epithelial tissue and is located_in the ovary.",
+            "urls": [
+                "https://www.cancer.gov/types/ovarian"
+            ]
+        },
+        {
+            "DOID": "DOID:2975",
+            "Name": "cystic kidney disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:374",
+            "Name": "nutrition disease",
+            "Definition": "An acquired metabolic disease that is characterized by an insufficient intake of food or of certain nutrients, by an inability of the body to absorb and use nutrients, or by overconsumption of certain foods.",
+            "urls": [
+                "http://www.who.int/topics/nutrition_disorders/en/"
+            ]
+        },
+        {
+            "DOID": "DOID:11476",
+            "Name": "osteoporosis",
+            "Definition": "A bone resorption disease characterized by decreased density of normally mineralized bone which results_in the thinning of bone tissue and decreased mechanical strength.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Osteoporosis",
+                "http://www.mayoclinic.com/health/osteoporosis/DS00128",
+                "http://www.niams.nih.gov/Health_Info/Bone/default.asp",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000360.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:193",
+            "Name": "reproductive organ cancer",
+            "Definition": "An organ system cancer that is manifested in the reproductive organs.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Reproductive_system#Examples_of_cancers"
+            ]
+        },
+        {
+            "DOID": "DOID:1324",
+            "Name": "lung cancer",
+            "Definition": "A respiratory system cancer that is located_in the lung.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Lung_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:0060090",
+            "Name": "central nervous system benign neoplasm",
+            "Definition": "A nervous system benign neoplasm that is characterized by lack of malignancy.",
+            "urls": [
+                "https://www.cancer.gov/types/brain/patient/adult-brain-treatment-pdq"
+            ]
+        },
+        {
+            "DOID": "DOID:0060084",
+            "Name": "cell type benign neoplasm",
+            "Definition": "A benign neoplasm that is classified by the type of cell or tissue from which it is derived.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Benign_tumor"
+            ]
+        },
+        {
+            "DOID": "DOID:2914",
+            "Name": "immune system disease",
+            "Definition": "A disease of anatomical entity that is located_in the immune system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Immune_system"
+            ]
+        },
+        {
+            "DOID": "DOID:1100",
+            "Name": "ovarian disease",
+            "Definition": "A female reproductive system disease that is located_in the ovary.",
+            "urls": [
+                "https://medlineplus.gov/ovariandisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:3312",
+            "Name": "bipolar disorder",
+            "Definition": "A mood disorder that involves alternating periods of mania and depression.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Mood_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:0060051",
+            "Name": "autoimmune disease of cardiovascular system",
+            "Definition": "An autoimmune disease that is the abnormal functioning of the immune system that causes your immune system to produce antibodies or T cells against cells and/or tissues in the cardiovascular system.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/books/NBK459447/"
+            ]
+        },
+        {
+            "DOID": "DOID:1428",
+            "Name": "endocrine pancreas disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:8893",
+            "Name": "psoriasis",
+            "Definition": "A skin disease that is characterized by patches of thick red skin and silvery scales.",
+            "urls": [
+                "https://www.cdc.gov/psoriasis/index.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:0080829",
+            "Name": "low grade glioma",
+            "Definition": "A cell type benign neoplasm that has_material_basis_in glial cells (astrocytes, oligodendrocytes or ependymocytes).",
+            "urls": [
+                "http://www.danafarberbostonchildrens.org/conditions/brain-tumor/low-grade-glioma.aspx",
+                "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/glioma",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4361022/"
+            ]
+        },
+        {
+            "DOID": "DOID:10534",
+            "Name": "stomach cancer",
+            "Definition": "A gastrointestinal system cancer that is located_in the stomach.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/stomach-esophagealcancer",
+                "http://en.wikipedia.org/wiki/Stomach"
+            ]
+        },
+        {
+            "DOID": "DOID:0060100",
+            "Name": "musculoskeletal system cancer",
+            "Definition": "An organ system cancer located_in the muscular and skeletal organs and characterized by uncontrolled cellular proliferation of the musculoskeletal organs.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Musculoskeletal_system#Diseases_and_disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:3068",
+            "Name": "glioblastoma",
+            "Definition": "A malignant astrocytoma characterized by the presence of small areas of necrotizing tissue that is surrounded by anaplastic cells as well as the presence of hyperplastic blood vessels, and that has_material_basis_in abnormally proliferating cells derives_from multiple cell types including astrocytes and oligondroctyes.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/glioblastomamultiforme",
+                "http://en.wikipedia.org/wiki/Glioblastoma_multiforme",
+                "https://www.ncbi.nlm.nih.gov/pubmed/20129251",
+                "https://www.ncbi.nlm.nih.gov/pubmed/23029035"
+            ]
+        },
+        {
+            "DOID": "DOID:5679",
+            "Name": "retinal disease",
+            "Definition": "An eye disease that is located_in the retina.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Retina#Diseases_and_disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:784",
+            "Name": "chronic kidney disease",
+            "Definition": "A kidney failure that is characterized by the gradual loss of kidney function.",
+            "urls": [
+                "https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521",
+                "https://www.ncbi.nlm.nih.gov/books/NBK499861/"
+            ]
+        },
+        {
+            "DOID": "DOID:1240",
+            "Name": "leukemia",
+            "Definition": "A cancer that affects the blood or bone marrow characterized by an abnormal proliferation of blood cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Leukemia",
+                "http://www.cancer.gov/dictionary?CdrID=45343"
+            ]
+        },
+        {
+            "DOID": "DOID:0050753",
+            "Name": "cerebellar ataxia",
+            "Definition": "A hereditary ataxia that is characterized by ataxia originating in the cerebellum.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Cerebellar_ataxia"
+            ]
+        },
+        {
+            "DOID": "DOID:0080639",
+            "Name": "bone sarcoma",
+            "Definition": "A bone cancer that has_material_basis_in abnormally proliferating cells derives from embryonic mesoderm.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5805807"
+            ]
+        },
+        {
+            "DOID": "DOID:1440",
+            "Name": "Machado-Joseph disease",
+            "Definition": "An autosomal dominant cerebellar ataxia that is characterized by slow degeneration of the hindbrain and has_material_basis_in expansion of CAG triplet repeats (glutamine) in the ATXN3 gene.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Machado%E2%80%93Joseph_disease",
+                "http://omim.org/entry/109150",
+                "http://rarediseases.org/rare-disease-information/rare-diseases/byID/110/viewAbstract"
+            ]
+        },
+        {
+            "DOID": "DOID:3829",
+            "Name": "pituitary adenoma",
+            "Definition": "A pituitary gland benign neoplasm that derives_from glandular epithelial cells.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/24010395"
+            ]
+        },
+        {
+            "DOID": "DOID:9500",
+            "Name": "leukocyte disease",
+            "Definition": "A hematopoietic system disease that is located_in white blood cells.",
+            "urls": [
+                "https://rarediseases.org/rare-diseases/leukocyte-adhesion-deficiency-syndromes/"
+            ]
+        },
+        {
+            "DOID": "DOID:9799",
+            "Name": "eye degenerative disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:9036",
+            "Name": "parotid gland cancer",
+            "Definition": "A salivary gland cancer that is located_in the parotid gland.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Parotid_gland"
+            ]
+        },
+        {
+            "DOID": "DOID:104",
+            "Name": "bacterial infectious disease",
+            "Definition": "A disease by infectious agent that results_in infection, has_material_basis_in Bacteria.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pathogenic_bacteria"
+            ]
+        },
+        {
+            "DOID": "DOID:10944",
+            "Name": "tongue disease",
+            "Definition": "A mouth disease located_in the tongue.",
+            "urls": [
+                "https://medlineplus.gov/tonguedisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:9561",
+            "Name": "nasopharyngeal disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:1040",
+            "Name": "chronic lymphocytic leukemia",
+            "Definition": "A lymphocytic leukemia characterized by over production of B-cells and their accumulation in bone marrow and blood.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/B-cell_chronic_lymphocytic_leukemia",
+                "http://www.cancer.gov/dictionary?cdrid=346545"
+            ]
+        },
+        {
+            "DOID": "DOID:2033",
+            "Name": "communication disorder",
+            "Definition": "A specific developmental disorder that involves specific developmental disorders of speech and language.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Communication_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:5409",
+            "Name": "lung small cell carcinoma",
+            "Definition": "A lung carcinoma that has_material_basis_in primitive-appearing cells that are smaller than normal cells and is located_in the lung.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Small-cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:345",
+            "Name": "uterine disease",
+            "Definition": "A female reproductive system disease that is located_in the uterus.",
+            "urls": [
+                "http://www.merriam-webster.com/dictionary/uterus"
+            ]
+        },
+        {
+            "DOID": "DOID:0060037",
+            "Name": "developmental disorder of mental health",
+            "Definition": "A disease of mental health that occur during a child's developmental period between birth and age 18 resulting in retarding of the child's psychological or physical development.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Developmental_disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:176",
+            "Name": "cardiovascular cancer",
+            "Definition": "An organ system cancer that located_in the heart and blood vessels.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=44005",
+                "http://www.healthcentral.com/heart-disease/h/cardiovascular-cancer.html"
+            ]
+        },
+        {
+            "DOID": "DOID:0080011",
+            "Name": "bone resorption disease",
+            "Definition": "A bone remodeling disease that results in an abnormal decrease of bone density or mass.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Bone_resorption",
+                "https://www.ncbi.nlm.nih.gov/pubmed/11277085"
+            ]
+        },
+        {
+            "DOID": "DOID:1036",
+            "Name": "chronic leukemia",
+            "Definition": "A leukemia that develops slowly.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/leukemiaadultchronic.html"
+            ]
+        },
+        {
+            "DOID": "DOID:14067",
+            "Name": "Plasmodium falciparum malaria",
+            "Definition": "A malaria described as a severe form of the disease caused by a parasite Plasmodium falciparum, which is marked by irrregular recurrence of paroxysms and prolonged or continuous fever.",
+            "urls": [
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=falciparum+malaria"
+            ]
+        },
+        {
+            "DOID": "DOID:5041",
+            "Name": "esophageal cancer",
+            "Definition": "A gastrointestinal system cancer that is located_in the esophagus.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/stomach-esophagealcancer",
+                "http://en.wikipedia.org/wiki/Esophagus"
+            ]
+        },
+        {
+            "DOID": "DOID:12336",
+            "Name": "male infertility",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:13317",
+            "Name": "hyperinsulinemic hypoglycemia",
+            "Definition": "A carbohydrate metabolic disorder that involves low blood glucose resulting from an excess of insulin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hyperinsulinemic_hypoglycemia"
+            ]
+        },
+        {
+            "DOID": "DOID:0060085",
+            "Name": "organ system benign neoplasm",
+            "Definition": "A benign neoplasm that is classified by the organ system from which it is arising from.",
+            "urls": [
+                "http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=14.07d&code=C367"
+            ]
+        },
+        {
+            "DOID": "DOID:8466",
+            "Name": "retinal degeneration",
+            "Definition": "A retinal disease that is characterized by deterioration of the retina caused by the progressive and eventual death of the cells of the retina.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Retinal_degeneration_(rhodopsin_mutation)"
+            ]
+        },
+        {
+            "DOID": "DOID:1070",
+            "Name": "primary open angle glaucoma",
+            "Definition": "An open-angle glaucoma that is characterized by the absence of any apparent obstruction of aqueous outflow through the trabecular meshwork with gonioscopy, but often with elevated intraocular pressure.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5464971/"
+            ]
+        },
+        {
+            "DOID": "DOID:0050117",
+            "Name": "disease by infectious agent",
+            "Definition": "A disease that is the consequence of the presence of pathogenic microbial agents, including pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and aberrant proteins known as prions.",
+            "urls": [
+                "http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=14.10d&code=C26726"
+            ]
+        },
+        {
+            "DOID": "DOID:0050735",
+            "Name": "X-linked monogenic disease",
+            "Definition": "A monogenic disease that has_material_basis_in muations in genes on the X chromosome.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Genetic_disorder#X-linked_dominant",
+                "http://ghr.nlm.nih.gov/handbook/inheritance/inheritancepatterns"
+            ]
+        },
+        {
+            "DOID": "DOID:162",
+            "Name": "cancer",
+            "Definition": "A disease of cellular proliferation that is malignant and primary, characterized by uncontrolled cellular proliferation, local cell invasion and metastasis.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/cancer",
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:120",
+            "Name": "female reproductive organ cancer",
+            "Definition": "A reproductive organ cancer that is manifested in the female genitals. This includes organs such as the ovaries, fallopian tubes, uterus, cervix, vagina and vulva.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Template:Female_genital_neoplasia",
+                "http://www.wrongdiagnosis.com/g/genital_system_cancer/intro.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:60009",
+            "Name": "pituitary gland benign neoplasm",
+            "Definition": "A benign neoplasm located in the pituitary gland.",
+            "urls": [
+                "https://www.mayoclinic.org/diseases-conditions/pituitary-tumors/symptoms-causes/syc-20350548"
+            ]
+        },
+        {
+            "DOID": "DOID:9942",
+            "Name": "lymph node disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:14566",
+            "Name": "disease of cellular proliferation",
+            "Definition": "A disease that is characterized by abnormally rapid cell division.",
+            "urls": [
+                "http://en.wikipedia.org/w/index.php?title=Cell_proliferation"
+            ]
+        },
+        {
+            "DOID": "DOID:0060118",
+            "Name": "thoracic disease",
+            "Definition": "A disease of anatomical entity that is located_in the thoracic cavity.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Thoracic_cavity"
+            ]
+        },
+        {
+            "DOID": "DOID:1115",
+            "Name": "sarcoma",
+            "Definition": "A cell type cancer that has_material_basis_in abnormally proliferating cells derives from embryonic mesoderm.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/Sarcoma",
+                "http://en.wikipedia.org/wiki/Sarcoma",
+                "http://www.cancer.gov/dictionary?CdrID=45562"
+            ]
+        },
+        {
+            "DOID": "DOID:2253",
+            "Name": "cervix disease",
+            "Definition": "A uterine disease that is located_in the cervix.",
+            "urls": [
+                "https://www.mdedge.com/obgmanagement/article/136739/gynecology/2017-update-cervical-disease"
+            ]
+        },
+        {
+            "DOID": "DOID:5680",
+            "Name": "embryonal testis carcinoma",
+            "Definition": "An embryonal carcinoma that is located_in the testis.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Embryonal_carcinoma#Testicular_embryonal_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:9976",
+            "Name": "heroin dependence",
+            "Definition": "An opiate dependence that involves the continued use of heroin despite problems related to use of the substance.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Opioid_dependence"
+            ]
+        },
+        {
+            "DOID": "DOID:0080524",
+            "Name": "thyroid gland adenocarcinoma",
+            "Definition": "A thyroid gland carcinoma that derives_from epithelial cells of glandular origin.",
+            "urls": [
+                "https://ncit.nci.nih.gov/ncitbrowser/pages/concept_details.jsf"
+            ]
+        },
+        {
+            "DOID": "DOID:635",
+            "Name": "acquired immunodeficiency syndrome",
+            "Definition": "A Human immunodeficiency virus infectious disease that results_in reduction in the numbers of CD4-bearing helper T cells below 200 per microliter of blood or 14% of all lymphocytes thereby rendering the subject highly vulnerable to life-threatening infections and cancers, has_material_basis_in Human immunodeficiency virus 1 or has_material_basis_in Human immunodeficiency virus 2, which are transmitted_by sexual contact, transmitted_by transfer of blood, semen, vaginal fluid, pre-ejaculate, or breast milk, transmitted_by congenital method, and transmitted_by contaminated needles. Opportunistic infections are common in people with AIDS.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/AIDS",
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=aids"
+            ]
+        },
+        {
+            "DOID": "DOID:5614",
+            "Name": "eye disease",
+            "Definition": "An eye and adnexa disease that is located_in the eye.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Eye_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:2377",
+            "Name": "multiple sclerosis",
+            "Definition": "A demyelinating disease that involves damage to the fatty myelin sheaths around the axons of the brain and spinal cord resulting in demyelination and scarring.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Multiple_sclerosis",
+                "https://ghr.nlm.nih.gov/condition/multiple-sclerosis"
+            ]
+        },
+        {
+            "DOID": "DOID:3918",
+            "Name": "pancreatic cystadenoma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:3627",
+            "Name": "aortic aneurysm",
+            "Definition": "An aortic disease that is characterized by an enlargement (dilation) of the aorta to greater than 1.5 times normal size.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Aortic_aneurysm"
+            ]
+        },
+        {
+            "DOID": "DOID:5715",
+            "Name": "functionless pituitary adenoma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0080053",
+            "Name": "Albright's hereditary osteodystrophy",
+            "Definition": "An pseudohypoparathyroidism that has_material_basis_in lack of responsiveness to parathyroid  hormone which results in shortening and widening of long bones of the located in hand or located in foot along with short stature, obesity, and rounded face.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Albright%27s_hereditary_osteodystrophy",
+                "http://rarediseases.info.nih.gov/GARD/Disease.aspx?diseaseID=5770",
+                "http://www.orpha.net/data/patho/Pro/en/Albright-FRenPro1314.pdf"
+            ]
+        },
+        {
+            "DOID": "DOID:0060089",
+            "Name": "endocrine organ benign neoplasm",
+            "Definition": "An organ system benign neoplasm that is located_in endocrine glands which secretes a type of hormone directly into the bloodstream to regulate the body.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Endocrine_system"
+            ]
+        },
+        {
+            "DOID": "DOID:9256",
+            "Name": "colorectal cancer",
+            "Definition": "A large intestine cancer that is located_in the colon and/or located_in the rectum.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=444983"
+            ]
+        },
+        {
+            "DOID": "DOID:9252",
+            "Name": "amino acid metabolic disorder",
+            "Definition": "An inherited metabolic disorder that is characterized by impaired synthesis and degradation of amino acids.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Inborn_errors_of_amino_acid_metabolism"
+            ]
+        },
+        {
+            "DOID": "DOID:9973",
+            "Name": "substance dependence",
+            "Definition": "A substance-related disorder that involves the continued use of alcohol or other drugs despite problems related to use of the substance.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Drug_dependence"
+            ]
+        },
+        {
+            "DOID": "DOID:0050736",
+            "Name": "autosomal dominant disease",
+            "Definition": "An autosomal genetic disease that is characterized by the presence of one disease-associated mutation of a gene which is sufficient to cause the disease.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/glossary=autosomaldominant",
+                "http://ghr.nlm.nih.gov/handbook/inheritance/inheritancepatterns",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/002049.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:11432",
+            "Name": "endometriosis of ovary",
+            "Definition": "A female reproductive system disease characterized by the growth of endometrial tissue that is located_in the ovary.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Endometriosis"
+            ]
+        },
+        {
+            "DOID": "DOID:1883",
+            "Name": "hepatitis C",
+            "Definition": "A viral infectious disease that results_in inflammation located_in liver, has_material_basis_in Hepatitis C virus, which is transmitted_by blood from an infected person enters the body of an uninfected person. The infection has_symptom fever, has_symptom fatigue, has_symptom loss of appetite, has_symptom nausea, has_symptom vomiting, has_symptom abdominal pain, has_symptom clay-colored bowel movements, has_symptom joint pain, and has_symptom jaundice.",
+            "urls": [
+                "http://www.cdc.gov/hepatitis/HCV/index.htm",
+                "http://www.cdc.gov/hepatitis/hcv/pdfs/hepcgeneralfactsheet.pdf",
+                "http://www.cdc.gov/hepatitis/Resources/Professionals/PDFs/ABCTable.pdf"
+            ]
+        },
+        {
+            "DOID": "DOID:0050830",
+            "Name": "peripheral artery disease",
+            "Definition": "An artery disease that is characterized by build up of plaque in the arteries that carry blood to your head, organs, and limbs.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000170.htm",
+                "https://www.nhlbi.nih.gov/health/health-topics/topics/pad/"
+            ]
+        },
+        {
+            "DOID": "DOID:4230",
+            "Name": "smooth muscle cancer",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:12603",
+            "Name": "acute leukemia",
+            "Definition": "A lymphoid leukemia that occurs when a hematopoietic stem cell undergoes malignant transformation into a primitive, undifferentiated cell with abnormal longevity producing large numbers of white blood cells to be produced and enter the blood stream.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Acute_leukemia",
+                "http://www.bloodjournal.org/content/bloodjournal/128/3/462.full.pdf",
+                "http://www.merck.com/mmpe/sec11/ch142/ch142b.html"
+            ]
+        },
+        {
+            "DOID": "DOID:1561",
+            "Name": "cognitive disorder",
+            "Definition": "A disease of mental health that affects cognitive functions including memory processing, perception and problem solving.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Cognitive_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:0050013",
+            "Name": "carbohydrate metabolism disease",
+            "Definition": "An acquired metabolic disease that is characterized by abnormal carbohydrate metabolism.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/metabolicdisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:50",
+            "Name": "thyroid gland disease",
+            "Definition": "An endocrine system disease that is located_in the thyroid.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Thyroid"
+            ]
+        },
+        {
+            "DOID": "DOID:5419",
+            "Name": "schizophrenia",
+            "Definition": "A psychotic disorder that is characterized by a disintegration of thought processes and of emotional responsiveness.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Schizophrenia"
+            ]
+        },
+        {
+            "DOID": "DOID:263",
+            "Name": "kidney cancer",
+            "Definition": "A urinary system cancer that is located_in the kidney.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Kidney_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:3498",
+            "Name": "pancreatic ductal adenocarcinoma",
+            "Definition": "A pancreatic adenocarcinoma that derives_from pancreatic duct cells.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/PancreaticDuctalAdenocarcinoma",
+                "http://en.wikipedia.org/wiki/Pancreatic_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:706",
+            "Name": "mature B-cell neoplasm",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:9261",
+            "Name": "nasopharynx carcinoma",
+            "Definition": "A pharynx cancer that is located in the nasopharynx, the uppermost region of the pharynx or throat, where the nasal passages and auditory tubes join the remainder of the upper respiratory tract.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Nasopharyngeal_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:0060004",
+            "Name": "autoimmune disease of central nervous system",
+            "Definition": "An autoimmune hypersensitivity disease located_in the central nervous system.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/books/NBK459447/"
+            ]
+        },
+        {
+            "DOID": "DOID:8850",
+            "Name": "salivary gland cancer",
+            "Definition": "An oral cavity cancer that is located_in the salivary gland.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=446528"
+            ]
+        },
+        {
+            "DOID": "DOID:150",
+            "Name": "disease of mental health",
+            "Definition": "A disease that involves a psychological or behavioral pattern generally associated with subjective distress or disability that occurs in an individual, and which are not a part of normal development or culture.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Mental_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:786",
+            "Name": "laryngeal disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0070004",
+            "Name": "myeloid neoplasm",
+            "Definition": "A bone marrow cancer that is formed of any one of the bone marrow cells belonging to the granulocytic (neutrophil, eosinophil, basophil), monocytic/macrophage, erythroid, megakaryocytic and mast cell lineages.",
+            "urls": [
+                "http://www.bloodjournal.org/content/bloodjournal/128/3/462.full.pdf",
+                "https://www.ncbi.nlm.nih.gov/pubmed/19357394"
+            ]
+        },
+        {
+            "DOID": "DOID:5166",
+            "Name": "endometrial stromal tumor",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0060056",
+            "Name": "hypersensitivity reaction disease",
+            "Definition": "An immune system disease that has_material_basis_in abnormal immune responses.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hypersensitivity",
+                "http://www.ncbi.nlm.nih.gov/books/NBK27136/"
+            ]
+        },
+        {
+            "DOID": "DOID:2596",
+            "Name": "larynx cancer",
+            "Definition": "A respiratory system cancer that is located_in the larynx.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Larynx"
+            ]
+        },
+        {
+            "DOID": "DOID:0050639",
+            "Name": "primary cutaneous amyloidosis",
+            "Definition": "An amyloidosis characterized by pruritus, skin scratching and by deposits of amyloid in the dermis.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/19663869"
+            ]
+        },
+        {
+            "DOID": "DOID:1192",
+            "Name": "peripheral nervous system neoplasm",
+            "Definition": "A nervous system cancer that is located in the peripheral nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Peripheral_nervous_system"
+            ]
+        },
+        {
+            "DOID": "DOID:5151",
+            "Name": "plexiform neurofibroma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:3118",
+            "Name": "hepatobiliary disease",
+            "Definition": "A gastrointestinal system disease that is located_in the liver and/or biliary tract.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hepato-biliary_diseases"
+            ]
+        },
+        {
+            "DOID": "DOID:5223",
+            "Name": "infertility",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0050951",
+            "Name": "hereditary ataxia",
+            "Definition": "A neurodegenerative disease that is characterized by slowly progressive incoordination of gait and often associated with poor coordination of hands, speech, and eye movements.",
+            "urls": [
+                "http://www.ncbi.nlm.nih.gov/books/NBK1138"
+            ]
+        },
+        {
+            "DOID": "DOID:4006",
+            "Name": "bladder urothelial carcinoma",
+            "Definition": "A bladder carcinoma that has_material_basis_in transitional cells located_in the lining of the bladder.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/UrothelialBladderCarcinoma",
+                "http://www.cancer.gov/dictionary?cdrid=46629"
+            ]
+        },
+        {
+            "DOID": "DOID:2621",
+            "Name": "autonomic nervous system neoplasm",
+            "Definition": "A peripheral nervous system neoplasm that is located_in the autonomic nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Autonomic_nervous_system"
+            ]
+        },
+        {
+            "DOID": "DOID:3308",
+            "Name": "embryonal carcinoma",
+            "Definition": "An embryonal cancer that is a type of germ cell tumour that is located_in the ovaries or located_in the testes.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Embryonal_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:9206",
+            "Name": "Barrett's esophagus",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:4467",
+            "Name": "clear cell renal cell carcinoma",
+            "Definition": "A renal cell carcinoma that has_material_basis_in cells that appear very pale or clear when examined under microscope.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=45063",
+                "https://cancergenome.nih.gov/cancersselected/kidneyclearcell"
+            ]
+        },
+        {
+            "DOID": "DOID:3856",
+            "Name": "male reproductive organ cancer",
+            "Definition": "A reproductive organ cancer that is manifested in the male genital system. This includes organs such as the penis and scrotum.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Template:Male_genital_neoplasia",
+                "http://www.wrongdiagnosis.com/g/genital_system_cancer/intro.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:8692",
+            "Name": "myeloid leukemia",
+            "Definition": "A leukemia that is located_in myeloid tissue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Myeloid_leukemia"
+            ]
+        },
+        {
+            "DOID": "DOID:3910",
+            "Name": "lung adenocarcinoma",
+            "Definition": "A lung non-small cell carcinoma that derives_from epithelial cells of glandular origin.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/lungadenocarcinoma",
+                "http://en.wikipedia.org/wiki/Adenocarcinoma",
+                "http://en.wikipedia.org/wiki/Adenocarcinoma_of_the_lung"
+            ]
+        },
+        {
+            "DOID": "DOID:8857",
+            "Name": "lupus erythematosus",
+            "Definition": "An autoimmune disease that is characterized by a constellation of findings that include elevated antibodies to nuclear antigens, antiphospholipids, low complement levels, ulcers, non-scarring alopecia, renal or neurologic damage, and low white blood cell and platelet counts, has_symptom rashes, fatigue, arthritis, hair loss, seizures, and symptoms related to affected organs.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/29366725"
+            ]
+        },
+        {
+            "DOID": "DOID:10652",
+            "Name": "Alzheimer's disease",
+            "Definition": "A tauopathy that is characterized by memory lapses, confusion, emotional instability and progressive loss of mental ability and results in progressive memory loss, impaired thinking, disorientation, and changes in personality and mood starting and leads in advanced cases to a profound decline in cognitive and physical functioning and is marked histologically by the degeneration of brain neurons especially in the cerebral cortex and by the presence of neurofibrillary tangles and plaques containing beta-amyloid.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Alzheimer%27s_disease",
+                "http://www.merriam-webster.com/medical/alzheimer%27s%20disease",
+                "http://www.nia.nih.gov/alzheimers/publication/alzheimers-disease-fact-sheet"
+            ]
+        },
+        {
+            "DOID": "DOID:10763",
+            "Name": "hypertension",
+            "Definition": "An artery disease characterized by chronic elevated blood pressure in the arteries.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Hypertension",
+                "https://www.ncbi.nlm.nih.gov/pubmed/24352797"
+            ]
+        },
+        {
+            "DOID": "DOID:0050745",
+            "Name": "diffuse large B-cell lymphoma",
+            "Definition": "A B-cell lymphoma that is a cancer of B cells presenting as an aggressive tumour which can arise in virtually any part of the body.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Diffuse_large_B-cell_lymphoma",
+                "https://www.ncbi.nlm.nih.gov/pubmed/28487884"
+            ]
+        },
+        {
+            "DOID": "DOID:10283",
+            "Name": "prostate cancer",
+            "Definition": "A male reproductive organ cancer that is located_in the prostate.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=445079"
+            ]
+        },
+        {
+            "DOID": "DOID:4043",
+            "Name": "skeletal muscle cancer",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:5339",
+            "Name": "cyclic hematopoiesis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:1229",
+            "Name": "paranoid schizophrenia",
+            "Definition": "A schizophrenia characterized by delusions or auditory hallucinations of persecution or being plotted against without thought disorder, disorganized behavior, or affective flattening.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Paranoid_schizophrenia",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000936.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:4905",
+            "Name": "pancreatic carcinoma",
+            "Definition": "A pancreas cancer that derives_from epithelial cells located_in the exocrine pancreas.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Carcinoma",
+                "http://www.cancer.gov/cancertopics/types/pancreatic"
+            ]
+        },
+        {
+            "DOID": "DOID:3907",
+            "Name": "lung squamous cell carcinoma",
+            "Definition": "A non-small cell lung carcinoma that has_material_basis_in the squamous cell.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/lungsquamouscell",
+                "http://en.wikipedia.org/wiki/Squamous-cell_carcinoma",
+                "http://en.wikipedia.org/wiki/Squamous_cell_carcinoma_of_the_lung",
+                "http://www.cancer.gov/dictionary?CdrID=46595"
+            ]
+        },
+        {
+            "DOID": "DOID:305",
+            "Name": "carcinoma",
+            "Definition": "A cell type cancer that has_material_basis_in abnormally proliferating cells derives_from epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:2349",
+            "Name": "arteriosclerosis",
+            "Definition": "An artery disease that is characterized by a thickening and hardening of arterial walls in the arteries.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Arteriosclerosis"
+            ]
+        },
+        {
+            "DOID": "DOID:9074",
+            "Name": "systemic lupus erythematosus",
+            "Definition": "A lupus erythematosus that is an inflammation of connective tissue marked by skin rashes, joint pain and swelling, inflammation of the kidneys and inflammation of the tissue surrounding the heart.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Systemic_lupus_erythematosus"
+            ]
+        },
+        {
+            "DOID": "DOID:4440",
+            "Name": "seminoma",
+            "Definition": "A germinoma that has_material_basis_in cells that make sperm and eggs.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=46577"
+            ]
+        },
+        {
+            "DOID": "DOID:3213",
+            "Name": "demyelinating disease",
+            "Definition": "A central nervous system disease that is characterized by damage to the myelin sheath present around nerve axons.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/17071802"
+            ]
+        },
+        {
+            "DOID": "DOID:9408",
+            "Name": "acute myocardial infarction",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:2030",
+            "Name": "anxiety disorder",
+            "Definition": "A cognitive disorder that involves an excessive, irrational dread of everyday situations.",
+            "urls": [
+                "http://www.nimh.nih.gov/health/topics/anxiety-disorders/index.shtml"
+            ]
+        },
+        {
+            "DOID": "DOID:1781",
+            "Name": "thyroid gland cancer",
+            "Definition": "An endocrine gland cancer located in the thryoid gland located in the neck below the thyroid cartilage.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Thyroid_gland"
+            ]
+        },
+        {
+            "DOID": "DOID:3969",
+            "Name": "thyroid gland papillary carcinoma",
+            "Definition": "A differentiated thyroid gland carcinoma that is characterized by the small mushroom shape of the tumor which has a stem attached to the epithelial layer abd arises from the follicular cells of the thyroid gland.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/thyroid",
+                "http://en.wikipedia.org/wiki/Papillary_thyroid_cancer",
+                "https://www.ncbi.nlm.nih.gov/pubmed/21455196"
+            ]
+        },
+        {
+            "DOID": "DOID:319",
+            "Name": "spinal cord disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:2998",
+            "Name": "testicular cancer",
+            "Definition": "A male reproductive system cancer that is located_in the testicles.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=445090"
+            ]
+        },
+        {
+            "DOID": "DOID:3121",
+            "Name": "gallbladder cancer",
+            "Definition": "A biliary tract cancer that is located_in the gallbladder.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Gallbladder"
+            ]
+        },
+        {
+            "DOID": "DOID:0050959",
+            "Name": "spinocerebellar ataxia type 8",
+            "Definition": "An autosomal dominant cerebellar ataxia that is characterized by slowly progressive dysarthria, bradykinesia, nystagmus and loss of coordination, has_material_basis_in mutation in the ATXN80S gene.",
+            "urls": [
+                "https://rarediseases.info.nih.gov/diseases/4956/spinocerebellar-ataxia-8"
+            ]
+        },
+        {
+            "DOID": "DOID:688",
+            "Name": "embryonal cancer",
+            "Definition": "A germ cell cancer that is associated with an embryo.",
+            "urls": [
+                "http://www.cancer.gov/dictionary/?CdrID=44250"
+            ]
+        },
+        {
+            "DOID": "DOID:1909",
+            "Name": "melanoma",
+            "Definition": "A cell type cancer that has_material_basis_in abnormally proliferating cells derives_from melanocytes which are found in skin, the bowel and the eye.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Melanoma",
+                "https://www.ncbi.nlm.nih.gov/pubmed/22123420"
+            ]
+        },
+        {
+            "DOID": "DOID:0060469",
+            "Name": "Miller-Dieker lissencephaly syndrome",
+            "Definition": "A syndrome characterized by classical lissencephaly and distinct facial features and has_material_basis_in submicroscopic deletions of 17p13.3, including the LIS1 gene.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/condition/miller-dieker-syndrome",
+                "https://en.wikipedia.org/wiki/Miller-Dieker_syndrome",
+                "https://www.ncbi.nlm.nih.gov/pubmed/21239872",
+                "https://www.ncbi.nlm.nih.gov/pubmed/9473821"
+            ]
+        },
+        {
+            "DOID": "DOID:0080005",
+            "Name": "bone remodeling disease",
+            "Definition": "A bone disease that results_in formation or resorption abnormalities located_in bone.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Bone_remodeling"
+            ]
+        },
+        {
+            "DOID": "DOID:12294",
+            "Name": "atypical depressive disorder",
+            "Definition": "A mood disorder that is characterized by mood reactivity and positivity, significant weight gain or increased appetite, excessive sleep or somnolence, a sensation of heaviness in limbs known as leaden paralysis, and significant social impairment as a consequence of hypersensitivity to perceived interpersonal rejection.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Mood_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:2151",
+            "Name": "malignant ovarian surface epithelial-stromal neoplasm",
+            "Definition": "An ovary epithelial cancer that has_material_basis_in epithelial and stromal tissue and arises from the surface epithelium of the ovary.",
+            "urls": [
+                "https://www.sciencedirect.com/science/article/pii/0046817791902054"
+            ]
+        },
+        {
+            "DOID": "DOID:289",
+            "Name": "endometriosis",
+            "Definition": "A female reproductive system disease characterized by the growth of endometrial tissue outside the uterine body.",
+            "urls": [
+                "https://en.wikipedia.org/?title=Endometriosis",
+                "https://www.ncbi.nlm.nih.gov/pubmed/20574791"
+            ]
+        },
+        {
+            "DOID": "DOID:3342",
+            "Name": "bone inflammation disease",
+            "Definition": "A bone disease that results_in inflammation of the located_in bone.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Osteitis",
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=Osteitis"
+            ]
+        },
+        {
+            "DOID": "DOID:9296",
+            "Name": "cleft lip",
+            "Definition": "An orofacial cleft that is characterized by a congenital defect in the upper lip where the maxillary prominence fails to merge with the merged medial nasal prominences.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Cleft_lip_and_cleft_palate",
+                "https://www.cdc.gov/ncbddd/birthdefects/cleftlip.html"
+            ]
+        },
+        {
+            "DOID": "DOID:5093",
+            "Name": "thoracic cancer",
+            "Definition": "An organ system cancer located_in the thoracic cavity that develops in the different types of cells within the lungs, as well as less common cancers of the esophagus, the trachea, or the chest wall.",
+            "urls": [
+                "https://radonc.ucsf.edu/thoracic-cancers"
+            ]
+        },
+        {
+            "DOID": "DOID:1107",
+            "Name": "esophageal carcinoma",
+            "Definition": "A esophageal cancer that has_material_basis_in abnormally proliferating cells derives_from epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Esophageal_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:4045",
+            "Name": "muscle cancer",
+            "Definition": "A musculoskeletal system cancer that is located_in muscle.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Muscle"
+            ]
+        },
+        {
+            "DOID": "DOID:1414",
+            "Name": "ovarian dysfunction",
+            "Definition": "An ovarian disease that is characterized by irregular or absent ovulation.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/26132932"
+            ]
+        },
+        {
+            "DOID": "DOID:687",
+            "Name": "hepatoblastoma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:535",
+            "Name": "sleep disorder",
+            "Definition": "A disease of mental health that involves disruption of sleep patterns.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Sleep_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:0050885",
+            "Name": "IMAGe syndrome",
+            "Definition": "A syndrome that is characterized by intrauterine growth restriction, metaphyseal dysplasia, adrenal hypoplasia congenita, genital abnormalities and has_material_basis_in heterozygous mutation in the CDKN1C gene.",
+            "urls": [
+                "http://omim.org/entry/614732",
+                "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?Lng=GB&Expert=85173",
+                "https://www.ncbi.nlm.nih.gov/pubmed/14760276",
+                "https://www.ncbi.nlm.nih.gov/pubmed/22634751",
+                "https://www.ncbi.nlm.nih.gov/pubmed/23719190",
+                "https://www.ncbi.nlm.nih.gov/pubmed/24065356"
+            ]
+        },
+        {
+            "DOID": "DOID:37",
+            "Name": "skin disease",
+            "Definition": "An integumentary system disease that is located_in skin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Skin_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:2394",
+            "Name": "ovarian cancer",
+            "Definition": "A female reproductive organ cancer that is located_in the ovary.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=445074"
+            ]
+        },
+        {
+            "DOID": "DOID:0050686",
+            "Name": "organ system cancer",
+            "Definition": "A cancer that is classified based on the organ it starts in.",
+            "urls": [
+                "http://cancerguide.org/basic.html"
+            ]
+        },
+        {
+            "DOID": "DOID:612",
+            "Name": "primary immunodeficiency disease",
+            "Definition": "An immune system disease that results when one or more essential parts of the immune system is missing or not working properly at birth due to a genetic mutation.",
+            "urls": [
+                "http://www.nichd.nih.gov/publications/pubs/primary_immuno.cfm#PrimaryImmunoDiseases"
+            ]
+        },
+        {
+            "DOID": "DOID:0050865",
+            "Name": "tongue squamous cell carcinoma",
+            "Definition": "A head and neck squamous cell carcinoma that is located_in the tongue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Squamous_cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:3748",
+            "Name": "esophagus squamous cell carcinoma",
+            "Definition": "An esophageal carcinoma that derives_from epithelial squamous cells located_in the esophagus.",
+            "urls": [
+                "http://www.cancer.gov/cancertopics/types/esophageal"
+            ]
+        },
+        {
+            "DOID": "DOID:2876",
+            "Name": "laryngeal squamous cell carcinoma",
+            "Definition": "A laryngeal carcinoma that has_material_basis_in squamous cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Squamous-cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:10941",
+            "Name": "intracranial aneurysm",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:7474",
+            "Name": "malignant pleural mesothelioma",
+            "Definition": "A pleural cancer that has_material_basis_in mesothelium cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Mesothelioma"
+            ]
+        },
+        {
+            "DOID": "DOID:896",
+            "Name": "metal metabolism disorder",
+            "Definition": "An inherited metabolic disorder that involves metabolic disturbances in the processing or distribution of dietary minerals.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Inborn_errors_of_metal_metabolism"
+            ]
+        },
+        {
+            "DOID": "DOID:5844",
+            "Name": "myocardial infarction",
+            "Definition": "A coronary artery disease characterized by myocardial cell death (myocardial necrosis) due to prolonged ischaemia.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Myocardial_infarction",
+                "https://www.ncbi.nlm.nih.gov/pubmed/17951287"
+            ]
+        },
+        {
+            "DOID": "DOID:11830",
+            "Name": "myopia",
+            "Definition": "A refractive error characterized by the inability to see farther objects clearly.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Myopia",
+                "http://ghr.nlm.nih.gov/glossary=myopia",
+                "http://www.mayoclinic.org/diseases-conditions/nearsightedness/basics/definition/con-20027548"
+            ]
+        },
+        {
+            "DOID": "DOID:3369",
+            "Name": "Ewing sarcoma",
+            "Definition": "A connective tissue cancer that has_material_basis in neural crest cells derives_from undeveloped, undifferentiated neuroectoderm.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Primitive_neuroectodermal_tumor",
+                "http://www.cancer.gov/dictionary?cdrid=383924"
+            ]
+        },
+        {
+            "DOID": "DOID:4090",
+            "Name": "agnosia",
+            "Definition": "A communication disorder that is a loss of ability to recognize objects, persons, sounds, shapes, or smells while the specific sense is not defective nor is there any significant memory loss.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Agnosia"
+            ]
+        },
+        {
+            "DOID": "DOID:0050624",
+            "Name": "gastrointestinal system benign neoplasm",
+            "Definition": "An organ system benign neoplasm located_in gastrointestinal tract organs.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Human_gastrointestinal_tract"
+            ]
+        },
+        {
+            "DOID": "DOID:9835",
+            "Name": "refractive error",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:1686",
+            "Name": "glaucoma",
+            "Definition": "An eye disease that is characterized by an unstable or a sustained increase in the intraocular pressure which the eye cannot withstand without damage to its structure or impairment of its function.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Glaucoma",
+                "https://www.aao.org/eye-health/diseases/what-is-glaucoma"
+            ]
+        },
+        {
+            "DOID": "DOID:77",
+            "Name": "gastrointestinal system disease",
+            "Definition": "A disease of anatomical entity that is located_in the gastrointestinal tract.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Human_gastrointestinal_tract"
+            ]
+        },
+        {
+            "DOID": "DOID:10591",
+            "Name": "pre-eclampsia",
+            "Definition": "A hypertension occurring during pregnancy characterized by large amounts of protein in the urine (proteinuria) and edema, usually by the last trimester of pregnancy.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pre-eclampsia",
+                "http://ghr.nlm.nih.gov/condition/preeclampsia",
+                "https://www.ncbi.nlm.nih.gov/pubmed/24400024"
+            ]
+        },
+        {
+            "DOID": "DOID:0060115",
+            "Name": "nervous system benign neoplasm",
+            "Definition": "An organ system benign neoplasm that is located_in the central nervous system or located_in the peripheral nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Nervous_system"
+            ]
+        },
+        {
+            "DOID": "DOID:7148",
+            "Name": "rheumatoid arthritis",
+            "Definition": "An arthritis that is an autoimmune disease which attacks healthy cells and tissue located_in joint.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Rheumatoid_arthritis",
+                "http://www.arthritis.org/disease-center.php?disease_id=31",
+                "http://www.mayoclinic.org/diseases-conditions/rheumatoid-arthritis/home/ovc-20197388",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000431.htm",
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=rheumatoid%20arthritis"
+            ]
+        },
+        {
+            "DOID": "DOID:3892",
+            "Name": "insulinoma",
+            "Definition": "A pancreatic cystadenoma that is characterized by the overproduction of insulin.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Insulinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:4706",
+            "Name": "infratentorial cancer",
+            "Definition": "A brain cancer that is located_in the infratentorial region.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Tentorium_cerebelli",
+                "http://www.ncbi.nlm.nih.gov/mesh/68015192"
+            ]
+        },
+        {
+            "DOID": "DOID:2789",
+            "Name": "parasitic protozoa infectious disease",
+            "Definition": "A parasitic infectious disease that is caused by parasitic protozoa which are microorganisms classified as unicellular eukaryotes.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Protozoan",
+                "http://en.wikipedia.org/wiki/Protozoan_infection"
+            ]
+        },
+        {
+            "DOID": "DOID:824",
+            "Name": "periodontitis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:4845",
+            "Name": "pilomyxoid astrocytoma",
+            "Definition": "A pilocytic astrocytoma that is characterized by a monomorphic architectural pattern, usually associated with the absence of Rosenthal fibers and eosinophilic granular bodies.",
+            "urls": [
+                "https://pubmed.ncbi.nlm.nih.gov/30945015/",
+                "https://radiopaedia.org/articles/pilomyxoid-astrocytoma?lang=us"
+            ]
+        },
+        {
+            "DOID": "DOID:8398",
+            "Name": "osteoarthritis",
+            "Definition": "An arthritis that has_material_basis_in worn out cartilage located_in joint.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Osteoarthritis",
+                "http://www.mayoclinic.com/health/osteoarthritis/DS00019",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000423.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:13378",
+            "Name": "Kawasaki disease",
+            "Definition": "A lymphadenitis characterized by swelling of cervical lymph nodes in infants and young children and inflammation of medium-sized blood vessels located_in body, has_symptom fever, has_symptom congestion of ocular conjunctivae, has_symptom reddening of lips, has_symptom reddening of oral cavity, has_symptom protuberance of tongue papillae and has_symptom edema of extremities.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Kawasaki_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:7",
+            "Name": "disease of anatomical entity",
+            "Definition": "A disease that manifests in a defined anatomical structure.",
+            "urls": [
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=anatomic"
+            ]
+        },
+        {
+            "DOID": "DOID:3007",
+            "Name": "breast ductal carcinoma",
+            "Definition": "A breast carcinoma that derives_from the lining of milk ducts.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/breastductal",
+                "http://www.cancer.gov/dictionary?CdrID=45085"
+            ]
+        },
+        {
+            "DOID": "DOID:2127",
+            "Name": "brain germinoma",
+            "Definition": "A brain cancer that is characterized by abnormally proliferating cells, derives_from germ cells.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Germinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:0050890",
+            "Name": "synucleinopathy",
+            "Definition": "A neurodegenerative disease that is characterized by the abnormal accumulation of aggregates of alpha-synuclein protein in neurons, nerve fibres or glial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Synucleinopathies"
+            ]
+        },
+        {
+            "DOID": "DOID:0060116",
+            "Name": "sensory system cancer",
+            "Definition": "A nervous system cancer that is located in the sensory system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Sensory_system"
+            ]
+        },
+        {
+            "DOID": "DOID:154",
+            "Name": "mixed cell type cancer",
+            "Definition": "A cell type cancer that has_material_basis_in abnormally proliferating cells derives_from two germinal layers of tissue.",
+            "urls": [
+                "http://medical-dictionary.thefreedictionary.com/mixed+neoplasm"
+            ]
+        },
+        {
+            "DOID": "DOID:2600",
+            "Name": "laryngeal carcinoma",
+            "Definition": "A larynx cancer that has_material_basis_in epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:3565",
+            "Name": "meningioma",
+            "Definition": "A central nervous system cancer that are manifested in the central nervous system and arise from the arachnoid cap cells of the arachnoid villi in the meninges.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Meningioma"
+            ]
+        },
+        {
+            "DOID": "DOID:9538",
+            "Name": "multiple myeloma",
+            "Definition": "A myeloid neoplasm that is located_in the plasma cells in bone marrow.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Multiple_myeloma",
+                "http://www.cancer.gov/dictionary?CdrID=411384"
+            ]
+        },
+        {
+            "DOID": "DOID:0060072",
+            "Name": "benign neoplasm",
+            "Definition": "A disease of cellular proliferation that results in abnormal growths in the body which lack the ability to metastasize.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Benign_neoplasm",
+                "http://www.nlm.nih.gov/medlineplus/benigntumors.html"
+            ]
+        },
+        {
+            "DOID": "DOID:114",
+            "Name": "heart disease",
+            "Definition": "A cardiovascular system disease that involves the heart.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Heart_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:14330",
+            "Name": "Parkinson's disease",
+            "Definition": "A synucleinopathy that has_material_basis_in degeneration of the central nervous system that often impairs motor skills, speech, and other functions.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Parkinson%27s_disease",
+                "https://pubmed.ncbi.nlm.nih.gov/26474316/",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5877503/"
+            ]
+        },
+        {
+            "DOID": "DOID:299",
+            "Name": "adenocarcinoma",
+            "Definition": "A carcinoma that has_material_basis_in abnormally proliferating cells, derives_from epithelial cells, which originate in glandular tissue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adenocarcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:3347",
+            "Name": "osteosarcoma",
+            "Definition": "A bone sarcoma that is located_in bone that has_material_basis_in cells of mesenchymal origin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Osteosarcoma",
+                "http://www.cancer.gov/dictionary?cdrid=45395"
+            ]
+        },
+        {
+            "DOID": "DOID:8649",
+            "Name": "tongue cancer",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:10302",
+            "Name": "parotid disease",
+            "Definition": "A salivary gland disease that is located in the parotid gland.",
+            "urls": [
+                "https://www.mayoclinic.org/diseases-conditions/parotid-tumor/cdc-20388269"
+            ]
+        },
+        {
+            "DOID": "DOID:4914",
+            "Name": "esophagus adenocarcinoma",
+            "Definition": "An esophageal carcinoma that derives_from epithelial cells of glandular origin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adenocarcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:4226",
+            "Name": "endometrial stromal sarcoma",
+            "Definition": "An endometrial stromal tumor that has_material_basis in connective tissue.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Endometrial_stromal_sarcoma"
+            ]
+        },
+        {
+            "DOID": "DOID:8923",
+            "Name": "skin melanoma",
+            "Definition": "A skin cancer that has_material_basis_in melanocytes.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/melanoma",
+                "http://en.wikipedia.org/wiki/Melanoma",
+                "http://www.cancer.gov/dictionary?CdrID=45135"
+            ]
+        },
+        {
+            "DOID": "DOID:6270",
+            "Name": "gastric cardia carcinoma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:3952",
+            "Name": "adrenal cortex disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0060083",
+            "Name": "immune system cancer",
+            "Definition": "An organ system cancer located_in the immune system that is characterized by uncontrolled cellular proliferation in organs of the immune system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Immune_system"
+            ]
+        },
+        {
+            "DOID": "DOID:0060464",
+            "Name": "Feingold syndrome",
+            "Definition": "A syndrome characterized by variable combinations of microcephaly, limb malformations, esophageal and duodenal atresias, and learning disability/mental retardation.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/condition/feingold-syndrome",
+                "https://en.wikipedia.org/wiki/Feingold_syndrome",
+                "https://www.ncbi.nlm.nih.gov/pubmed/14518066",
+                "https://www.ncbi.nlm.nih.gov/pubmed/16906565"
+            ]
+        },
+        {
+            "DOID": "DOID:8725",
+            "Name": "vascular dementia",
+            "Definition": "A dementia that involves impairments in cognitive function caused by problems in blood vessels that feed the brain.",
+            "urls": [
+                "http://www.mayoclinic.com/health/vascular-dementia/DS00934",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000739.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:11723",
+            "Name": "Duchenne muscular dystrophy",
+            "Definition": "A muscular dystrophy that has_material_basis_in X-linked mutations in the DMD gene found on the X chromosome. It is characterized by rapidly progressing muscle weakness and muscle atrophy initially involving the lower extremities and eventually affecting the whole body. It affects males whereas females can be carriers. The symptoms start before the age of six and may appear at infancy.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Duchenne_muscular_dystrophy",
+                "http://omim.org/entry/300377",
+                "http://www.genome.gov/19518854"
+            ]
+        },
+        {
+            "DOID": "DOID:2559",
+            "Name": "opiate dependence",
+            "Definition": "A drug dependence that involves the continued use of opiate drugs despite despite problems related to use of the substance.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Opiate_dependency"
+            ]
+        },
+        {
+            "DOID": "DOID:526",
+            "Name": "human immunodeficiency virus infectious disease",
+            "Definition": "A viral infectious disease that results in destruction of immune system, leading to life-threatening opportunistic infections and cancers, has_material_basis_in Human immunodeficiency virus 1 or has_material_basis_in Human immunodeficiency virus 2, which are transmitted by sexual contact, transmitted by transfer of blood, semen, vaginal fluid, pre-ejaculate, or breast milk, transmitted by congenital method, and transmitted by contaminated needles. The virus infects helper T cells (CD4+ T cells) which are directly or indirectly destroyed, macrophages, and dendritic cells. The infection has symptom diarrhea, has symptom fatigue, has symptom fever, has symptom vaginal yeast infection, has symptom headache, has symptom mouth sores, has symptom muscle aches, has symptom sore throat, and has symptom swollen lymph glands.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/HIV",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000602.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:2021",
+            "Name": "placenta cancer",
+            "Definition": "A female reproductive organ cancer that is located_in the placenta.",
+            "urls": [
+                "https://www.agcf.org.au/gestational-trophoblastic-diseases",
+                "https://www.medstarcancer.org/conditions/gynecologic-cancer/placenta-cancer/",
+                "https://www.ncbi.nlm.nih.gov/pubmed/26156670,"
+            ]
+        },
+        {
+            "DOID": "DOID:1398",
+            "Name": "parasitic infectious disease",
+            "Definition": "A disease by infectious agent that is carried out by a parasite which by definition is a pathogen that simultaneously injures and derives sustenance from its host.",
+            "urls": [
+                "http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=mmed&part=A4071"
+            ]
+        },
+        {
+            "DOID": "DOID:0050177",
+            "Name": "monogenic disease",
+            "Definition": "A genetic disease that is the result of one or more abnormal alleles and may be dominant, semi-dominant, or recessive.",
+            "urls": [
+                "https://www.genome.gov/For-Patients-and-Families/Genetic-Disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:9279",
+            "Name": "hyperhomocysteinemia",
+            "Definition": "An amino acid metabolic disorder that involves an abnormally large level of homocysteine in the blood.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hyperhomocysteinemia"
+            ]
+        },
+        {
+            "DOID": "DOID:1091",
+            "Name": "tooth disease",
+            "Definition": "A mouth disease located_in the teeth.",
+            "urls": [
+                "https://medlineplus.gov/toothdisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:10155",
+            "Name": "intestinal cancer",
+            "Definition": "A gastrointestinal system cancer that is located_in the intestine.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Intestine"
+            ]
+        },
+        {
+            "DOID": "DOID:3463",
+            "Name": "breast disease",
+            "Definition": "A thoracic disease that is located_in the breast.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/breastdiseases.html"
+            ]
+        },
+        {
+            "DOID": "DOID:9974",
+            "Name": "drug dependence",
+            "Definition": "A substance dependence that involves the continued use of drugs despite problems related to use of the substance.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Drug_dependence"
+            ]
+        },
+        {
+            "DOID": "DOID:12858",
+            "Name": "Huntington's disease",
+            "Definition": "A neurodegenerative disease that has_material_basis_in autosomal dominant inheritance and is characterized by unwanted choreatic movements, behavioral and psychiatric disturbances and dementia and has_material_basis_in expansion of CAG triplet repeats (glutamine) resulting in neuron degeneration affecting muscle coordination, cognitive abilities.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Huntington_disease",
+                "http://www.orpha.net/consor/cgi-bin/Disease_Search.php?lng=EN&data_id=118&Disease_Disease_Search_diseaseGroup=huntington&Disease_Disease_Search_diseaseType=Pat&Disease(s)%20concerned=Huntington-disease&title=Huntington-disease&search=Disease_Search_Simple"
+            ]
+        },
+        {
+            "DOID": "DOID:0050902",
+            "Name": "medulloblastoma",
+            "Definition": "An infratentorial cancer that is located_in the lower part of the brain and is a type of primitive neuroectodermal tumor.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Medulloblastoma",
+                "http://www.cancer.gov/dictionary?CdrID=45780",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3306779/"
+            ]
+        },
+        {
+            "DOID": "DOID:2994",
+            "Name": "germ cell cancer",
+            "Definition": "A cell type cancer that has_material_basis_in abnormally proliferating cells derives_from germ cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Germ_cell_tumor"
+            ]
+        },
+        {
+            "DOID": "DOID:3571",
+            "Name": "liver cancer",
+            "Definition": "A hepatobiliary system cancer that is located_in the liver.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Liver"
+            ]
+        },
+        {
+            "DOID": "DOID:3304",
+            "Name": "germinoma",
+            "Definition": "A germ cell cancer that lacks histologic differentiation. It usually refers to a tumor in the brain.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Germinoma",
+                "https://en.wikipedia.org/wiki/Germinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:0060318",
+            "Name": "acute promyelocytic leukemia",
+            "Definition": "An acute myeloid leukemia characterized by accumulation of promyelocytes in the bone marrow and by a translocation between chromosomes 15 and 17.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Acute_promyelocytic_leukemia",
+                "http://ghr.nlm.nih.gov/condition/acute-promyelocytic-leukemia"
+            ]
+        },
+        {
+            "DOID": "DOID:0060262",
+            "Name": "gallbladder disease",
+            "Definition": "A gastrointestinal system disease that is located_in the gallbladder.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Gallbladder_disease",
+                "http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=14.10d&code=C34631&ns=NCI_Thesaurus&key=n1027527578&b=1&n=null"
+            ]
+        },
+        {
+            "DOID": "DOID:594",
+            "Name": "panic disorder",
+            "Definition": "An anxiety disorder that is characterized by unexpected and repeated episodes of intense fear accompanied by physical symptoms that may include chest pain, heart palpitations, shortness of breath, dizziness, or abdominal distress.",
+            "urls": [
+                "http://www.nimh.nih.gov/health/topics/panic-disorder/index.shtml"
+            ]
+        },
+        {
+            "DOID": "DOID:3953",
+            "Name": "adrenal gland cancer",
+            "Definition": "An endocrine gland cancer located_in the adrenal glands which are located above the kidneys.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adrenal_gland"
+            ]
+        },
+        {
+            "DOID": "DOID:2786",
+            "Name": "cerebellar disease",
+            "Definition": "A brain disease that is characterized by damage to brain substance located_in cerebellum; has_symptom ataxia, has_symptom dysarthria, and has_symptom cerebellar cognitive affective syndrome.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Cerebellum",
+                "https://www.ncbi.nlm.nih.gov/pubmed/15377747"
+            ]
+        },
+        {
+            "DOID": "DOID:12987",
+            "Name": "agranulocytosis",
+            "Definition": "A leukopenia that is characterized by a severe lack of of granulocytes with a drop in granulocyte concentration below 200 cells/mm\u00b3 of blood.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Agranulocytosis"
+            ]
+        },
+        {
+            "DOID": "DOID:9993",
+            "Name": "hypoglycemia",
+            "Definition": "A glucose metabolism disease that is characterized by abnormally low levels of blood glucose.",
+            "urls": [
+                "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/low-blood-glucose-hypoglycemia"
+            ]
+        },
+        {
+            "DOID": "DOID:9952",
+            "Name": "acute lymphoblastic leukemia",
+            "Definition": "A acute leukemia that is characterized by over production of lymphoblasts.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=46332"
+            ]
+        },
+        {
+            "DOID": "DOID:3095",
+            "Name": "germ cell and embryonal cancer",
+            "Definition": "A germ cell cancer that is derives_from a mixture of germs cells and embryonal cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Germ_cell"
+            ]
+        },
+        {
+            "DOID": "DOID:16",
+            "Name": "integumentary system disease",
+            "Definition": "A disease of anatomical entity that is located_in the integumentary system comprising the skin and its appendages.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Integumentary_system"
+            ]
+        },
+        {
+            "DOID": "DOID:4851",
+            "Name": "pilocytic astrocytoma",
+            "Definition": "A childhood low-grade glioma that is characterized by cells that look like fibers when viewed under a microscope and is located_in the brain.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pilocytic_astrocytoma",
+                "http://www.cancer.gov/dictionary?CdrID=44341"
+            ]
+        },
+        {
+            "DOID": "DOID:2237",
+            "Name": "hepatitis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0060689",
+            "Name": "atrichia with papular lesions",
+            "Definition": "An alopecia characterized by irreversible hair loss during the neonatal period on all hear-bearing areas of the body followed by  development of papular lesions all over the body that has_material_basis_in  mutations in the HR gene on chromosome 8p21.3.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/10205263"
+            ]
+        },
+        {
+            "DOID": "DOID:11612",
+            "Name": "polycystic ovary syndrome",
+            "Definition": "An ovarian dysfunction that is characterized by hyperandrogenism, polycystic ovaries, hirsutism, oligomenorrhea or amenorrhea, anovulation and excessive body weight.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/glossary=polycysticovarysyndrome",
+                "https://en.wikipedia.org/wiki/Polycystic_ovary_syndrome",
+                "https://pubmed.ncbi.nlm.nih.gov/28791858",
+                "https://www.ncbi.nlm.nih.gov/pubmed/20591140"
+            ]
+        },
+        {
+            "DOID": "DOID:5183",
+            "Name": "hereditary Wilms' tumor",
+            "Definition": "A nephroblastoma that results_in either bilateral disease or a family history of Wilms' tumour.",
+            "urls": [
+                "http://www.cancerindex.org/geneweb/X210202.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:7693",
+            "Name": "abdominal aortic aneurysm",
+            "Definition": "An aortic aneurysm that is located_in the abdominal aorta.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Aortic_aneurysm"
+            ]
+        },
+        {
+            "DOID": "DOID:850",
+            "Name": "lung disease",
+            "Definition": "A lower respiratory tract disease in which the function of the lungs is adversely affected by narrowing or blockage of the airways resulting in poor air flow, a loss of elasticity in the lungs that produces a decrease in the total volume of air that the lungs are able to hold, and clotting, scarring, or inflammation of the blood vessels that affect the ability of the lungs to take up oxygen and to release carbon dioxide.",
+            "urls": [
+                "http://www.niehs.nih.gov/health/topics/conditions/lung-disease/index.cfm",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000066.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:1612",
+            "Name": "breast cancer",
+            "Definition": "A thoracic cancer that originates in the mammary gland.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Breast_cancer",
+                "http://en.wikipedia.org/wiki/Mammary",
+                "http://www.cancer.gov/cancertopics/types/breast",
+                "http://www.nlm.nih.gov/medlineplus/breastcancer.html"
+            ]
+        },
+        {
+            "DOID": "DOID:3908",
+            "Name": "lung non-small cell carcinoma",
+            "Definition": "A lung carcinoma that is characterized as any type of epithelial lung cancer other than small cell lung carcinoma.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Non-small-cell_lung_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:0080525",
+            "Name": "differentiated thyroid gland carcinoma",
+            "Definition": "A thyroid gland adenocarcinoma characterized by extensive evidence of follicular cell differentiation.",
+            "urls": [
+                "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C7153&ns=ncit"
+            ]
+        },
+        {
+            "DOID": "DOID:8771",
+            "Name": "contagious pustular dermatitis",
+            "Definition": "A viral infectious disease that results_in infection located_in skin, has_material_basis_in Orf virus, which is transmitted_by contact with infected or recently vaccinated animals, or transmitted_by fomites carrying the virus. The infection has_symptom lesions on the finger, hand, arm, face, and penis.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Orf_%28disease%29",
+                "http://www.cdc.gov/mmwr/preview/mmwrhtml/mm5503a1.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:0060039",
+            "Name": "autoimmune disease of skin and connective tissue",
+            "Definition": "An autoimmune disease that is the abnormal functioning of the immune system that causes your immune system to produce antibodies or T cells against cells and/or tissues in the skin and connective tissue.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/books/NBK459447/"
+            ]
+        },
+        {
+            "DOID": "DOID:229",
+            "Name": "female reproductive system disease",
+            "Definition": "A reproductive system disease that impairs the ability to reproduce and is located in the uterus, vagina, cervix, ovaries or fallopian tubes.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Female_reproductive_system",
+                "http://en.wikipedia.org/wiki/Reproductive_system_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:1795",
+            "Name": "malignant exocrine pancreas neoplasm",
+            "Definition": "A pancreatic cancer that arises from the epithelial cells of the exocrine pancreatic tissue.",
+            "urls": [
+                "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C7430"
+            ]
+        },
+        {
+            "DOID": "DOID:3948",
+            "Name": "adrenocortical carcinoma",
+            "Definition": "An adrenal cortex cancer that forms in the outer layer of tissue of the adrenal gland and that has_material_basis_in abnormally proliferating cells derives_from epithelial cells.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/AdrenocorticalCarcinoma",
+                "http://www.cancer.gov/cancertopics/types/adrenocortical"
+            ]
+        },
+        {
+            "DOID": "DOID:848",
+            "Name": "arthritis",
+            "Definition": "A bone inflammation disease that involves a response to irritation or injury, characterized by joint pain, swelling, stiffness located_in joint.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Arthritis",
+                "http://www.arthritis.org/",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/001243.htm",
+                "https://www.cdc.gov/arthritis/index.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:4",
+            "Name": "disease",
+            "Definition": "A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism.",
+            "urls": [
+                "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf"
+            ]
+        },
+        {
+            "DOID": "DOID:14681",
+            "Name": "Silver-Russell syndrome",
+            "Definition": "A physical disorder that is characterized by severe intrauterine growth retardation, poor postnatal growth, craniofacial features such as a triangular shaped face and a broad forehead, body asymmetry, and a variety of minor malformations.",
+            "urls": [
+                "https://ghr.nlm.nih.gov/condition/russell-silver-syndrome",
+                "https://rarediseases.org/rare-diseases/russell-silver-syndrome/"
+            ]
+        },
+        {
+            "DOID": "DOID:0060334",
+            "Name": "transient neonatal diabetes mellitus",
+            "Definition": "A neonatal diabetes that is characterized by hyperglycemia during the neonatal period that remits during infancy but recurs in later life in most patients.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Transient_neonatal_diabetes_mellitus",
+                "https://www.ncbi.nlm.nih.gov/pubmed/17349054"
+            ]
+        },
+        {
+            "DOID": "DOID:9351",
+            "Name": "diabetes mellitus",
+            "Definition": "A glucose metabolism disease characterized by chronic hyperglycaemia with disturbances of carbohydrate, fat and protein metabolism resulting from defects in insulin secretion, insulin action, or both.",
+            "urls": [
+                "http://www.who.int/diabetes/action_online/basics/en/",
+                "https://en.wikipedia.org/wiki/Diabetes_mellitus",
+                "https://www.ncbi.nlm.nih.gov/pubmed/9686693"
+            ]
+        },
+        {
+            "DOID": "DOID:686",
+            "Name": "liver carcinoma",
+            "Definition": "A liver cancer that has_material_basis_in epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Carcinoma",
+                "http://en.wikipedia.org/wiki/Liver_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:8552",
+            "Name": "chronic myeloid leukemia",
+            "Definition": "A myeloid leukemia that is characterized by over production of white blood cells.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=46755"
+            ]
+        },
+        {
+            "DOID": "DOID:48",
+            "Name": "male reproductive system disease",
+            "Definition": "A reproductive system disease that affects male reproductive organs.",
+            "urls": [
+                "https://www.dmu.edu/medterms/male-reproductive-system/male-reproductive-system-diseases/"
+            ]
+        },
+        {
+            "DOID": "DOID:225",
+            "Name": "syndrome",
+            "Definition": "A disease characterized by a group of signs and symptoms that occur together and characterize a particular abnormality.",
+            "urls": [
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=syndrome"
+            ]
+        },
+        {
+            "DOID": "DOID:1289",
+            "Name": "neurodegenerative disease",
+            "Definition": "A central nervous system disease that results in the progressive deterioration of function or structure of neurons.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Degenerative_disease",
+                "http://en.wikipedia.org/wiki/Neurodegeneration"
+            ]
+        },
+        {
+            "DOID": "DOID:18",
+            "Name": "urinary system disease",
+            "Definition": "A disease of anatomical entity that is located_in kidney, ureter, bladder and urethra.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Urinary_system"
+            ]
+        },
+        {
+            "DOID": "DOID:1555",
+            "Name": "urticaria",
+            "Definition": "A skin disease characterized by skin rash notable for pale red, raised and itchy bumps, located_in the upper dermis.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Urticaria"
+            ]
+        },
+        {
+            "DOID": "DOID:9297",
+            "Name": "lip disease",
+            "Definition": "A mouth disease located_in the lip.",
+            "urls": [
+                "https://www.merckmanuals.com/home/mouth-and-dental-disorders/lip-and-tongue-disorders/lip-sores-lip-inflammation-and-other-changes"
+            ]
+        },
+        {
+            "DOID": "DOID:0050567",
+            "Name": "orofacial cleft",
+            "Definition": "A physical disorder that is characterized by cleft lip and/or cleft palate that result in feeding, speech and hearing problems caused by failures during development.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Cleft_lip_and_cleft_palate"
+            ]
+        },
+        {
+            "DOID": "DOID:2018",
+            "Name": "hyperinsulinism",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:768",
+            "Name": "retinoblastoma",
+            "Definition": "A retinal cell cancer and malignant neoplasm of retina and neuroblastoma and neuroendocrine tumors that derives_from the tissues of the retina.",
+            "urls": [
+                "http://www.cancer.gov/cancertopics/types/retinoblastoma"
+            ]
+        },
+        {
+            "DOID": "DOID:3620",
+            "Name": "central nervous system cancer",
+            "Definition": "A nervous system cancer that is located_in the central nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Central_nervous_system"
+            ]
+        },
+        {
+            "DOID": "DOID:2519",
+            "Name": "testicular disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:423",
+            "Name": "myopathy",
+            "Definition": "A muscular disease in which the muscle fibers do not function resulting in muscular weakness.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Myopathy"
+            ]
+        },
+        {
+            "DOID": "DOID:0060119",
+            "Name": "pharynx cancer",
+            "Definition": "A gastrointestinal system cancer that is located_in the pharynx.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pharynx"
+            ]
+        },
+        {
+            "DOID": "DOID:574",
+            "Name": "peripheral nervous system disease",
+            "Definition": "A nervous system disease that affects the peripheral nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/w/index.php?title=Peripheral_neuropathy&redirect=no"
+            ]
+        },
+        {
+            "DOID": "DOID:1067",
+            "Name": "open-angle glaucoma",
+            "Definition": "A glaucoma characterized by optic nerve damage resulting in progressive loss of visual field and increased pressure in the eye due to trabecular blockage.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Glaucoma",
+                "http://www.merckmanuals.com/professional/eye_disorders/glaucoma/primary_open-angle_glaucoma.html"
+            ]
+        },
+        {
+            "DOID": "DOID:530",
+            "Name": "eyelid disease",
+            "Definition": "An adnexa disease that is located_in the eyelid.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Eye_disease#H00-H06_Disorders_of_eyelid.2C_lacrimal_system_and_orbit"
+            ]
+        },
+        {
+            "DOID": "DOID:2531",
+            "Name": "hematologic cancer",
+            "Definition": "An organ system cancer located in the hematological system that is characterized by uncontrolled cellular proliferation in blood, bone marrow and lymph nodes.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Blood_cancer",
+                "http://www.cancer.gov/dictionary/?CdrID=45708"
+            ]
+        },
+        {
+            "DOID": "DOID:2226",
+            "Name": "myeloproliferative neoplasm",
+            "Definition": "A myeloid neoplasm that is characterized by a group of slow growing blood cancers in which large numbers of abnormal red blood cells, white blood cells, or platelets grow and spread in the bone marrow and the peripheral blood.",
+            "urls": [
+                "http://www.bloodjournal.org/content/114/5/937.long",
+                "http://www.cancer.gov/cancertopics/types/myeloproliferative"
+            ]
+        },
+        {
+            "DOID": "DOID:1074",
+            "Name": "kidney failure",
+            "Definition": "A kidney disease characterized by the failure of the kidneys to adequately filter waste products from the blood.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Renal_failure",
+                "http://www.nlm.nih.gov/medlineplus/kidneyfailure.html"
+            ]
+        },
+        {
+            "DOID": "DOID:1470",
+            "Name": "major depressive disorder",
+            "Definition": "An endogenous depression that is characterized by an all-encompassing low mood accompanied by low self-esteem, and by loss of interest or pleasure in normally enjoyable activities.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Major_depressive_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:0060032",
+            "Name": "autoimmune disease of musculoskeletal system",
+            "Definition": "An autoimmune disease that is the abnormal functioning of the immune system that causes your immune system to produce antibodies or T cells against cells and/or tissues in the musculoskeletal system.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/books/NBK459447/"
+            ]
+        },
+        {
+            "DOID": "DOID:0060260",
+            "Name": "ptosis",
+            "Definition": "An eye disease characterized by the drooping or falling of the upper or lower eyelid.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Ptosis_%28eyelid%29"
+            ]
+        },
+        {
+            "DOID": "DOID:0050737",
+            "Name": "autosomal recessive disease",
+            "Definition": "An autosomal genetic disease that is characterized by the presence of two mutated copies of the gene, both of which must be present in order for the disease or trait to develop.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/handbook/inheritance/inheritancepatterns",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/002052.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:0080074",
+            "Name": "neural tube defect",
+            "Definition": "A physical disorder characterized by incomplete closure of the neural tube.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Neural_tube_defect",
+                "https://www.ncbi.nlm.nih.gov/books/NBK555903/"
+            ]
+        },
+        {
+            "DOID": "DOID:4195",
+            "Name": "hyperglycemia",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:409",
+            "Name": "liver disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0060038",
+            "Name": "specific developmental disorder",
+            "Definition": "A developmental disorder of mental health that categorizes specific learning disabilities and developmental disorders affecting coordination.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Specific_developmental_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:1967",
+            "Name": "leiomyosarcoma",
+            "Definition": "A smooth muscle cancer that can arise almost anywhere in the body, but is most common in the uterus, abdomen, or pelvis.",
+            "urls": [
+                "http://www.cancer.gov/dictionary/?CdrID=46027"
+            ]
+        },
+        {
+            "DOID": "DOID:3590",
+            "Name": "gestational trophoblastic neoplasm",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:3451",
+            "Name": "skin carcinoma",
+            "Definition": "A skin cancer that is located_in tissues of the skin and develops from epithelial cells.",
+            "urls": [
+                "http://www.cancer.gov/cancertopics/types/skin"
+            ]
+        },
+        {
+            "DOID": "DOID:4960",
+            "Name": "bone marrow cancer",
+            "Definition": "A hematopoietic cancer that derives_from the blood-forming stem cells of the bone marrow.",
+            "urls": [
+                "http://nci.nih.gov/dictionary/?CdrID=430857"
+            ]
+        },
+        {
+            "DOID": "DOID:417",
+            "Name": "autoimmune disease",
+            "Definition": "An immune system disease that is an overactive immune response of the body against substances and tissues normally present in the body resulting from an abnormal functioning of the immune system that results in the production of antibodies or T cell directed against the host tissues.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Autoimmune_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:4159",
+            "Name": "skin cancer",
+            "Definition": "An integumentary system cancer located_in the skin that is the uncontrolled growth of abnormal skin cells.",
+            "urls": [
+                "https://medlineplus.gov/skincancer.html"
+            ]
+        },
+        {
+            "DOID": "DOID:2154",
+            "Name": "nephroblastoma",
+            "Definition": "A kidney cancer that affects the kidneys and typically located_in children.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Wilms%27_tumor"
+            ]
+        },
+        {
+            "DOID": "DOID:8432",
+            "Name": "polycythemia",
+            "Definition": "A bone marrow disease characterized by an increased number of red blood cells in the bloodstream resulting in thicker blood and reduced blood flow.",
+            "urls": [
+                "https://rarediseases.info.nih.gov/diseases/7422/polycythemia-vera",
+                "https://www.nhlbi.nih.gov/health-topics/polycythemia-vera"
+            ]
+        },
+        {
+            "DOID": "DOID:10976",
+            "Name": "membranous glomerulonephritis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:2871",
+            "Name": "endometrial carcinoma",
+            "Definition": "A endometrial cancer that is located_in the tissue lining the uterus.",
+            "urls": [
+                "http://www.cancer.gov/cancertopics/types/endometrial"
+            ]
+        },
+        {
+            "DOID": "DOID:1227",
+            "Name": "neutropenia",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:3393",
+            "Name": "coronary artery disease",
+            "Definition": "An artery disease that is characterized by plaque building up along the inner walls of the arteries of the heart resulting in a narrowing of the arteries and a reduced blood supply to the cardiac muscles.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Coronary_heart_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:9744",
+            "Name": "type 1 diabetes mellitus",
+            "Definition": "A diabetes mellitus that is characterized by destruction of pancreatic beta cells resulting in absent or extremely low insulin production.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Diabetes",
+                "http://en.wikipedia.org/wiki/Diabetes_mellitus_type_1"
+            ]
+        },
+        {
+            "DOID": "DOID:4535",
+            "Name": "hypotrichosis",
+            "Definition": "A hair disease that is characterized by sparse hair on the scalp resulting from abnormal hair follicle development and has_material_basis in mutations in proteins involved in hair growth, division or proliferation of cells within hair follicles.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hypotrichosis",
+                "http://ghr.nlm.nih.gov/condition/autosomal-recessive-hypotrichosis"
+            ]
+        },
+        {
+            "DOID": "DOID:3093",
+            "Name": "nervous system cancer",
+            "Definition": "An organ system cancer located_in the nervous system that affects the central or peripheral nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Nervous_system_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:0080144",
+            "Name": "childhood acute lymphocytic leukemia",
+            "Definition": "An acute lymphocytic leukemia occuring during childhood.",
+            "urls": [
+                "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=16.04d&ns=NCI_Thesaurus&code=C3168&key=736438179&b=1&n=null"
+            ]
+        },
+        {
+            "DOID": "DOID:769",
+            "Name": "neuroblastoma",
+            "Definition": "An autonomic nervous system neoplasm that derives_from immature nerve cells.",
+            "urls": [
+                "http://www.cancer.gov/cancertopics/types/neuroblastoma"
+            ]
+        },
+        {
+            "DOID": "DOID:0060060",
+            "Name": "non-Hodgkin lymphoma",
+            "Definition": "A lymphoma that is characterized as any kind of lymphoma except Hodgkin's lymphoma.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Non-Hodgkin_lymphoma",
+                "http://www.cancer.gov/dictionary?CdrID=45148"
+            ]
+        },
+        {
+            "DOID": "DOID:8584",
+            "Name": "Burkitt lymphoma",
+            "Definition": "A mature B-cell neoplasm of B-cells found in the germinal center.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Burkitt%27s_lymphoma",
+                "http://www.cancer.gov/dictionary?CdrID=45203"
+            ]
+        },
+        {
+            "DOID": "DOID:0050687",
+            "Name": "cell type cancer",
+            "Definition": "A cancer that is classified by the type of cell from which it is derived.",
+            "urls": [
+                "http://cancerguide.org/basic.html",
+                "http://en.wikipedia.org/wiki/Cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:2174",
+            "Name": "ocular cancer",
+            "Definition": "A sensory system cancer located_in the eye that is characterized by uncontrolled cellular proliferation in the eye.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Eye",
+                "http://en.wikipedia.org/wiki/Eye_neoplasm"
+            ]
+        },
+        {
+            "DOID": "DOID:5158",
+            "Name": "pleural cancer",
+            "Definition": "A connective tissue cancer that located_in the pleura.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pleural_cavity"
+            ]
+        },
+        {
+            "DOID": "DOID:3324",
+            "Name": "mood disorder",
+            "Definition": "A cognitive disorder that involves a disturbance in mood as the predominant underlying feature.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Mood_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:0110408",
+            "Name": "retinitis pigmentosa 11",
+            "Definition": "A retinitis pigmentosa that has_material_basis_in mutation in the PRPF31 gene on chromosome 19q13.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pubmed/11545739"
+            ]
+        },
+        {
+            "DOID": "DOID:0060058",
+            "Name": "lymphoma",
+            "Definition": "A hematologic cancer that affects lymphocytes that reside in the lymphatic system and in blood-forming organs.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Lymphoma",
+                "http://www.lymphoma.org/site/pp.asp?c=bkLTKaOQLmK8E&b=6300161",
+                "http://www.nlm.nih.gov/medlineplus/lymphoma.html"
+            ]
+        },
+        {
+            "DOID": "DOID:4184",
+            "Name": "pseudohypoparathyroidism",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:403",
+            "Name": "mouth disease",
+            "Definition": "A gastrointestinal system disease that is located_in the mouth.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Oral_and_maxillofacial_pathology"
+            ]
+        },
+        {
+            "DOID": "DOID:1037",
+            "Name": "lymphoid leukemia",
+            "Definition": "A leukemia that has_material_basis_in a B-cell or T-cell lineage involving primarily the bone marrow and the peripheral blood.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=616067"
+            ]
+        },
+        {
+            "DOID": "DOID:2468",
+            "Name": "psychotic disorder",
+            "Definition": "A cognitive disorder that involves abnormal thinking and perceptions resulting in a disconnection with reality.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/psychoticdisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:201",
+            "Name": "connective tissue cancer",
+            "Definition": "A musculoskeletal system cancer that is located_in connective tissue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Connective_tissue"
+            ]
+        },
+        {
+            "DOID": "DOID:1921",
+            "Name": "Klinefelter syndrome",
+            "Definition": "A chromosomal duplication syndrome that is characterized by infertility and that has_material_basis_in an extra X chromosome in cells in men.",
+            "urls": [
+                "https://ghr.nlm.nih.gov/condition/klinefelter-syndrome",
+                "https://www.genome.gov/Genetic-Disorders/Klinefelter-Syndrome"
+            ]
+        },
+        {
+            "DOID": "DOID:2513",
+            "Name": "basal cell carcinoma",
+            "Definition": "A skin carcinoma affecting basal cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Basal-cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:3355",
+            "Name": "fibrosarcoma",
+            "Definition": "A connective tissue cancer that has_material_basis_in fibrous connective tissue and characterized by the presence of immature proliferating fibroblasts or undifferentiated anaplastic spindle cells in a storiform pattern.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Fibrosarcoma"
+            ]
+        },
+        {
+            "DOID": "DOID:1441",
+            "Name": "autosomal dominant cerebellar ataxia",
+            "Definition": "A cerebellar ataxia that has_material_basis_in autosomal dominant inheritance.",
+            "urls": [
+                "http://www.ncbi.nlm.nih.gov/books/NBK1138/",
+                "http://www.ncbi.nlm.nih.gov/books/NBK22234/"
+            ]
+        },
+        {
+            "DOID": "DOID:3527",
+            "Name": "cerebral arterial disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:630",
+            "Name": "genetic disease",
+            "Definition": "A disease that has_material_basis_in genetic variations in the human genome.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/"
+            ]
+        },
+        {
+            "DOID": "DOID:657",
+            "Name": "adenoma",
+            "Definition": "A cell type benign neoplasm that is composed_of epithelial tissue in which tumor cells form glands or glandlike structures.",
+            "urls": [
+                "http://coloncancer.about.com/od/glossaries/g/Adenoma.htm",
+                "http://en.wikipedia.org/wiki/Adenoma"
+            ]
+        },
+        {
+            "DOID": "DOID:934",
+            "Name": "viral infectious disease",
+            "Definition": "A disease by infectious agent that results in infection, has_material_basis_in Viruses.",
+            "urls": [
+                "http://www.merck.com/mmhe/sec17/ch198/ch198a.html"
+            ]
+        },
+        {
+            "DOID": "DOID:65",
+            "Name": "connective tissue disease",
+            "Definition": "A musculoskeletal system disease that affects tissues such as skin, tendons, and cartilage.",
+            "urls": [
+                "http://www.niams.nih.gov/Health_Info/Scleroderma/default.asp"
+            ]
+        },
+        {
+            "DOID": "DOID:3459",
+            "Name": "breast carcinoma",
+            "Definition": "A breast cancer that has_material_basis_in abnormally proliferating cells derives_from epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Breast_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:0080322",
+            "Name": "polycystic kidney disease",
+            "Definition": "A cystic kidney disease that is characterized by the growth of fluid-filled cysts in the kidneys that reduces kidney function and may lead to kidney failure.",
+            "urls": [
+                "https://www.niddk.nih.gov/health-information/kidney-disease/polycystic-kidney-disease/what-is-pkd"
+            ]
+        },
+        {
+            "DOID": "DOID:13241",
+            "Name": "Behcet's disease",
+            "Definition": "A vasculitis that is characterized by an autoimmune mediated inflammation of the blood vessels throughout the body leading to ulcerations on the mouth and sometimes the genitals, notorious for causing hypopyon uveitis.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Beh%C3%A7et%27s_disease",
+                "http://www.nlm.nih.gov/medlineplus/behcetssyndrome.html"
+            ]
+        },
+        {
+            "DOID": "DOID:10854",
+            "Name": "salivary gland disease",
+            "Definition": "A mouth disease located_in the salivary gland.",
+            "urls": [
+                "https://www.cedars-sinai.org/health-library/diseases-and-conditions/s/salivary-gland-disease-and-tumors.html"
+            ]
+        },
+        {
+            "DOID": "DOID:0080355",
+            "Name": "hepatobiliary system cancer",
+            "Definition": "A gastrointestinal system cancer that is located_in the hepatobiliary system.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4461147/"
+            ]
+        },
+        {
+            "DOID": "DOID:865",
+            "Name": "vasculitis",
+            "Definition": "A vascular disease that is characterized by inflammation of the blood vessels.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Vasculitis",
+                "http://www.nhlbi.nih.gov/health/health-topics/topics/vas/",
+                "http://www.nlm.nih.gov/medlineplus/vasculitis.html"
+            ]
+        },
+        {
+            "DOID": "DOID:14654",
+            "Name": "prostatitis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:9253",
+            "Name": "gastrointestinal stromal tumor",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:17",
+            "Name": "musculoskeletal system disease",
+            "Definition": "A disease of anatomical entity that occurs in the muscular and/or skeletal system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Human_musculoskeletal_system#Diseases_and_disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:557",
+            "Name": "kidney disease",
+            "Definition": "A urinary system disease that is located_in the kidney.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/kidneydiseases.html"
+            ]
+        },
+        {
+            "DOID": "DOID:974",
+            "Name": "upper respiratory tract disease",
+            "Definition": "A respiratory system disease which involves the upper respiratory tract.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Category:Upper_respiratory_tract_diseases",
+                "http://www.who.int/topics/respiratory_tract_diseases/en/"
+            ]
+        },
+        {
+            "DOID": "DOID:2025",
+            "Name": "gestational choriocarcinoma",
+            "Definition": "A choriocarcicoma that develops in the presence of a preceding gestational event.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Gestational_choriocarcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:184",
+            "Name": "bone cancer",
+            "Definition": "A connective tissue cancer that is located_in bone and is characterized by uncontrolled cellular proliferation that destroys normal bone tissue.",
+            "urls": [
+                "http://www.cancer.gov/cancertopics/factsheet/Sites-Types/bone",
+                "http://www.cancer.gov/cancertopics/types/bone",
+                "http://www.wrongdiagnosis.com/b/bone_cancer/intro.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:4971",
+            "Name": "myelofibrosis",
+            "Definition": "A myeloid neoplasm that is located in the bone marrow which results in bone marrow being replaced by fibrous (scar) tissue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Myelofibrosis"
+            ]
+        },
+        {
+            "DOID": "DOID:0060564",
+            "Name": "spinal disease",
+            "Definition": "A bone disease that is located_in the spine.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Spinal_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:4194",
+            "Name": "glucose metabolism disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:15",
+            "Name": "reproductive system disease",
+            "Definition": "A disease of anatomical entity that is located_in reproductive system organs.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Reproductive_system"
+            ]
+        },
+        {
+            "DOID": "DOID:3307",
+            "Name": "teratoma",
+            "Definition": "A germ cell and embryonal cancer that is an encapsulated tumor with tissue or organ components resembling normal derivatives of all three germ layers.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Teratoma"
+            ]
+        },
+        {
+            "DOID": "DOID:1532",
+            "Name": "pleural disease",
+            "Definition": "A thoracic disease which may involve inflammation of pleura, collection of air within the pleural cavity, abnormal collection of pleural fluid, abnormal growths on the pleura (pleural tumor) and pleural plaques. The main causes of pleural diseases including pleural effusions are congestive heart failure, malignancy, parapneumonic infections and pulmonary embolism.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pleural_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:707",
+            "Name": "B-cell lymphoma",
+            "Definition": "A non-Hodgkin lymphoma that has_material_basis_in B cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/B-cell_lymphoma"
+            ]
+        },
+        {
+            "DOID": "DOID:4362",
+            "Name": "cervical cancer",
+            "Definition": "A female reproductive organ cancer that is located_in the cervix.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/cervicalcancer",
+                "http://en.wikipedia.org/wiki/Cervical_cancer",
+                "http://www.cancer.gov/dictionary?CdrID=444973"
+            ]
+        },
+        {
+            "DOID": "DOID:365",
+            "Name": "bladder disease",
+            "Definition": "A urinary system disease that is located_in the bladder.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/bladderdiseases.html"
+            ]
+        },
+        {
+            "DOID": "DOID:117",
+            "Name": "heart cancer",
+            "Definition": "A cardiovascular cancer located_in the heart.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Heart_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:654",
+            "Name": "overnutrition",
+            "Definition": "A nutrition disease that is characterized by an excess of a nutritional element, such as a vitamin, mineral, carbohydrate, protein, fat, or general energy content.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Overnutrition"
+            ]
+        },
+        {
+            "DOID": "DOID:10286",
+            "Name": "prostate carcinoma",
+            "Definition": "A prostate cancer that has_material_basis_in abnormally proliferating cells derives_from epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:219",
+            "Name": "colon cancer",
+            "Definition": "A colorectal cancer that is located_in the colon.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=44237"
+            ]
+        },
+        {
+            "DOID": "DOID:0060073",
+            "Name": "lymphatic system cancer",
+            "Definition": "An immune system cancer that is located_in the lymphatic system and is characterized by uncontrolled cellular proliferation of lymphoid tissue.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Lymphatic_system"
+            ]
+        },
+        {
+            "DOID": "DOID:0050161",
+            "Name": "lower respiratory tract disease",
+            "Definition": "A respiratory system disease which involves the lower respiratory tract.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/lower_respiratory_tract"
+            ]
+        },
+        {
+            "DOID": "DOID:0060131",
+            "Name": "alexithymia",
+            "Definition": "An agnosia that is a deficiency in understanding, processing, or describing emotions.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Agnosia"
+            ]
+        },
+        {
+            "DOID": "DOID:331",
+            "Name": "central nervous system disease",
+            "Definition": "A nervous system disease that affects either the spinal cord (myelopathy) or brain (encephalopathy) of the central nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Central_nervous_system_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:0080000",
+            "Name": "muscular disease",
+            "Definition": "A musculoskeletal system disease that affects the muscles.",
+            "urls": [
+                "http://www.nlm.nih.gov/medlineplus/muscledisorders.html"
+            ]
+        },
+        {
+            "DOID": "DOID:26",
+            "Name": "pancreas disease",
+            "Definition": "An endocrine system disease that is located_in the pancreas.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pancreatic_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:6713",
+            "Name": "cerebrovascular disease",
+            "Definition": "An vascular disease that is characterized by dysfunction of the blood vessels supplying the brain.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Cerebrovascular_disease",
+                "http://www.ncbi.nlm.nih.gov/books/NBK378/"
+            ]
+        },
+        {
+            "DOID": "DOID:14250",
+            "Name": "Down syndrome",
+            "Definition": "A chromosomal disease that is characterized by flat-looking facial features and weak muscle tone (hypotonia) in infancy and is caused by trisomy of all or a critical portion of chromosome 21 and is associated with intellectual disability.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Down_syndrome",
+                "http://ghr.nlm.nih.gov/condition/down-syndrome",
+                "http://www.nichd.nih.gov/health/topics/down/Pages/default.aspx",
+                "http://www.omim.org/entry/190685?search=down%20syndrome&highlight=down%20syndromic%20syndrome"
+            ]
+        },
+        {
+            "DOID": "DOID:4645",
+            "Name": "retinal cancer",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:684",
+            "Name": "hepatocellular carcinoma",
+            "Definition": "A liver carcinoma that has_material_basis_in undifferentiated hepatocytes and located_in the liver.",
+            "urls": [
+                "http://cancergenome.nih.gov/cancersselected/LiverHepatocellularCarcinoma",
+                "http://en.wikipedia.org/wiki/Hepatocellular_carcinoma",
+                "http://www.omim.org/entry/114550"
+            ]
+        },
+        {
+            "DOID": "DOID:783",
+            "Name": "end stage renal disease",
+            "Definition": "A chronic kidney disease is characterized by non-functioning kidneys, as the final stage in chronic kidney disease.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/books/NBK499861/"
+            ]
+        },
+        {
+            "DOID": "DOID:4752",
+            "Name": "multiple system atrophy",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:2277",
+            "Name": "gonadal disease",
+            "Definition": "An endocrine system disease that is located_in the gonads.",
+            "urls": [
+                "https://www.nature.com/subjects/gonadal-disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:1749",
+            "Name": "squamous cell carcinoma",
+            "Definition": "A carcinoma that derives_from squamous epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Squamous_cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:9884",
+            "Name": "muscular dystrophy",
+            "Definition": "A myopathy is characterized by progressive skeletal muscle weakness degeneration.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Muscular_dystrophy",
+                "http://www.ninds.nih.gov/disorders/md/md.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:0060005",
+            "Name": "autoimmune disease of endocrine system",
+            "Definition": "An autoimmune disease that is the abnormal functioning of the immune system resulting in production of antibodies or T cells against cells and/or tissues in the endocrine system.",
+            "urls": [
+                "https://www.ncbi.nlm.nih.gov/books/NBK459447/"
+            ]
+        },
+        {
+            "DOID": "DOID:0050829",
+            "Name": "pericardium disease",
+            "Definition": "A cardiovascular system disease that is located_in the  fibrous sac surrounding the heart.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pericardium"
+            ]
+        },
+        {
+            "DOID": "DOID:936",
+            "Name": "brain disease",
+            "Definition": "A central nervous system disease that is located_in the brain.",
+            "urls": [
+                "https://medlineplus.gov/braindiseases.html"
+            ]
+        },
+        {
+            "DOID": "DOID:0080830",
+            "Name": "childhood low-grade glioma",
+            "Definition": "A low-grade glioma that occurs in children and encompasses tumors of astrocytic, oligodendroglial, and mixed glial-neuronal histology.",
+            "urls": [
+                "https://pubmed.ncbi.nlm.nih.gov/23583981/",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2917804/",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5786244/",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7066826/"
+            ]
+        },
+        {
+            "DOID": "DOID:520",
+            "Name": "aortic disease",
+            "Definition": "An artery disease that is characterized by degeneration of the cells composing the aortic wall.",
+            "urls": [
+                "http://www.hopkinsmedicine.org/heart_vascular_institute/conditions_treatments/conditions/aorta.html"
+            ]
+        },
+        {
+            "DOID": "DOID:8997",
+            "Name": "polycythemia vera",
+            "Definition": "A myeloproliferative neoplasm characterized by erythroid hyperplasia,  myeloid leukocytosis, thrombocytosis, and splenomegaly.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Polycythemia_vera",
+                "https://rarediseases.info.nih.gov/diseases/7422/polycythemia-vera",
+                "https://www.mayoclinic.org/diseases-conditions/polycythemia-vera/symptoms-causes/syc-20355850"
+            ]
+        },
+        {
+            "DOID": "DOID:3717",
+            "Name": "gastric adenocarcinoma",
+            "Definition": "A stomach carcinoma that derives_from epithelial cells of glandular origin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adenocarcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:11934",
+            "Name": "head and neck cancer",
+            "Definition": "An organ system cancer that arises in the head or neck region. This region includes the nasal cavity, sinuses, lips, mouth, salivary glands, throat, or larynx.",
+            "urls": [
+                "http://apps.who.int/bookorders/anglais/detart1.jsp?sesslan=1&codlan=1&codcol=70&codcch=9",
+                "http://en.wikipedia.org/wiki/Head_and_neck_cancer",
+                "http://www.cancer.gov/cancertopics/factsheet/Sites-Types/head-and-neck",
+                "http://www.cancer.gov/dictionary?CdrID=257519",
+                "http://www.iarc.fr/en/publications/pdfs-online/pat-gen/bb9/index.php"
+            ]
+        },
+        {
+            "DOID": "DOID:10348",
+            "Name": "blepharophimosis",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:2348",
+            "Name": "arteriosclerotic cardiovascular disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0050771",
+            "Name": "pheochromocytoma",
+            "Definition": "An endocrine organ benign neoplasm that arises within the adrenal medulla, releasing epinephrines and norepinephrines hormones that cause either episodic or persistent high blood pressure.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Pheochromocytoma",
+                "https://rarediseases.info.nih.gov/diseases/7385/pheochromocytoma",
+                "https://www.mayoclinic.org/diseases-conditions/pheochromocytoma/symptoms-causes/syc-20355367",
+                "https://www.omim.org/entry/171300"
+            ]
+        },
+        {
+            "DOID": "DOID:780",
+            "Name": "placenta disease",
+            "Definition": "A uterine disease that is located_in the placenta.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Placenta_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:4961",
+            "Name": "bone marrow disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:655",
+            "Name": "inherited metabolic disorder",
+            "Definition": "A disease of metabolism that is characterized by enzyme deficiency or accumulation of enzymes or toxins which interfere with normal function due to inherited enzyme abnormality.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Inborn_errors_of_metabolism",
+                "http://www.ncbi.nlm.nih.gov/mesh/68008659"
+            ]
+        },
+        {
+            "DOID": "DOID:3388",
+            "Name": "periodontal disease",
+            "Definition": "A mouth disease that is relating to or affecting the structures surrounding and supporting the teeth.",
+            "urls": [
+                "https://www.nidcr.nih.gov/health-info/gum-disease/more-info"
+            ]
+        },
+        {
+            "DOID": "DOID:2921",
+            "Name": "glomerulonephritis",
+            "Definition": "A nephritis that causes inflammation of the glomeruli located_in kidney.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Glomerulonephritis"
+            ]
+        },
+        {
+            "DOID": "DOID:1059",
+            "Name": "intellectual disability",
+            "Definition": "A specific developmental disorder that involves significant limitations both in mental functioning and in adaptive behavior such as communicating, taking care of him or herself, and social skills.",
+            "urls": [
+                "http://aaidd.org/intellectual-disability/definition#.WsPDT2VvqaU",
+                "https://en.wikipedia.org/wiki/Intellectual_disability"
+            ]
+        },
+        {
+            "DOID": "DOID:3247",
+            "Name": "rhabdomyosarcoma",
+            "Definition": "A skeletal muscle cancer that arise from skeletal muscle progenitors.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Rhabdomyosarcoma"
+            ]
+        },
+        {
+            "DOID": "DOID:4451",
+            "Name": "renal carcinoma",
+            "Definition": "A kidney cancer that derives_from the lining of the proximal convoluted tubule (the very small tubes in the kidney that filter the blood and remove waste products).",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Renal_cell_carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:6271",
+            "Name": "gastric cardia adenocarcinoma",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:76",
+            "Name": "stomach disease",
+            "Definition": "A gastrointestinal system disease that is located_in the stomach.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Stomach_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:11983",
+            "Name": "Prader-Willi syndrome",
+            "Definition": "A chromosomal disease that is characterized by weak muscle tone, feeding difficulties, poor growth, and delayed development. Beginning in childhood, affected individuals develop an insatiable appetite, which leads to chronic overeating and obesity.",
+            "urls": [
+                "https://ghr.nlm.nih.gov/condition/prader-willi-syndrome"
+            ]
+        },
+        {
+            "DOID": "DOID:8536",
+            "Name": "herpes zoster",
+            "Definition": "A viral infectious disease that results_in infection located_in nerve fiber, has_material_basis_in Human herpesvirus 3, which reactivates after appearing as chickenpox in childhood. The virus is transmitted_by direct contact with the rash, which can develop into chickenpox in newly-infected individuals. The infection has_symptom rash which is followed by blisters, has_symptom headache, has_symptom fever, has_symptom malaise, has_symptom itching, has_symptom burning pain, and has_symptom paresthesia.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Herpes_zoster",
+                "http://www.nlm.nih.gov/medlineplus/ency/article/000858.htm"
+            ]
+        },
+        {
+            "DOID": "DOID:75",
+            "Name": "lymphatic system disease",
+            "Definition": "An immune system disease that is located_in the lymphatic system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Lymphatic_disease",
+                "http://www.nlm.nih.gov/medlineplus/lymphaticdiseases.html"
+            ]
+        },
+        {
+            "DOID": "DOID:4007",
+            "Name": "bladder carcinoma",
+            "Definition": "A urinary bladder cancer that has_material_basis_in abnormally proliferating cells derives_from epithelial cells.",
+            "urls": [
+                "https://www.mayoclinic.org/diseases-conditions/bladder-cancer/symptoms-causes/syc-20356104"
+            ]
+        },
+        {
+            "DOID": "DOID:4450",
+            "Name": "renal cell carcinoma",
+            "Definition": "A renal carcinoma that has_material_basis_in the lining of the proximal convoluted renal tubule of the kidney.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Renal_cell_carcinoma",
+                "http://www.cancer.gov/dictionary?CdrID=661352"
+            ]
+        },
+        {
+            "DOID": "DOID:0080015",
+            "Name": "physical disorder",
+            "Definition": "A disease that has_material_basis_in a genetic abnormality, error with embryonic development, infection or compromised intrauterine environment.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Congenital_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:0050155",
+            "Name": "sensory system disease",
+            "Definition": "A nervous system disease which is located in a part of the nervous system responsible for processing sensory information that consists of sensory receptors, neural pathways, and parts of the brain involved in sensory perception. Commonly recognized sensory systems are those for vision, hearing, somatic sensation (touch), taste and olfaction (smell).",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Sensory_system"
+            ]
+        },
+        {
+            "DOID": "DOID:28",
+            "Name": "endocrine system disease",
+            "Definition": "A disease of anatomical entity that is located_in endocrine glands which secretes a type of hormone directly into the bloodstream to regulate the body.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Endocrine_system"
+            ]
+        },
+        {
+            "DOID": "DOID:9553",
+            "Name": "adrenal gland disease",
+            "Definition": "An endocrine system disease that is located_in the adrenal gland.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adrenal_gland_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:3905",
+            "Name": "lung carcinoma",
+            "Definition": "A lung cancer that has_material_basis_in abnormally proliferating cells derives_from epithelial cells and is located_in the lungs and has_symptom cough and has_symptom chest discomfort or pain and has_symptom weight loss and has_symptom hemoptysis.",
+            "urls": [
+                "https://merck.com/mmpe/sec05/ch062/ch062b.html"
+            ]
+        },
+        {
+            "DOID": "DOID:8618",
+            "Name": "oral cavity cancer",
+            "Definition": "A gastrointestinal system cancer that is located_in the oral cavity.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Oral_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:2978",
+            "Name": "carbohydrate metabolic disorder",
+            "Definition": "An inherited metabolic disorder that affect the catabolism and anabolism of carbohydrates.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Inborn_errors_of_carbohydrate_metabolism"
+            ]
+        },
+        {
+            "DOID": "DOID:1380",
+            "Name": "endometrial cancer",
+            "Definition": "A uterine cancer that is located_in tissues lining the uterus.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=444987"
+            ]
+        },
+        {
+            "DOID": "DOID:0060122",
+            "Name": "integumentary system cancer",
+            "Definition": "An organ system cancer that is located_in the skin, hair and nails.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Integumentary_system"
+            ]
+        },
+        {
+            "DOID": "DOID:47",
+            "Name": "prostate disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:0080001",
+            "Name": "bone disease",
+            "Definition": "A connective tissue disease that affects the structure or development of bone or causes an impairment of normal bone function.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Bone_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:5672",
+            "Name": "large intestine cancer",
+            "Definition": "An intestinal cancer that effects the long, tube-like organ that is connected to the small intestine at one end and the anus at the other.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Large_intestine"
+            ]
+        },
+        {
+            "DOID": "DOID:615",
+            "Name": "leukopenia",
+            "Definition": "A leukocyte disorder that is characterized by a decrease in the number of white blood cells (leukocytes) found in the blood, which places individuals at increased risk of infection.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Leukopenia"
+            ]
+        },
+        {
+            "DOID": "DOID:53",
+            "Name": "pituitary gland disease",
+            "Definition": "An endocrine system disease that is located_in the pituitary gland.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Pituitary_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:5426",
+            "Name": "primary ovarian insufficiency",
+            "Definition": "An ovarian disease where ovaries do not produce estrogen despite high levels of circulating gonadotropins in women under 40.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Premature_ovarian_failure",
+                "https://pubmed.ncbi.nlm.nih.gov/27861765/",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477642/"
+            ]
+        },
+        {
+            "DOID": "DOID:9352",
+            "Name": "type 2 diabetes mellitus",
+            "Definition": "A diabetes mellitus that is characterized by high blood sugar, insulin resistance, and relative lack of insulin.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Diabetes",
+                "http://en.wikipedia.org/wiki/Diabetes_mellitus_type_2"
+            ]
+        },
+        {
+            "DOID": "DOID:12365",
+            "Name": "malaria",
+            "Definition": "A parasitic protozoa infectious disease characterized as a vector-borne infectious disease caused by the presence of protozoan parasites of the genus Plasmodium in the red blood cells, transmitted from an infected to an uninfected individual by the bite of anopheline mosquitoes, and characterized by periodic attacks of chills and fever that coincide with mass destruction of blood cells and the release of toxic substances by the parasite at the end of each reproductive cycle.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Malaria",
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=malaria"
+            ]
+        },
+        {
+            "DOID": "DOID:3193",
+            "Name": "peripheral nerve sheath neoplasm",
+            "Definition": "A peripheral nervous system neoplasm that is located in the connective tissue surrounding nerves.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Malignant_peripheral_nerve_sheath_tumor"
+            ]
+        },
+        {
+            "DOID": "DOID:5719",
+            "Name": "adrenal medulla cancer",
+            "Definition": "An adrenal gland cancer that is located_in the adrenal medulla.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Adrenal_tumor#Tumors_of_the_Adrenal_Medulla"
+            ]
+        },
+        {
+            "DOID": "DOID:10548",
+            "Name": "cardia cancer",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:863",
+            "Name": "nervous system disease",
+            "Definition": "A disease of anatomical entity that is located_in the central nervous system or located_in the peripheral nervous system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Nervous_system"
+            ]
+        },
+        {
+            "DOID": "DOID:0080146",
+            "Name": "childhood B-cell acute lymphoblastic leukemia",
+            "Definition": "A childhood acute lymphoblastic leukemia that has_material_basis in B-cells.",
+            "urls": [
+                "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=16.07d&ns=NCI_Thesaurus&code=C9140"
+            ]
+        },
+        {
+            "DOID": "DOID:2043",
+            "Name": "hepatitis B",
+            "Definition": "A viral infectious disease that results_in inflammation located_in liver, has_material_basis_in Hepatitis B virus, which is transmitted_by sexual contact, blood transfusions, or fomites like needles or syringes. The infection has_symptom fever, fatigue, loss of appetite, nausea, vomiting, abdominal pain, clay-colored bowel movements, joint pain, and jaundice.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hepatitis_B#Transmission",
+                "http://www.cdc.gov/hepatitis/HBV/index.htm",
+                "http://www.cdc.gov/hepatitis/Resources/Professionals/PDFs/ABCTable.pdf"
+            ]
+        },
+        {
+            "DOID": "DOID:421",
+            "Name": "hair disease",
+            "Definition": "An integumentary system disease that is located_in hair.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Hair_disease"
+            ]
+        },
+        {
+            "DOID": "DOID:0060289",
+            "Name": "Ohdo syndrome",
+            "Definition": "A syndrome that is characterized by blepharophimosis, ptosis, dental hypoplasia, hearing impairment and intellectual disability.",
+            "urls": [
+                "http://www.orpha.net/consor/cgi-bin/Disease_Search.php?lng=EN&data_id=2489&Disease_Disease_Search_diseaseGroup=Ohdo-syndrome&Disease_Disease_Search_diseaseType=Pat&Disease%28s%29/group%20of%20diseases=Blepharophimosis-intellectual-disability-syndrome--Ohdo-type--Ohdo-syndrome-&title=Blepharophimosis-intellectual-disability-syndrome--Ohdo-type--Ohdo-syndrome-&search=Disease_Search_Simple"
+            ]
+        },
+        {
+            "DOID": "DOID:5295",
+            "Name": "intestinal disease",
+            "Definition": "A gastrointestinal system disease that is located_in the intestine.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Human_gastrointestinal_tract"
+            ]
+        },
+        {
+            "DOID": "DOID:0080014",
+            "Name": "chromosomal disease",
+            "Definition": "A genetic disease that has_material_basis_in extra, missing, or re-arranged chromosomes.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Chromosome_abnormality",
+                "http://www.genome.gov/11508982#al-5",
+                "http://www.rarechromo.org/html/chromosomesanddisorders.asp"
+            ]
+        },
+        {
+            "DOID": "DOID:363",
+            "Name": "uterine cancer",
+            "Definition": "A female reproductive organ cancer that is located_in the uterus.",
+            "urls": [
+                "http://www.cancer.gov/dictionary?CdrID=445094"
+            ]
+        },
+        {
+            "DOID": "DOID:4607",
+            "Name": "biliary tract cancer",
+            "Definition": "A hepatobiliary system cancer that results_in malignant growth located_in the gallbladder or located_in the bile duct.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Biliary_tract_cancer"
+            ]
+        },
+        {
+            "DOID": "DOID:3119",
+            "Name": "gastrointestinal system cancer",
+            "Definition": "An organ system cancer located_in gastrointestinal tract that is manifested in organs of the gastrointestinal system.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Human_gastrointestinal_tract"
+            ]
+        },
+        {
+            "DOID": "DOID:1205",
+            "Name": "allergic disease",
+            "Definition": "An immune system disease that is an exaggerated immune response to allergens, such as insect venom, dust mites, pollen, pet dander, drugs or some foods.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Allergy"
+            ]
+        },
+        {
+            "DOID": "DOID:10952",
+            "Name": "nephritis",
+            "Definition": "A kidney disease that is characterized by an inflammation of the kidneys.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Nephritis"
+            ]
+        },
+        {
+            "DOID": "DOID:3963",
+            "Name": "thyroid gland carcinoma",
+            "Definition": "A thyroid gland cancer that has_material_basis_in epithelial cells.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Carcinoma"
+            ]
+        },
+        {
+            "DOID": "DOID:13089",
+            "Name": "intracranial arterial disease",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:660",
+            "Name": "adrenal cortex cancer",
+            "Definition": "",
+            "urls": []
+        },
+        {
+            "DOID": "DOID:5520",
+            "Name": "head and neck squamous cell carcinoma",
+            "Definition": "A head and neck carcinoma that has_material_basis_in squamous cells that line the moist, mucosal surfaces inside the head and neck.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Head_and_neck_cancer#Squamous_cell_carcinoma",
+                "http://www.cancer.gov/cancertopics/factsheet/Sites-Types/head-and-neck",
+                "http://www.cancer.gov/dictionary?CdrID=597171"
+            ]
+        },
+        {
+            "DOID": "DOID:0050828",
+            "Name": "artery disease",
+            "Definition": "A vascular disease that is located_in an artery.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Artery#Pathology"
+            ]
+        },
+        {
+            "DOID": "DOID:0060167",
+            "Name": "seasonal affective disorder",
+            "Definition": "A mental depression that involves presentation of depressive symptoms only during a specific season of the year.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Seasonal_affective_disorder"
+            ]
+        },
+        {
+            "DOID": "DOID:1432",
+            "Name": "blindness",
+            "Definition": "An eye disease characterized by a lack or loss of vision.",
+            "urls": [
+                "https://en.wikipedia.org/wiki/Visual_impairment",
+                "https://nei.nih.gov/eyedata/blind",
+                "https://www.cdc.gov/healthcommunication/toolstemplates/entertainmented/tips/Blindness.html"
+            ]
+        },
+        {
+            "DOID": "DOID:0050739",
+            "Name": "autosomal genetic disease",
+            "Definition": "A monogenic disease that has_material_basis_in a mutation in a single gene on one of the non-sex chromosomes.",
+            "urls": [
+                "http://ghr.nlm.nih.gov/glossary=autosomaldominant",
+                "http://ghr.nlm.nih.gov/handbook/inheritance/inheritancepatterns"
+            ]
+        },
+        {
+            "DOID": "DOID:0050908",
+            "Name": "myelodysplastic syndrome",
+            "Definition": "A bone marrow cancer that is characterized by under production of white blood cells, red blood cells and platelets.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Myelodysplastic_syndrome",
+                "http://www.cancer.gov/dictionary?CdrID=45266"
+            ]
+        },
+        {
+            "DOID": "DOID:1579",
+            "Name": "respiratory system disease",
+            "Definition": "A disease of anatomical entity that located_in the respiratory system which extends from the nasal sinuses to the diaphragm.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/File:Respiratory_system_complete_en.svg",
+                "http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=respiratory%20system"
+            ]
+        },
+        {
+            "DOID": "DOID:3070",
+            "Name": "high grade glioma",
+            "Definition": "A cell type cancer that has_material_basis_in glial cells and is located in brain or located in spine.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Malignant_glioma"
+            ]
+        },
+        {
+            "DOID": "DOID:303",
+            "Name": "substance-related disorder",
+            "Definition": "A disease of mental health involving the abuse or dependence on a substance that is ingested in order to produce a high, alter one's senses, or otherwise affect functioning.",
+            "urls": [
+                "https://www.psychologytoday.com/us/conditions/substance-related-disorders"
+            ]
+        },
+        {
+            "DOID": "DOID:0060040",
+            "Name": "pervasive developmental disorder",
+            "Definition": "A developmental disorder of mental health that refers to a group of five disorders characterized by impairments in socialization and communication, as well as restricted interests and repetitive behaviors.",
+            "urls": [
+                "https://www.ninds.nih.gov/Disorders/All-Disorders/Pervasive-Developmental-Disorders-Information-Page"
+            ]
+        },
+        {
+            "DOID": "DOID:11054",
+            "Name": "urinary bladder cancer",
+            "Definition": "An urinary system cancer that results_in malignant growth located_in the urinary bladder.",
+            "urls": [
+                "http://en.wikipedia.org/wiki/Bladder_cancer"
+            ]
+        }
+    ]
+}
