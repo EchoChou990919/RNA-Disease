@@ -8,5 +8,13 @@ export default defineConfig({
   plugins: [
     vue(),
     WindiCSS()
-  ]
+  ],
+  resolve:{
+    alias:[
+      {
+        find:"@",
+        replacement:"/src"
+      }
+    ]
+  }
 })
