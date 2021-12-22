@@ -57,8 +57,8 @@
         <g>
             <!-- 节点标签 -->
             <text
-                :x="x(node.x)"
-                :y="y(node.y)"
+                :x="x(node.x+5)"
+                :y="y(node.y+5)"
                 filter="url(#solid)"
                 v-for="node in labels"
                 :key="node.id"
@@ -220,6 +220,7 @@ function mouse2nodeIndex(offsetX, offsetY, d_threshold = 70) {
     const target_y = ry((offsetY - transform.y) / transform.k);
     const target_index = delaunay.find(target_x, target_y);
     const target = nodes.value[target_index];
+    if(!target) return null;
     const d = (target.x - target_x) ** 2 + (target.y - target_y) ** 2;
     if (d > d_threshold ** 2) {
         return null;
@@ -234,7 +235,10 @@ function onMouseMove(e) {
     const { offsetX, offsetY } = e;
     const target = mouse2nodeIndex(offsetX, offsetY);
     if (selectionStore.locked) {
-        if (!isHighlight(target)) {
+        if(!target){
+            return;
+        }
+        else if (!isHighlight(target)) {
             selectionStore.hovered = null;
         }
         else {
@@ -264,7 +268,9 @@ function onMouseMove(e) {
             }
         }
         return res;
-    });
+    }).filter(edge=>
+        edge.source!=edge.target
+    );
     const highlightTarget = [target, ...showEdges.value.map(e => e.target)]
     highlight(highlightTarget);
 }

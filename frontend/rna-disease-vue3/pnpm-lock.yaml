@@ -6,10 +6,14 @@ specifiers:
   '@vitejs/plugin-vue': ^2.0.0
   axios: ^0.24.0
   d3: ^7.2.1
+  dagre: ^0.8.5
+  graphology: ^0.23.2
+  graphology-traversal: ^0.2.2
   lodash: ^4.17.21
   naive-ui: ^2.23.1
   pinia: ^2.0.6
   svg-pan-zoom: ^3.6.1
+  toposort: ^2.0.2
   vite: ^2.7.2
   vite-plugin-windicss: ^1.5.4
   vue: ^3.2.25
@@ -18,9 +22,13 @@ specifiers:
 dependencies:
   axios: registry.npmmirror.com/axios/0.24.0
   d3: registry.npmmirror.com/d3/7.2.1
+  dagre: registry.nlark.com/dagre/0.8.5
+  graphology: registry.npmmirror.com/graphology/0.23.2
+  graphology-traversal: registry.npmmirror.com/graphology-traversal/0.2.2
   lodash: registry.npmmirror.com/lodash/4.17.21
   pinia: registry.npmmirror.com/pinia/2.0.6_vue@3.2.26
   svg-pan-zoom: registry.npmmirror.com/svg-pan-zoom/3.6.1
+  toposort: registry.nlark.com/toposort/2.0.2
   vue: registry.npmmirror.com/vue/3.2.26
 
 devDependencies:
@@ -136,6 +144,15 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       d3-color: registry.nlark.com/d3-color/3.0.1
+    dev: false
+
+  registry.nlark.com/dagre/0.8.5:
+    resolution: {integrity: sha1-ujCwBV2sErbB/MJHgXRCd30Gr+4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/dagre/download/dagre-0.8.5.tgz}
+    name: dagre
+    version: 0.8.5
+    dependencies:
+      graphlib: registry.npmmirror.com/graphlib/2.1.8
+      lodash: registry.npmmirror.com/lodash/4.17.21
     dev: false
 
   registry.nlark.com/estree-walker/2.0.2:
@@ -301,6 +318,12 @@ packages:
     dependencies:
       is-number: registry.nlark.com/is-number/7.0.0
     dev: true
+
+  registry.nlark.com/toposort/2.0.2:
+    resolution: {integrity: sha1-riF2gXXRVZ1IvvNUILL0li8JwzA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/toposort/download/toposort-2.0.2.tgz}
+    name: toposort
+    version: 2.0.2
+    dev: false
 
   registry.npmmirror.com/@babel/parser/7.16.6:
     resolution: {integrity: sha512-Gr86ujcNuPDnNOY8mi383Hvi8IYrJVJYuf3XcuBM/Dgd+bINn/7tHqsj+tKkoreMbmGsFLsltI/JJd8fOFWGDQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/parser/download/@babel/parser-7.16.6.tgz}
@@ -1206,6 +1229,13 @@ packages:
       esbuild-windows-arm64: registry.npmmirror.com/esbuild-windows-arm64/0.13.15
     dev: true
 
+  registry.npmmirror.com/events/3.3.0:
+    resolution: {integrity: sha1-Mala0Kkk4tLEGagTrrLE6HjqdAA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/events/download/events-3.3.0.tgz}
+    name: events
+    version: 3.3.0
+    engines: {node: '>=0.8.x'}
+    dev: false
+
   registry.npmmirror.com/evtd/0.2.3:
     resolution: {integrity: sha512-tmiT1YUVqFjTY+BSBOAskL83xNx41iUfpvKP6Gcd/xMHjg3mnER98jXGXJyKnxCG19uPc6EhZiUC+MUyvoqCtw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/evtd/download/evtd-0.2.3.tgz}
     name: evtd
@@ -1251,6 +1281,44 @@ packages:
     dependencies:
       is-glob: registry.npmmirror.com/is-glob/4.0.3
     dev: true
+
+  registry.npmmirror.com/graphlib/2.1.8:
+    resolution: {integrity: sha1-V2HUFHN4cAhMkux7XbywWSydNdo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graphlib/download/graphlib-2.1.8.tgz}
+    name: graphlib
+    version: 2.1.8
+    dependencies:
+      lodash: registry.npmmirror.com/lodash/4.17.21
+    dev: false
+
+  registry.npmmirror.com/graphology-traversal/0.2.2:
+    resolution: {integrity: sha1-gZA/oDGRCqNBhcIeqHuI/D2LISw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graphology-traversal/download/graphology-traversal-0.2.2.tgz}
+    name: graphology-traversal
+    version: 0.2.2
+    peerDependencies:
+      graphology-types: '>=0.20.0'
+    dependencies:
+      graphology-utils: registry.npmmirror.com/graphology-utils/2.4.4
+      mnemonist: registry.npmmirror.com/mnemonist/0.38.5
+    dev: false
+
+  registry.npmmirror.com/graphology-utils/2.4.4:
+    resolution: {integrity: sha512-6vmvwqgQnO17C//oyVlzbt9CtxTGgBDn5XZ0zvQu0KmfqKl6SZ7X7oPFS9HujxyG7Rmao+QbTfD704+zcel25g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graphology-utils/download/graphology-utils-2.4.4.tgz}
+    name: graphology-utils
+    version: 2.4.4
+    peerDependencies:
+      graphology-types: '>=0.23.0'
+    dev: false
+
+  registry.npmmirror.com/graphology/0.23.2:
+    resolution: {integrity: sha512-RHcLpAP4M+KPShLQEvgkT1Y4vxl+FFbmmy3D0mupO+VXIuYC8zdmMcHs40D9m3mmN067zGS+lUaHjDq06Td7PQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graphology/download/graphology-0.23.2.tgz}
+    name: graphology
+    version: 0.23.2
+    peerDependencies:
+      graphology-types: '>=0.23.0'
+    dependencies:
+      events: registry.npmmirror.com/events/3.3.0
+      obliterator: registry.npmmirror.com/obliterator/2.0.1
+    dev: false
 
   registry.npmmirror.com/highlight.js/11.3.1:
     resolution: {integrity: sha1-gTB47zqlGcYXAPhP6QRyMcXcMpE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/highlight.js/download/highlight.js-11.3.1.tgz}
@@ -1338,6 +1406,14 @@ packages:
       picomatch: registry.nlark.com/picomatch/2.3.0
     dev: true
 
+  registry.npmmirror.com/mnemonist/0.38.5:
+    resolution: {integrity: sha1-Stx/QgBJEjf+D6aJrAuGU5aFyt4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mnemonist/download/mnemonist-0.38.5.tgz}
+    name: mnemonist
+    version: 0.38.5
+    dependencies:
+      obliterator: registry.npmmirror.com/obliterator/2.0.1
+    dev: false
+
   registry.npmmirror.com/ms/2.1.2:
     resolution: {integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ms/download/ms-2.1.2.tgz}
     name: ms
@@ -1379,6 +1455,12 @@ packages:
     version: 3.1.30
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  registry.npmmirror.com/obliterator/2.0.1:
+    resolution: {integrity: sha512-XnkiCrrBcIZQitJPAI36mrrpEUvatbte8hLcTcQwKA1v9NkCKasSi+UAguLsLDs/out7MoRzAlmz7VXvY6ph6w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/obliterator/download/obliterator-2.0.1.tgz}
+    name: obliterator
+    version: 2.0.1
+    dev: false
 
   registry.npmmirror.com/picocolors/1.0.0:
     resolution: {integrity: sha1-y1vcdP8/UYkiNur3nWi8RFZKuBw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/picocolors/download/picocolors-1.0.0.tgz}

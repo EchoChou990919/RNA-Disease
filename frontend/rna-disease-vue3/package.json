@@ -9,9 +9,13 @@
   "dependencies": {
     "axios": "^0.24.0",
     "d3": "^7.2.1",
+    "dagre": "^0.8.5",
+    "graphology": "^0.23.2",
+    "graphology-traversal": "^0.2.2",
     "lodash": "^4.17.21",
     "pinia": "^2.0.6",
     "svg-pan-zoom": "^3.6.1",
+    "toposort": "^2.0.2",
     "vue": "^3.2.25"
   },
   "devDependencies": {

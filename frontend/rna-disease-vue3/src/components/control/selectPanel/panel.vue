@@ -9,23 +9,38 @@
 </template>
 
 <script setup>
-import {computed} from 'vue';
+import {computed, watchEffect} from 'vue';
 
 import ItemSelectVue from './ItemSelect.vue';
 import { SelectionStore } from '@/store/selection';
 import {loadNodeLinks,net2connTable} from "@/service/dataloader/nodelinks";
+import { loadDiseaseDetail } from '@/service/dataloader/diseaseDetail';
 
 const store=SelectionStore();
 
 const nodelinks=await loadNodeLinks();
 const connTable=net2connTable(nodelinks);
+const disease_detail=await loadDiseaseDetail();
 
 const data=computed(()=>{
-    if(store.locked==null){
-        return [];
-    }
-    return connTable[store.locked.id].map(item=>nodelinks.nodes.find(d=>d.id==item.target));
+    const target=store.locked;
+    if(!target) return [];
+    if(target.category!==0) return [];
+    const connNodes=connTable[store.locked.id].map(item=>nodelinks.nodes.find(d=>d.id==item.target));
+    return connNodes.map(item=>{
+        return disease_detail.find(detail=>detail.id==item.id)
+    }).filter(e=>e!=null);
+    // return disease_detail.find(item=>item.id===target.id);
 })
+
+watchEffect(()=>console.log(data.value));
+
+// const data=computed(()=>{
+//     if(store.locked==null){
+//         return [];
+//     }
+//     return connTable[store.locked.id].map(item=>nodelinks.nodes.find(d=>d.id==item.target));
+// })
 
 // const data = [
 //     {

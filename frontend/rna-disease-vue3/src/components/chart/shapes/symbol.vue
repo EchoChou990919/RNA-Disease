@@ -12,7 +12,10 @@ import * as d3 from "d3";
 const props = defineProps({
     x: Number,
     y: Number,
-    symbol: Object,
+    symbol: {
+        type:Object,
+        default: d3.symbolCircle
+    },
     size: Number,
     fill: String,
 })

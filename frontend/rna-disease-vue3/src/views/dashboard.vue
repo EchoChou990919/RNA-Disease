@@ -46,7 +46,13 @@
                     @update:collapsed="right_slider_collapsed = $event"
                     bordered
                 >
-                    <div v-show="!right_slider_collapsed"></div>
+                    <div v-show="!right_slider_collapsed">
+                    <suspense>
+                        <template #default>
+                            <Dag></Dag>
+                        </template>
+                    </suspense>
+                    </div>
                 </n-layout-sider>
             </n-layout>
         </n-layout>
@@ -61,6 +67,8 @@ import { ref } from "vue";
 import SearchBoxVue from '../components/control/SearchBox.vue';
 import LeftPanel from "../components/control/selectPanel/panel.vue";
 import graphVue from '../components/chart/graph.vue';
+// import DAGVue from '../components/chart/dag.vue';
+import Dag from '../components/chart/dag.vue';
 
 const header_height = "64px";
 const left_slider_collapsed = ref(false);
