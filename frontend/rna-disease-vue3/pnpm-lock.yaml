@@ -9,6 +9,7 @@ specifiers:
   lodash: ^4.17.21
   naive-ui: ^2.23.1
   pinia: ^2.0.6
+  svg-pan-zoom: ^3.6.1
   vite: ^2.7.2
   vite-plugin-windicss: ^1.5.4
   vue: ^3.2.25
@@ -19,6 +20,7 @@ dependencies:
   d3: registry.npmmirror.com/d3/7.2.1
   lodash: registry.npmmirror.com/lodash/4.17.21
   pinia: registry.npmmirror.com/pinia/2.0.6_vue@3.2.26
+  svg-pan-zoom: registry.npmmirror.com/svg-pan-zoom/3.6.1
   vue: registry.npmmirror.com/vue/3.2.26
 
 devDependencies:
@@ -1487,6 +1489,12 @@ packages:
     dependencies:
       has-flag: registry.nlark.com/has-flag/4.0.0
     dev: true
+
+  registry.npmmirror.com/svg-pan-zoom/3.6.1:
+    resolution: {integrity: sha1-+IChuzLRjpxiXXcVNQvrwmm0UM8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/svg-pan-zoom/download/svg-pan-zoom-3.6.1.tgz}
+    name: svg-pan-zoom
+    version: 3.6.1
+    dev: false
 
   registry.npmmirror.com/treemate/0.3.9:
     resolution: {integrity: sha512-/TE70ZXKy5s91EIM+Law46emnD50XmsKl6vlSjPt0XZnGtTgUS0qw3EDyC651CJYdkdpsMgW0HVpbH0xhpBjew==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/treemate/download/treemate-0.3.9.tgz}

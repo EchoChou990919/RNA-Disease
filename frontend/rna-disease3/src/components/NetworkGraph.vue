@@ -8,10 +8,6 @@
     @mouseout="pointerout"
     @dblclick="onclick"
   >
-    <filter x="0" y="0" width="1" height="1" id="solid">
-      <feFlood flood-color="#EEE" />
-      <feComposite in="SourceGraphic" />
-    </filter>
     <g>
       <g>
         <g :style="{filter:selectedNodeIds.locked?'opacity(0.2)':'none'}">
@@ -31,7 +27,6 @@
               class="point"
             ></path>
           </transition-group>
-          <transition-group name="fade" tag="g">
             <!-- 边 -->
             <line
               v-for="edge in showEdges"
@@ -44,7 +39,7 @@
               :y2="y(edge.target.y)"
               opacity="0.1"
             ></line>
-          </transition-group>
+
         </g>
         <transition-group name="fade" tag="g">
           <!-- 高亮的边 -->

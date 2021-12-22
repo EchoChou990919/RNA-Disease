@@ -1,7 +1,7 @@
 <template>
 <n-space vertical justify="center" class="h-1/1">
 
-    <n-input round placeholder="搜索" class="w-3xl" style="width: 50vw;">
+    <n-input round placeholder="搜索">
         <template #suffix>
             <n-icon>
                 <Search12Filled />
