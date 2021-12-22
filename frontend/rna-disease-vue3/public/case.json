@@ -1,0 +1,415 @@
+{
+    "case_i": [
+        "DOID:0014667",
+        "DOID:0050639",
+        "DOID:0050686",
+        "DOID:0050687",
+        "DOID:0060100",
+        "DOID:0060158",
+        "DOID:10283",
+        "DOID:10286",
+        "DOID:14566",
+        "DOID:14654",
+        "DOID:15",
+        "DOID:162",
+        "DOID:193",
+        "DOID:1967",
+        "DOID:305",
+        "DOID:3856",
+        "DOID:4",
+        "DOID:4045",
+        "DOID:4230",
+        "DOID:47",
+        "DOID:48",
+        "DOID:7",
+        "DOID:9120"
+    ],
+    "case_j": [
+        "DOID:0050686",
+        "DOID:10283",
+        "DOID:11612",
+        "DOID:14566",
+        "DOID:15",
+        "DOID:162",
+        "DOID:193",
+        "DOID:225",
+        "DOID:3856",
+        "DOID:4",
+        "DOID:47",
+        "DOID:48",
+        "DOID:7"
+    ],
+    "nodes": [
+        {
+            "doid": "DOID:37",
+            "disease_name": "skin disease"
+        },
+        {
+            "doid": "DOID:4230",
+            "disease_name": "smooth muscle cancer"
+        },
+        {
+            "doid": "DOID:47",
+            "disease_name": "prostate disease"
+        },
+        {
+            "doid": "DOID:630",
+            "disease_name": "genetic disease"
+        },
+        {
+            "doid": "DOID:7",
+            "disease_name": "disease of anatomical entity"
+        },
+        {
+            "doid": "DOID:0014667",
+            "disease_name": "disease of metabolism"
+        },
+        {
+            "doid": "DOID:1100",
+            "disease_name": "ovarian disease"
+        },
+        {
+            "doid": "DOID:48",
+            "disease_name": "male reproductive system disease"
+        },
+        {
+            "doid": "DOID:16",
+            "disease_name": "integumentary system disease"
+        },
+        {
+            "doid": "DOID:17",
+            "disease_name": "musculoskeletal system disease"
+        },
+        {
+            "doid": "DOID:193",
+            "disease_name": "reproductive organ cancer"
+        },
+        {
+            "doid": "DOID:0060100",
+            "disease_name": "musculoskeletal system cancer"
+        },
+        {
+            "doid": "DOID:4045",
+            "disease_name": "muscle cancer"
+        },
+        {
+            "doid": "DOID:4",
+            "disease_name": "disease"
+        },
+        {
+            "doid": "DOID:162",
+            "disease_name": "cancer"
+        },
+        {
+            "doid": "DOID:1414",
+            "disease_name": "ovarian dysfunction"
+        },
+        {
+            "doid": "DOID:225",
+            "disease_name": "syndrome"
+        },
+        {
+            "doid": "DOID:11612",
+            "disease_name": "polycystic ovary syndrome"
+        },
+        {
+            "doid": "DOID:0050639",
+            "disease_name": "primary cutaneous amyloidosis"
+        },
+        {
+            "doid": "DOID:0060158",
+            "disease_name": "acquired metabolic disease"
+        },
+        {
+            "doid": "DOID:0050686",
+            "disease_name": "organ system cancer"
+        },
+        {
+            "doid": "DOID:2277",
+            "disease_name": "gonadal disease"
+        },
+        {
+            "doid": "DOID:0050687",
+            "disease_name": "cell type cancer"
+        },
+        {
+            "doid": "DOID:1967",
+            "disease_name": "leiomyosarcoma"
+        },
+        {
+            "doid": "DOID:3856",
+            "disease_name": "male reproductive organ cancer"
+        },
+        {
+            "doid": "DOID:305",
+            "disease_name": "carcinoma"
+        },
+        {
+            "doid": "DOID:10286",
+            "disease_name": "prostate carcinoma"
+        },
+        {
+            "doid": "DOID:14654",
+            "disease_name": "prostatitis"
+        },
+        {
+            "doid": "DOID:9120",
+            "disease_name": "amyloidosis"
+        },
+        {
+            "doid": "DOID:0080000",
+            "disease_name": "muscular disease"
+        },
+        {
+            "doid": "DOID:10283",
+            "disease_name": "prostate cancer"
+        },
+        {
+            "doid": "DOID:15",
+            "disease_name": "reproductive system disease"
+        },
+        {
+            "doid": "DOID:14566",
+            "disease_name": "disease of cellular proliferation"
+        },
+        {
+            "doid": "DOID:229",
+            "disease_name": "female reproductive system disease"
+        },
+        {
+            "doid": "DOID:655",
+            "disease_name": "inherited metabolic disorder"
+        },
+        {
+            "doid": "DOID:28",
+            "disease_name": "endocrine system disease"
+        }
+    ],
+    "edges": [
+        {
+            "source": "DOID:37",
+            "target": "DOID:16",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:4230",
+            "target": "DOID:4045",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:47",
+            "target": "DOID:48",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:630",
+            "target": "DOID:4",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:7",
+            "target": "DOID:4",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0014667",
+            "target": "DOID:4",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:1100",
+            "target": "DOID:2277",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:1100",
+            "target": "DOID:229",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:48",
+            "target": "DOID:15",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:16",
+            "target": "DOID:7",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:17",
+            "target": "DOID:7",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:193",
+            "target": "DOID:0050686",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:193",
+            "target": "DOID:15",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0060100",
+            "target": "DOID:0050686",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0060100",
+            "target": "DOID:17",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:4045",
+            "target": "DOID:0060100",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:4045",
+            "target": "DOID:0080000",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:162",
+            "target": "DOID:14566",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:1414",
+            "target": "DOID:1100",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:225",
+            "target": "DOID:4",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:11612",
+            "target": "DOID:1414",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0050639",
+            "target": "DOID:37",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0050639",
+            "target": "DOID:655",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0050639",
+            "target": "DOID:9120",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0060158",
+            "target": "DOID:0014667",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0050686",
+            "target": "DOID:162",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:2277",
+            "target": "DOID:28",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0050687",
+            "target": "DOID:162",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:1967",
+            "target": "DOID:4230",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:3856",
+            "target": "DOID:193",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:3856",
+            "target": "DOID:48",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:305",
+            "target": "DOID:0050687",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:10286",
+            "target": "DOID:10283",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:10286",
+            "target": "DOID:305",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:14654",
+            "target": "DOID:47",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:9120",
+            "target": "DOID:0014667",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:0080000",
+            "target": "DOID:17",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:10283",
+            "target": "DOID:3856",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:10283",
+            "target": "DOID:47",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:15",
+            "target": "DOID:7",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:14566",
+            "target": "DOID:4",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:229",
+            "target": "DOID:15",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:655",
+            "target": "DOID:0014667",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:655",
+            "target": "DOID:630",
+            "key": "is_a"
+        },
+        {
+            "source": "DOID:28",
+            "target": "DOID:7",
+            "key": "is_a"
+        }
+    ]
+}
