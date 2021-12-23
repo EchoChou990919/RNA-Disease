@@ -45,11 +45,12 @@
                     :collapsed="right_slider_collapsed"
                     @update:collapsed="right_slider_collapsed = $event"
                     bordered
+                    width="500"
                 >
                     <div v-show="!right_slider_collapsed">
                     <suspense>
                         <template #default>
-                            <Dag></Dag>
+                            <Dag class="w-1/1 h-1/1"></Dag>
                         </template>
                     </suspense>
                     </div>
@@ -73,7 +74,6 @@ import Dag from '../components/chart/dag.vue';
 const header_height = "64px";
 const left_slider_collapsed = ref(false);
 const right_slider_collapsed = ref(false);
-
 </script>
 
 <style>

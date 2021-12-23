@@ -1,9 +1,7 @@
 <template>
     <path 
         :d="arc" 
-        :fill="fill"
-        :stroke="stroke"
-        :stroke-width="strokeWidth"
+        v-bind="$attrs"
     ></path>
 </template>
 
@@ -13,14 +11,11 @@ import * as d3 from "d3";
 import { computed, defineProps } from "vue";
 
 const props = defineProps({
-    innerRadius: Number,
-    outerRadius: Number,
-    startAngle: Number,
-    endAngle: Number,
-    fill:String,
-    stroke:String,
-    strokeWidth:Number,
-    cornerRadius:Number,
+    innerRadius: [Number,String],
+    outerRadius: [Number,String],
+    startAngle: [Number,String],
+    endAngle: [Number,String],
+    cornerRadius:[Number,String],
 });
 const arc=computed(()=>{
     return d3.arc()
