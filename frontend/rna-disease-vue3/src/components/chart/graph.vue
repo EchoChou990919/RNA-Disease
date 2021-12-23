@@ -1,5 +1,15 @@
 <template>
+    <tooltip-vue
+        v-for="node in labels"
+        :key="node.id"
+        :x="d3position2offset(node.x, node.y).x"
+        :y="d3position2offset(node.x, node.y).y"
+        :style="{
+            color: colors[node.category]
+        }"
+    >{{ node.name }}</tooltip-vue>
     <svg
+        :class="class"
         :width="width"
         :height="height"
         :viewBox="`${VIEW_RANGE[0]} ${VIEW_RANGE[1]} ${width} ${height}`"
@@ -8,11 +18,6 @@
         @mousedown="onMouseDown"
         @mouseup="onMouseUp"
     >
-        <filter x="0" y="0" width="1" height="1" id="solid">
-            <feFlood flood-color="#EEE" />
-            <feComposite in="SourceGraphic" />
-        </filter>
-
         <g>
             <!-- 节点链接图 -->
             <line
@@ -54,18 +59,6 @@
                 />
             </g>
         </g>
-        <g>
-            <!-- 节点标签 -->
-            <text
-                :x="x(node.x+5)"
-                :y="y(node.y+5)"
-                filter="url(#solid)"
-                v-for="node in labels"
-                :key="node.id"
-                :fill="colors[node.category]"
-                :font-size="20 / transform.k"
-            >{{ node.name }}</text>
-        </g>
     </svg>
 </template>
 
@@ -76,10 +69,14 @@ import { ref, reactive, onMounted, computed, watch, watchEffect } from "vue";
 import svgPanZoom from "svg-pan-zoom";
 
 import symbolVue from "./shapes/symbol.vue";
+import tooltipVue from "./shapes/tooltip.vue";
 
 import { SelectionStore } from "@/store/selection";
 import { loadNodeLinks, net2connTable } from "@/service/dataloader/nodelinks";
 import ForceWorker from "@/service/worker/force.worker?worker";
+import { useZoom,offset2svg,svg2offset } from "@/utils/zoom";
+
+defineProps(["class"]);
 
 //配置
 const width = 800;
@@ -164,38 +161,13 @@ forceWorker.onmessage = (e) => {
 
 //缩放
 const el = ref(null);
-const transform = reactive({
-    k: 1,
-    x: 0,
-    y: 0,
-});
-
-let zoom = null;
 const panning = ref(false);
-
-const initZoom = () => {
-    zoom = svgPanZoom(el.value, {
-        // onUpdatedCTM: _.throttle(
-        //     (e) => {
-        //         transform.k = e.a;
-        //         transform.x = e.e;
-        //         transform.y = e.f;
-        //     },
-        //     500,
-        //     { leading: true }
-        // ),
-        onUpdatedCTM: e => {
-            transform.k = e.a;
-            transform.x = e.e;
-            transform.y = e.f;
-        },
-        beforePan: () => {
-            panning.value = true;
-        },
-        dblClickZoomEnabled: false,
-    });
-};
-onMounted(initZoom);
+const { transform, zoom } = useZoom(el, {
+    beforePan: () => {
+        panning.value = true;
+    },
+    dblClickZoomEnabled: false,
+})
 
 
 //处理鼠标交互
@@ -216,11 +188,12 @@ function clearSelection() {
 }
 
 function mouse2nodeIndex(offsetX, offsetY, d_threshold = 70) {
-    const target_x = rx((offsetX - transform.x) / transform.k);
-    const target_y = ry((offsetY - transform.y) / transform.k);
+    const {x,y}=offset2svg(offsetX,offsetY,transform);
+    const target_x = rx(x);
+    const target_y = ry(y);
     const target_index = delaunay.find(target_x, target_y);
     const target = nodes.value[target_index];
-    if(!target) return null;
+    if (!target) return null;
     const d = (target.x - target_x) ** 2 + (target.y - target_y) ** 2;
     if (d > d_threshold ** 2) {
         return null;
@@ -228,14 +201,22 @@ function mouse2nodeIndex(offsetX, offsetY, d_threshold = 70) {
     return target;
 }
 
+const top = ref(0);
+const left = ref(0);
+function d3position2offset(target_x, target_y) {
+    return svg2offset(x(target_x),y(target_y),transform);
+}
+
 // 实现悬浮效果
 // const hovered = ref(null);
 function onMouseMove(e) {
 
     const { offsetX, offsetY } = e;
+    top.value = offsetY;
+    left.value = offsetX;
     const target = mouse2nodeIndex(offsetX, offsetY);
     if (selectionStore.locked) {
-        if(!target){
+        if (!target) {
             return;
         }
         else if (!isHighlight(target)) {
@@ -268,8 +249,8 @@ function onMouseMove(e) {
             }
         }
         return res;
-    }).filter(edge=>
-        edge.source!=edge.target
+    }).filter(edge =>
+        edge.source != edge.target
     );
     const highlightTarget = [target, ...showEdges.value.map(e => e.target)]
     highlight(highlightTarget);
