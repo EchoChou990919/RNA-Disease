@@ -10,7 +10,7 @@
             </n-space>
         </n-layout-header>
         <n-layout has-sider>
-            <n-layout-sider
+            <!-- <n-layout-sider
                 class="shadow-lg"
                 bordered
                 collapse-mode="transform"
@@ -26,19 +26,12 @@
                         </template>
                     </suspense>
                 </div>
-            </n-layout-sider>
+            </n-layout-sider> -->
             <n-layout has-sider sider-placement="right">
                 <n-layout-content>
-                    <suspense>
-                        <template #default>
-                            <graph-vue class="w-1/1 h-1/1"></graph-vue>
-                        </template>
-                        <template #fallback>
-                            <n-spin></n-spin>
-                        </template>
-                    </suspense>
+                    <graph-vue class="w-1/1 h-1/1"></graph-vue>
                 </n-layout-content>
-                <n-layout-sider
+                <!-- <n-layout-sider
                     class="shadow-lg"
                     collapse-mode="transform"
                     show-trigger="arrow-circle"
@@ -48,13 +41,13 @@
                     width="500"
                 >
                     <div v-show="!right_slider_collapsed">
-                    <suspense>
-                        <template #default>
-                            <Dag class="w-1/1 h-1/1"></Dag>
-                        </template>
-                    </suspense>
+                        <suspense>
+                            <template #default>
+                                <Dag class="w-1/1 h-1/1"></Dag>
+                            </template>
+                        </suspense>
                     </div>
-                </n-layout-sider>
+                </n-layout-sider> -->
             </n-layout>
         </n-layout>
         <!-- <n-layout-footer>成府路</n-layout-footer> -->

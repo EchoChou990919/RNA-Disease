@@ -14,7 +14,12 @@ export default defineConfig({
       {
         find:"@",
         replacement:"/src"
-      }
+      },
     ]
+  },
+  build:{
+    commonjsOptions:{
+      ignoreTryCatch:false
+    }
   }
 })

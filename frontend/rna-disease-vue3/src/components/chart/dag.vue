@@ -1,8 +1,7 @@
 <template>
     <tooltip-vue v-if="tooltip" :x="tooltip.x" :y="tooltip.y">
         <n-space>
-            <div
-            >{{ tooltip.name }}</div>
+            <div>{{ tooltip.name }}</div>
         </n-space>
     </tooltip-vue>
     <svg
@@ -10,14 +9,14 @@
         :height="height"
         :viewBox="`${min_x} ${min_y} ${width} ${height}`"
         ref="el"
-        @mousemove="onMouseMove"
         :class="class"
+        v-bind="$attrs"
     >
         <mask
-            :x="min_x - r"
-            :y="min_y - r"
-            :width="width + 2 * r"
-            :height="height + 2 * r"
+            :x="min_x - outline_r"
+            :y="min_y - outline_r"
+            :width="width + 2 * outline_r"
+            :height="height + 2 * outline_r"
             v-for="group,idx in groups"
             :id="`particalEdges${idx}`"
         >
@@ -25,10 +24,16 @@
                 v-for="link in group.particalEdges"
                 v-bind="link"
                 stroke-linecap="round"
-                :stroke-width="2 * r"
+                :stroke-width="2 * outline_r"
                 stroke="#fff"
             />
-            <circle v-for="point in group.points" :cx="point.x" :cy="point.y" :r="r" fill="#fff" />
+            <circle
+                v-for="point in group.points"
+                :cx="point.x"
+                :cy="point.y"
+                :r="outline_r"
+                fill="#fff"
+            />
         </mask>
 
         <marker
@@ -41,215 +46,249 @@
             orient="auto"
             markerUnits="strokeWidth"
         >
-            <path d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z" :fill="stroke_color" />
-            <!-- <path d="M0,0 L0,6 L9,3 z" fill="currentColor" /> -->
+            <path
+                d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+                :fill="stroke_color"
+                :opacity="stroke_opacity"
+            />
         </marker>
-        
-        <rect
-            v-for="group,idx in groups"
-            :x="min_x - r"
-            :y="min_y - r"
-            :width="width + 2 * r"
-            :height="height + 2 * r"
-            :fill="colors[idx]"
-            opacity="0.5"
-            :mask="`url(#particalEdges${idx})`"
-        />
+
+        <g v-for="group,idx in groups" class="mix-blend-multiply">
+            <link-vertical-vue
+                v-for="link in group.particalEdges"
+                v-bind="link"
+                stroke-linecap="round"
+                :stroke-width="2 * outline_r"
+                :stroke="colors[idx]"
+                fill="none"
+            />
+            <circle
+                v-for="point in group.points"
+                :cx="point.x"
+                :cy="point.y"
+                :r="outline_r"
+                :fill="colors[idx]"
+            />
+        </g>
         <link-vertical-vue
             v-for="link in dag_links"
             v-bind="link"
             fill="none"
             :stroke="stroke_color"
             :stroke-width="0.5"
+            :opacity="stroke_opacity"
             marker-end="url(#arrow)"
         />
-        <!-- <symbol-vue 
-            v-for="point in dag_points" 
-            v-bind="point" 
-            :size="Math.PI*node_r**2" 
-            fill="#aaa" 
-            :stroke="stroke_color"
-            :stroke-width="0.5"
-        />
-        <g v-for="group,idx in groups">
-            <symbol-vue
-                v-for="point in group.points"
-                v-bind="point"
-                :size="Math.PI*node_r**2"
-                :fill="colors[idx]"
-            />
-        </g> -->
-        <pie-vue 
+        <pie-vue
             v-for="point in dag_points"
-            :data="[1, 1]" 
+            :data="[1, 1]"
             :colors="color(point)"
             :x="point.x"
             :y="point.y"
             :inner-radius="0"
-            :outer-radius="node_r"
+            :outer-radius="r"
             :tag="'g'"
-        ></pie-vue>
+            @mouseenter="onMouseenter(point)"
+            @mouseleave="onMouseleave"
+        />
         <circle
             v-for="point in dag_points"
             :cx="point.x"
             :cy="point.y"
-            :r="node_r"
+            :r="r"
             :stroke="stroke_color"
+            :opacity="stroke_opacity"
             :stroke-width="0.5"
             fill="none"
-        >
-        </circle>
+        />
     </svg>
-    <n-button @click="subNet">111</n-button>
 </template>
 
 <script setup>
 import * as d3 from "d3";
-import { NGradientText } from "naive-ui";
-
-import symbolVue from "./shapes/symbol.vue";
 import linkVerticalVue from "./shapes/linkVertical.vue";
-import curveVue from "./shapes/curve.vue";
 import tooltipVue from "./shapes/tooltip.vue";
 import pieVue from "./pie.vue";
 
-import { ArrowCircleDown20Filled } from "@vicons/fluent"
 
 import _ from "lodash";
-import { reactive, ref, onMounted } from "vue";
-import svgPanZoom from "svg-pan-zoom";
+import { computed, reactive, ref, watch } from "vue";
 import { loadCase } from "@/service/dataloader/dag";
 import { dagLayout, pack, filterNode2edges } from "@/utils/dagLayout";
-import { useZoom, offset2svg, svg2offset } from "@/utils/zoom"; 
-import {subGraph,loadNodeLinks} from "@/service/dataloader/nodelinks";
+import { useZoom, offset2svg, svg2offset } from "@/utils/zoom";
 
-defineProps(["class"])
+import { SelectionStore } from "@/store/selection";
+
+const selectionStore = SelectionStore();
+
+// defineProps(["class"])
 const el = ref(null);
 const { transform } = useZoom(el);
+
 
 const width = 200;
 const height = 200;
 const min_x = -width / 2;
 const min_y = -height / 2;
-const r = 10;
-const colors = ["#8dd3c7", "#ffffb3"];
-const stroke_color = "#000"
-const node_r=5;
-const margin=100;
+// const colors = ["#f9d04c", "#5eead4"];
+const other_color = "#aaa";
+const node_r = 5;
+const margin = 100;
 
-const caseData = await loadCase();
-const { case_i, case_j, nodes, edges } = caseData;
+// const { case_i, case_j, nodes, edges } = caseData;
+// const case_i = computed(() => selectionStore.case_i);
+// const case_j = computed(() => selectionStore.case_j);
+// const net = computed(() => selectionStore.subNet || { nodes: [], edges: [] });
 
-
-const layout = dagLayout(nodes, edges, {
-    id: item => item.doid,
-    graph_opts: {
-        rankdir: "BT",
-        marginx:margin,
-        marginy:margin,
+const props = defineProps({
+    case_i: {},
+    case_j: {},
+    net: {
+        default: {
+            nodes: [],
+            edges: []
+        }
     },
-    node_opts:{
-        width:node_r*2,
-        height:node_r*2,
+    class: {},
+    colors:Array
+})
+// const props=defineProps(["case_i", "case_j", "net","class"]);
+const case_i = computed(() => props.case_i);
+const case_j = computed(() => props.case_j);
+const net = computed(() => props.net);
+
+const nodes = computed(() => net.value.nodes);
+const edges = computed(() => net.value.edges);
+
+const isLargeGraph = computed(() => nodes.value.length > 50);
+
+const stroke_color = computed(() => {
+    if (isLargeGraph.value) return "#000";
+    else return "#000"
+});
+const stroke_opacity = computed(() => {
+    if (isLargeGraph.value) return 0.2;
+    else return 1
+});
+
+
+const layout = computed(() => dagLayout(nodes.value, edges.value,
+    {
+        id: item => item.doid,
+        graph_opts: {
+            rankdir: "BT",
+            marginx: margin,
+            marginy: margin,
+            nodesep: 20
+        },
+        node_opts: {
+            width: node_r * 2,
+            height: node_r * 2,
+        }
     }
+));
+
+const x = computed(() => {
+    const out_graph = layout.value.graph;
+    return d3.scaleLinear().domain([0, out_graph.width]).range([min_x, min_x + width]);
+})
+const y = computed(() => {
+    const out_graph = layout.value.graph;
+    return d3.scaleLinear().domain([0, out_graph.height]).range([min_y, min_y + height]);
+})
+
+const r = computed(() => {
+    return x.value(node_r) - x.value(0);
+})
+
+const outline_r = computed(() => {
+    let r = node_r * 2;
+    if (isLargeGraph.value) r = r * 3;
+    return x.value(r) - x.value(0);
 });
 
-const dag_raw_points = layout.nodes;
-const dag_raw_edges = layout.edges;
-const out_graph = layout.graph;
-const x = d3.scaleLinear().domain([0, out_graph.width]).range([min_x, min_x + width]);
-const y = d3.scaleLinear().domain([0, out_graph.height]).range([min_y, min_y + height]);
-const dag_points = dag_raw_points.map(v => {
-    return {
-        x: x(v.x),
-        y: y(v.y),
-        name: v.doid
-    };
+const outline_opacity = computed(() => {
+    // if (isLargeGraph.value) return 0.5;
+    // else return 0.5
+    return 1
 });
 
-const dag_links = [];
-for (let edge of edges) {
-    const { source, target } = edge;
-    const source_node = dag_points.find(point => point.name == source);
-    const target_node = dag_points.find(point => point.name == target);
-    dag_links.push({
-        source: [source_node.x, source_node.y-node_r],
-        target: [target_node.x, target_node.y+node_r],
-        v: source,
-        w: target
-    });
-}
 
-
-const groups = [case_i, case_j].map(case_item => {
-    const points = dag_points.filter(point => case_item.find(j => j == point.name));
-    // pack(points);
-    const particalEdges = filterNode2edges(points, dag_links, {
-        id: i => i.name,
-        edge_source: i => i.v,
-        edge_target: i => i.w
+const dag_points = computed(() => {
+    const dag_raw_points = layout.value.nodes;
+    return dag_raw_points.map(v => {
+        return {
+            x: x.value(v.x),
+            y: y.value(v.y),
+            name: v.doid
+        };
     });
-    return {
-        points,
-        particalEdges
-    };
+})
+
+const dag_links = computed(() => {
+    return edges.value.map(edge => {
+        const { source, target } = edge;
+        const source_node = dag_points.value.find(point => point.name == source);
+        const target_node = dag_points.value.find(point => point.name == target);
+        return {
+            source: [source_node.x, source_node.y - r.value],
+            target: [target_node.x, target_node.y + r.value],
+            v: source,
+            w: target
+        };
+    })
+
 })
 
 
-const tooltip = ref(null);
-const quadtree = d3.quadtree().x(d => d.x).y(d => d.y).addAll(dag_points);
-function onMouseMove(e) {
-    const { offsetX, offsetY } = e;
-    let { x, y } = offset2svg(offsetX, offsetY, transform);
-    const node = quadtree.find(x, y, r);
-    // console.log(node,offsetX,offsetY,x,y);
-    if (node) {
-        let { x, y } = svg2offset(node.x, node.y, transform);
-        tooltip.value = {
-            ...node,
-            x,
-            y,
+const groups = computed(() => {
+    return _.union([case_i.value, case_j.value]).map(case_item => {
+        const points = dag_points.value.filter(point => case_item.find(j => j == point.name));
+        // pack(points);
+        const particalEdges = filterNode2edges(points, dag_links.value, {
+            id: i => i.name,
+            edge_source: i => i.v,
+            edge_target: i => i.w
+        });
+        return {
+            points,
+            particalEdges
         };
-    }
-    else {
-        tooltip.value = null;
-    }
-}
+    })
+})
 
 function color(node) {
-    const in_case_i = case_i.find(i => i == node.name);
-    const in_case_j = case_j.find(i => i == node.name);
+    const in_case_i = case_i.value.find(i => i == node.name);
+    const in_case_j = case_j.value.find(i => i == node.name);
+    if (case_i.value == case_j.value) {
+        return in_case_i ? () => props.colors[0] : () => other_color;
+    }
+
     if (in_case_i && in_case_j) {
-        return (_, __, idx) => colors[idx];
+        return (_, __, idx) => props.colors[idx];
     }
     else if (in_case_j) {
-        return () => colors[1];
+        return () => props.colors[1];
     }
     else if (in_case_i) {
-        return () => colors[0];
+        return () => props.colors[0];
     }
     else {
-        return () => "#aaa";
+        return () => other_color;
     }
 }
 
-const nodelinks=await loadNodeLinks();
-
-async function subNet(){
-    const nodes=[{
-            "id": "2",
-            "name": "LINC01531",
-            "category": 0,
-            "degree": 1.000000000000007
-        },
-        {
-            "id": "3",
-            "name": "HPN-AS1",
-            "category": 0,
-            "degree": 1.000000000000007
-        }];
-    const res=await subGraph(nodelinks,nodes.map(node=>node.id));
-    console.log(res);
+const tooltip = ref(null);
+function onMouseenter(node) {
+    let { x, y } = svg2offset(node.x, node.y, transform);
+    tooltip.value = {
+        ...node,
+        x,
+        y,
+    };
 }
 
+function onMouseleave() {
+    tooltip.value = null;
+}
 </script>

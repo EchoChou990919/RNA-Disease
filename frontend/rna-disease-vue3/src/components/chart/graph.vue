@@ -1,13 +1,62 @@
 <template>
-    <tooltip-vue
-        v-for="node in labels"
-        :key="node.id"
-        :x="d3position2offset(node.x, node.y).x"
-        :y="d3position2offset(node.x, node.y).y"
-        :style="{
-            color: colors[node.category]
-        }"
-    >{{ node.name }}</tooltip-vue>
+    <transition-group name="tooltip">
+        <tooltip-vue
+            v-for="node in labels"
+            :key="node.id"
+            :x="d3position2offset(node.x, node.y).x"
+            :y="d3position2offset(node.x, node.y).y"
+            :style="{
+                color: colors[node.category]
+            }"
+            :offset-x="10"
+            :offset-y="0"
+            :drag="node.locked"
+            @pan_begin="panning = true; onClick(node)"
+            @pan_end="panning = false"
+            @mouseenter="onMouseLeave"
+            class="transition-all"
+        >
+            <template #header>
+                <n-space justify="space-between">
+                    <div>{{ node.name }}</div>
+                    <n-button text v-if="node.locked" @click="removeLock(node)">
+                        <n-icon>
+                            <dismiss></dismiss>
+                        </n-icon>
+                    </n-button>
+                </n-space>
+            </template>
+            <n-space vertical>
+                <transition
+                    enter-from-class="transform scale-y-0 opacity-0"
+                    enter-to-class="opacity-100"
+                    leave-from-class="opacity-100"
+                    leave-to-class="transform scale-y-0 opacity-0"
+                    enter-active-class="transition-all duration-200 ease-in-out"
+                    leave-active-class="transition-all duration-200 ease-in-out"
+                >
+                    <div v-if="node.locked">
+                        <div v-if="node.showDAG" class="tooltip-dag">
+                            <disease-similarity-vue
+                                v-if="selectionStore.locked[0].category == 0 && node.category == 0"
+                                :i="selectionStore.locked[0].name"
+                                :j="node.name"
+                                class="w-1/1 h-1/1"
+                            ></disease-similarity-vue>
+                        </div>
+
+                        <div v-if="node.showEvidence" class="tooltip-detail overflow-auto">
+                            <disease-evidence-vue
+                                :lncRNA="selectionStore.locked[0].name"
+                                :disease="names[node.name]"
+                            ></disease-evidence-vue>
+                        </div>
+                    </div>
+                </transition>
+            </n-space>
+        </tooltip-vue>
+    </transition-group>
+
     <svg
         :class="class"
         :width="width"
@@ -22,7 +71,7 @@
             <!-- 节点链接图 -->
             <line
                 v-if="renderDone"
-                v-for="edge in showEdges"
+                v-for="edge in showEdgesNew"
                 :stroke-width="2 / transform.k"
                 :key="edge.source.id + '-' + edge.target.id"
                 :x1="x(edge.source.x)"
@@ -65,16 +114,25 @@
 <script setup>
 import * as d3 from "d3";
 import _ from "lodash";
+import { NDivider, NIcon } from "naive-ui";
 import { ref, reactive, onMounted, computed, watch, watchEffect } from "vue";
-import svgPanZoom from "svg-pan-zoom";
+import dagVue from "./dag.vue";
+
+import { Dismiss16Filled as Dismiss } from "@vicons/fluent";
 
 import symbolVue from "./shapes/symbol.vue";
 import tooltipVue from "./shapes/tooltip.vue";
+import diseaseSimilarityVue from "./diseaseSimilarity.vue";
+import linkHorizontalVue from "./shapes/linkHorizontal.vue";
+import diseaseEvidenceVue from "../diseaseEvidence.vue";
 
 import { SelectionStore } from "@/store/selection";
 import { loadNodeLinks, net2connTable } from "@/service/dataloader/nodelinks";
+import { loadDiseaseNet, subGraph } from "@/service/dataloader/diseaseNet";
+import { loadInc2Di } from "@/service/dataloader/lnc2Di";
+import { loadDiseaseAttrs, doid2name } from "@/service/dataloader/diseaseDetail";
 import ForceWorker from "@/service/worker/force.worker?worker";
-import { useZoom,offset2svg,svg2offset } from "@/utils/zoom";
+import { useZoom, offset2svg, svg2offset } from "@/utils/zoom";
 
 defineProps(["class"]);
 
@@ -106,8 +164,10 @@ const selectionStore = SelectionStore();
 
 //加载数据
 const forceWorker = new ForceWorker();
-const nodeLinks = await loadNodeLinks();
+const nodeLinks = loadNodeLinks();
 const connTable = net2connTable(nodeLinks);
+const detail = loadDiseaseAttrs();
+const names = doid2name(detail.diseases);
 
 const nodes = ref(nodeLinks.nodes); //节点
 const edges = ref(nodeLinks.edges); //边
@@ -171,8 +231,8 @@ const { transform, zoom } = useZoom(el, {
 
 
 //处理鼠标交互
-function highlight(nodes) {
-    nodeHighlightToken.value++;
+function highlight(nodes, clear = true) {
+    if (clear) nodeHighlightToken.value++;
     nodes.forEach(node => {
         node.highlight = nodeHighlightToken.value;
     });
@@ -183,12 +243,18 @@ function isHighlight(node) {
 }
 
 function clearSelection() {
-    showEdges.value = [];
+    selectionStore.locked = [];
+    selectionStore.hovered = null;
     highlight(nodes.value);
+    // showEdges.value = [];
+    // highlight(nodes.value);
+    selectionStore.case_i = null;
+    selectionStore.case_j = null;
+    selectionStore.subNet = null;
 }
 
 function mouse2nodeIndex(offsetX, offsetY, d_threshold = 70) {
-    const {x,y}=offset2svg(offsetX,offsetY,transform);
+    const { x, y } = offset2svg(offsetX, offsetY, transform);
     const target_x = rx(x);
     const target_y = ry(y);
     const target_index = delaunay.find(target_x, target_y);
@@ -204,57 +270,166 @@ function mouse2nodeIndex(offsetX, offsetY, d_threshold = 70) {
 const top = ref(0);
 const left = ref(0);
 function d3position2offset(target_x, target_y) {
-    return svg2offset(x(target_x),y(target_y),transform);
+    return svg2offset(x(target_x), y(target_y), transform);
+}
+
+
+function onMouseMove(e) {
+    if (panning.value) {
+        return;
+    }
+    const { offsetX, offsetY } = e;
+    const target = mouse2nodeIndex(offsetX, offsetY);
+    if (target) {
+        onMouseEnter(target);
+    }
+    else {
+        onMouseLeave();
+    }
 }
 
 // 实现悬浮效果
 // const hovered = ref(null);
-function onMouseMove(e) {
+// function onMouseMove(e) {
 
-    const { offsetX, offsetY } = e;
-    top.value = offsetY;
-    left.value = offsetX;
-    const target = mouse2nodeIndex(offsetX, offsetY);
-    if (selectionStore.locked) {
-        if (!target) {
-            return;
-        }
-        else if (!isHighlight(target)) {
-            selectionStore.hovered = null;
+//     const { offsetX, offsetY } = e;
+//     top.value = offsetY;
+//     left.value = offsetX;
+//     const target = mouse2nodeIndex(offsetX, offsetY);
+//     if (selectionStore.locked) {
+//         if (!target) {
+//             return;
+//         }
+//         else if (!isHighlight(target)) {
+//             selectionStore.hovered = null;
+//         }
+//         else {
+//             selectionStore.hovered = target;
+//             if (selectionStore.locked.category == 0 && target.category == 0) {
+//                 const sourceName = selectionStore.locked.name;
+//                 const targetName = target.name;
+//                 const sourceInc = inc2Di[sourceName];
+//                 const targetInc = inc2Di[targetName];
+//                 const res = subGraph(diseaseNet, _.union(sourceInc, targetInc), {
+//                     id: i => i.doid
+//                 });
+//                 // console.log(sourceName, targetName, sourceInc, targetInc, res);
+//                 selectionStore.case_i = sourceInc;
+//                 selectionStore.case_j = targetInc;
+//                 selectionStore.subNet = res;
+//             }
+
+//         }
+//         return;
+//     }
+//     else {
+//         selectionStore.hovered = target;
+//     }
+//     if (!target) {
+//         clearSelection();
+//         return;
+//     }
+//     showEdges.value = connTable[target.id].map(e => {
+//         const { index, source, target } = e;
+//         const edge = edges.value[index];
+//         let res = null;
+//         if (edge.source.id == source) {
+//             res = edge;
+//         }
+//         else {
+//             res = {
+//                 ...edge,
+//                 source: edge.target,
+//                 target: edge.source,
+//             }
+//         }
+//         return res;
+//     }).filter(edge =>
+//         edge.source != edge.target
+//     );
+//     const highlightTarget = [target, ...showEdges.value.map(e => e.target)]
+//     highlight(highlightTarget);
+// }
+
+function onMouseEnter(node) {
+    if (selectionStore.locked.length > 0) {
+        if (isHighlight(node)) {
+            selectionStore.hovered = node;
         }
         else {
-            selectionStore.hovered = target;
+            selectionStore.hovered = null;
         }
         return;
     }
-    else {
-        selectionStore.hovered = target;
-    }
-    if (!target) {
+    selectionStore.hovered = node;
+}
+
+function onMouseLeave() {
+    selectionStore.hovered = null;
+}
+
+function onClick(node) {
+    if (node == null) {
         clearSelection();
         return;
     }
-    showEdges.value = connTable[target.id].map(e => {
-        const { index, source, target } = e;
-        const edge = edges.value[index];
-        let res = null;
-        if (edge.source.id == source) {
-            res = edge;
+    else {
+        selectionStore.locked.push(node);
+        highlight([node, ...showEdgesNew.value.map(e => e.target)]);
+    }
+}
+
+const showEdgesNew = computed(() => {
+    let showNodes = [];
+    if (selectionStore.locked.length == 0) {
+        if (selectionStore.hovered) {
+            showNodes = [selectionStore.hovered];
         }
-        else {
-            res = {
-                ...edge,
-                source: edge.target,
-                target: edge.source,
+        // showNodes = [selectionStore.hovered];
+    }
+    else {
+        if (selectionStore.locked.length == 1) {
+            const lockedNodes = selectionStore.locked[0];
+            if (selectionStore.hovered) {
+                showNodes = [lockedNodes, selectionStore.hovered];
+            }
+            else {
+                showNodes = [lockedNodes];
             }
         }
-        return res;
-    }).filter(edge =>
-        edge.source != edge.target
-    );
-    const highlightTarget = [target, ...showEdges.value.map(e => e.target)]
-    highlight(highlightTarget);
-}
+        else {
+            showNodes = selectionStore.locked.slice(0, 1);
+        }
+    }
+    showNodes = _.uniqBy(showNodes, 'id');
+    let filter = e => true;
+    if (showNodes.length == 2) {
+        let targetNodes = _(showNodes).map(node => {
+            return _(connTable[node.id]).map(edge => edge.target).uniq().value();
+        }).value();
+        let midNodes = new Set(_.intersection(targetNodes[0], targetNodes[1]));
+        // console.log("midNodes", midNodes, targetNodes);
+        filter = e => midNodes.has(e.target.id);
+    }
+    return _(showNodes).map(node => {
+        return connTable[node.id].map(e => {
+            const { index, source, target } = e;
+            const edge = edges.value[index];
+            let res = null;
+            if (edge.source.id == source) {
+                res = edge;
+            }
+            else {
+                res = {
+                    ...edge,
+                    source: edge.target,
+                    target: edge.source,
+                }
+            }
+            return res;
+        }).filter(edge => edge.source != edge.target).filter(filter);
+    }).flatten().union().value();
+});
 
 // 实现点击效果
 // const locked = ref(null);
@@ -269,19 +444,75 @@ function onMouseUp(e) {
     }
     const { offsetX, offsetY } = e;
     const target = mouse2nodeIndex(offsetX, offsetY);
-    if (!target || (selectionStore.locked && target != selectionStore.locked)) {
-        selectionStore.locked = false;
-        clearSelection();
-        return;
-    }
-    else {
-        selectionStore.locked = target;
-    }
+    onClick(target);
+    // if (!target || (selectionStore.locked && target != selectionStore.locked)) {
+    //     selectionStore.locked = false;
+    //     clearSelection();
+    //     return;
+    // }
+    // else {
+    //     selectionStore.locked = target;
+    // }
 }
 
 // 标签
 const labels = computed(() => {
-    const target = [selectionStore.locked, selectionStore.hovered];
-    return target.filter(e => e != null);
+    // const lockedTarget = selectionStore.locked;
+    let DAGSource = null;
+    if (selectionStore.locked.length > 0) DAGSource = selectionStore.locked[0];
+    const target = [...selectionStore.locked.map(node => ({
+        ...node,
+        locked: true
+    })),
+    selectionStore.hovered ? {
+        ...selectionStore.hovered,
+        locked: false
+    } : null];
+    return _.unionBy(target.filter(e => e != null).map(node => {
+        return {
+            showDAG: node.category == 0 && DAGSource && DAGSource.category == 0,
+            showEvidence: node.category == 1 && DAGSource && DAGSource.category == 0,
+            ...node,
+
+        }
+    }), node => node.name);
 })
+
+// function showDAG(node){
+//     if(node.category==0){
+//         if(selectionStore)
+//     }
+// }
+
+// const showDAG = computed(() => {
+//     return selectionStore.locked && selectionStore.case_i && selectionStore.case_j && selectionStore.locked.category == 0;
+
+// });
+
+function removeLock(node) {
+    selectionStore.locked = selectionStore.locked.filter(e => e.id != node.id);
+    if (selectionStore.locked.length == 0) {
+        clearSelection();
+    }
+}
 </script>
+
+<style scoped>
+.tooltip-dag {
+    /* @apply 2xl:(max-w-lg max-h-lg) max-w-[10rem] max-h-[10rem]; */
+    @apply 2xl:(w-lg h-lg) w-[10rem] h-[10rem];
+}
+.tooltip-detail {
+    @apply 2xl:(max-w-lg max-h-lg) max-w-[10rem] max-h-[10rem];
+}
+
+.tooltip-enter-from,
+.tooltip-leave-to {
+    @apply opacity-10;
+}
+
+.tooltip-enter-active,
+.tooltip-leave-active {
+    @apply transition duration-100;
+}
+</style>
