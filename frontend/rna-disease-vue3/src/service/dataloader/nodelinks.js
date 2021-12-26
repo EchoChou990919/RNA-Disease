@@ -1,11 +1,30 @@
 // import axios from "axios";
 import _ from "lodash";
 
-import nodeLinks from "/public/nodeLinks.json";
+import nodeLinks from "/public/newNodeLinks.json";
 
 
 let netCache = null;
 let connCache = null;
+let connMtx_t = {};
+
+for(const edge of nodeLinks.edges){
+    if(!connMtx_t[edge.source]){
+        connMtx_t[edge.source]={};
+    }
+    connMtx_t[edge.source][edge.target]=edge;
+    const reverseLink = {
+        ...edge,
+        source: edge.target,
+        target: edge.source,
+    };
+    if (!connMtx_t[edge.target]) {
+        connMtx_t[edge.target] = {};
+    }
+    connMtx_t[edge.target][edge.source] = reverseLink;
+}
+export const connMtx=connMtx_t;
+
 
 export function loadNodeLinks() {
     // if (netCache) {

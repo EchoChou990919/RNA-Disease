@@ -8,7 +8,9 @@
                 <div>{{item}}</div>
             </div>
         </n-space>
-        相似性: {{_.round(similarity*100)}}%
+        <div v-if="similarity">
+            相似性: {{_.round(similarity*100)}}%
+        </div>
     </div>
     <dag-vue :colors="colors" :case_i="case_i" :case_j="case_j" :net="subNet" v-bind="$attrs"></dag-vue>
 </template>
@@ -17,7 +19,7 @@
 import dagVue from "./dag.vue";
 import { loadInc2Di } from "@/service/dataloader/lnc2Di";
 import { loadDiseaseNet, subGraph } from "@/service/dataloader/diseaseNet";
-import { loadNodeLinks,net2connTable } from "@/service/dataloader/nodelinks";
+import { connMtx,loadNodeLinks } from "@/service/dataloader/nodelinks";
 import { computed } from "vue";
 import _ from "lodash";
 
@@ -31,7 +33,7 @@ const colors = [ "#5eead4","#f9d04c"];
 
 const diseaseNet = loadDiseaseNet();
 const inc2Di = loadInc2Di();
-// const nodeLinks=await loadNodeLinks();
+const nodeLinks= loadNodeLinks();
 // const connTable=net2connTable(nodeLinks);
 
 const case_i = computed(() => {
@@ -43,15 +45,18 @@ const case_j = computed(() => {
 })
 
 const similarity = computed(()=>{
-    // const id_i=nodeLinks.nodes.find(node=>node.name==props.i);
-    // const id_j=nodeLinks.nodes.find(node=>node.name==props.j);
+    if(props.i==props.j){
+        return null;
+    }
+    const id_i=nodeLinks.nodes.find(node=>node.name==props.i);
+    const id_j=nodeLinks.nodes.find(node=>node.name==props.j);
     // if(id_i==null||id_j==null){
     //     return 0;
     // }
     // const edge=connTable[id_i.id].find(edge=>edge.target==id_j.id)||
     //     connTable[id_j.id].find(edge=>edge.target==id_i.id);
     // return edge?edge.value:0;
-    return 0;
+    return connMtx[id_i.id][id_j.id].value;
 })
 
 const subNet = computed(() => {

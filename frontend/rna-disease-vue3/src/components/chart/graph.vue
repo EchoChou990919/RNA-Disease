@@ -18,7 +18,23 @@
         >
             <template #header>
                 <n-space justify="space-between">
-                    <div>{{ node.name }}</div>
+                    <n-space>
+                        <perdict-glyph-vue
+                            v-if="showGlyph(node)"
+                            :x="x(node.x || 0)"
+                            :y="y(node.y || 0)"
+                            :size="300"
+                            :perdict_value="connMtx[selectionStore.locked[0].id][node.id].value || 0"
+                            :perdict_label="connMtx[selectionStore.locked[0].id][node.id].value >= 0.5 ? 1 : 0"
+                            :truth_label="connMtx[selectionStore.locked[0].id][node.id].type == 2 ? 0 : 1"
+                            :palette="{
+                                0: 'blue',
+                                1: 'red',
+                            }"
+                            :label_opacity="0.5"
+                        />
+                        <div>{{ node.name }}</div>
+                    </n-space>
                     <n-button text v-if="node.locked" @click="removeLock(node)">
                         <n-icon>
                             <dismiss></dismiss>
@@ -35,7 +51,7 @@
                     enter-active-class="transition-all duration-200 ease-in-out"
                     leave-active-class="transition-all duration-200 ease-in-out"
                 >
-                    <div v-if="node.locked">
+                    <div v-if="node.locked||node.showEvidence">
                         <div v-if="node.showDAG" class="tooltip-dag">
                             <disease-similarity-vue
                                 v-if="selectionStore.locked[0].category == 0 && node.category == 0"
@@ -72,20 +88,48 @@
             <line
                 v-if="renderDone"
                 v-for="edge in showEdgesNew"
-                :stroke-width="2 / transform.k"
+                :stroke-width="(edge.type==0?2:2) / transform.k"
                 :key="edge.source.id + '-' + edge.target.id"
                 :x1="x(edge.source.x)"
                 :y1="y(edge.source.y)"
                 :x2="x(edge.target.x)"
                 :y2="y(edge.target.y)"
                 :opacity="edge.value * 0.5"
-                :stroke="colors[edge.target.category]"
+                :stroke="edgeColor(edge) || colors[edge.target.category]"
                 :stroke-dasharray="
                     edge.source_type == edge.target_type ? '1' : 'none'
                 "
             />
-            <symbol-vue
+            <g v-if="renderDone" v-for="(node,index) in nodes" :key="node.id">
+                <perdict-glyph-vue
+                    v-if="showGlyph(node)"
+                    :x="x(node.x || 0)"
+                    :y="y(node.y || 0)"
+                    :size="(2 + node.degree / 12) / transform.k"
+                    :perdict_value="connMtx[selectionStore.locked[0].id][node.id].value || 0"
+                    :perdict_label="connMtx[selectionStore.locked[0].id][node.id].value >= 0.5 ? 1 : 0"
+                    :truth_label="connMtx[selectionStore.locked[0].id][node.id].type == 2 ? 0 : 1"
+                    :palette="{
+                        0: 'blue',
+                        1: 'red',
+                    }"
+                    :label_opacity="0.5"
+                    :class="{'animate-pulse':hasEvidence(node)}"
+                />
+                <symbol-vue
+                    v-else
+                    
+                    :x="x(node.x || 0)"
+                    :y="y(node.y || 0)"
+                    :size="(2 + node.degree / 12) / transform.k"
+                    :fill="colors[node.category]"
+                    :symbol="symbols[node.category]"
+                    :opacity="node.highlight == nodeHighlightToken ? 1 : 0.1"
+                />
+            </g>
+            <!-- <component
                 v-if="renderDone"
+                :is="node.category == 1 && showGlyph ? perdictGlyphVue : symbolVue"
                 v-for="(node,index) in nodes"
                 :key="node.id"
                 :x="x(node.x || 0)"
@@ -94,7 +138,15 @@
                 :fill="colors[node.category]"
                 :symbol="symbols[node.category]"
                 :opacity="node.highlight == nodeHighlightToken ? 1 : 0.1"
-            />
+                :perdict_value="connMtx[selectionStore.locked[0].id][node.id].value || 0"
+                :perdict_label="connMtx[selectionStore.locked[0].id][node.id].value >= 0.5"
+                :truth_label="connMtx[selectionStore.locked[0].id][node.id].type == 2 ? 1 : 0"
+                :palette="{
+                    0: 'blue',
+                    1: 'red',
+                }"
+                :label_opacity="0.5"
+            />-->
         </g>
         <g>
             <!-- 密度图 -->
@@ -125,9 +177,12 @@ import tooltipVue from "./shapes/tooltip.vue";
 import diseaseSimilarityVue from "./diseaseSimilarity.vue";
 import linkHorizontalVue from "./shapes/linkHorizontal.vue";
 import diseaseEvidenceVue from "../diseaseEvidence.vue";
+import perdictGlyphVue from "./shapes/perdictGlyph.vue";
 
 import { SelectionStore } from "@/store/selection";
-import { loadNodeLinks, net2connTable } from "@/service/dataloader/nodelinks";
+import { loadNodeLinks, net2connTable, connMtx } from "@/service/dataloader/nodelinks";
+import { lncDisConnMtx } from '@/service/dataloader/diseaseEvidence';
+
 import { loadDiseaseNet, subGraph } from "@/service/dataloader/diseaseNet";
 import { loadInc2Di } from "@/service/dataloader/lnc2Di";
 import { loadDiseaseAttrs, doid2name } from "@/service/dataloader/diseaseDetail";
@@ -374,6 +429,12 @@ function onClick(node) {
         return;
     }
     else {
+        if(_.find(selectionStore.locked, n => n.id == node.id)) {
+            return;
+        }
+        if(!isHighlight(node)) {
+            return;
+        }
         selectionStore.locked.push(node);
         highlight([node, ...showEdgesNew.value.map(e => e.target)]);
     }
@@ -388,30 +449,37 @@ const showEdgesNew = computed(() => {
         // showNodes = [selectionStore.hovered];
     }
     else {
-        if (selectionStore.locked.length == 1) {
-            const lockedNodes = selectionStore.locked[0];
-            if (selectionStore.hovered) {
-                showNodes = [lockedNodes, selectionStore.hovered];
-            }
-            else {
-                showNodes = [lockedNodes];
-            }
+        // if (selectionStore.locked.length == 1) {
+        //     const lockedNodes = selectionStore.locked[0];
+        //     if (selectionStore.hovered) {
+        //         showNodes = [lockedNodes, selectionStore.hovered];
+        //     }
+        //     else {
+        //         showNodes = [lockedNodes];
+        //     }
+        // }
+        // else {
+        //     showNodes = selectionStore.locked.slice(0, 1);
+        // }
+        if (selectionStore.hovered) {
+            showNodes = [...selectionStore.locked, selectionStore.hovered];
         }
         else {
-            showNodes = selectionStore.locked.slice(0, 1);
+            showNodes = selectionStore.locked;
         }
     }
     showNodes = _.uniqBy(showNodes, 'id');
     let filter = e => true;
-    if (showNodes.length == 2) {
+    if (showNodes.length >= 2) {
         let targetNodes = _(showNodes).map(node => {
             return _(connTable[node.id]).map(edge => edge.target).uniq().value();
         }).value();
-        let midNodes = new Set(_.intersection(targetNodes[0], targetNodes[1]));
+        let midNodes = new Set(_.intersection(...targetNodes));
         // console.log("midNodes", midNodes, targetNodes);
         filter = e => midNodes.has(e.target.id);
     }
-    return _(showNodes).map(node => {
+    return _(showNodes).map((node,idx) => {
+        const isFirstLocked = selectionStore.locked.findIndex(n => n.id == node.id) == 0;
         return connTable[node.id].map(e => {
             const { index, source, target } = e;
             const edge = edges.value[index];
@@ -426,8 +494,12 @@ const showEdgesNew = computed(() => {
                     target: edge.source,
                 }
             }
-            return res;
-        }).filter(edge => edge.source != edge.target).filter(filter);
+            return {
+                idx,
+                // isFirstLocked,
+                ...res
+            };
+        }).filter(edge => edge.source != edge.target).filter(filter).filter((edge)=>edge.idx==0||edge.type==0);
     }).flatten().union().value();
 });
 
@@ -445,14 +517,6 @@ function onMouseUp(e) {
     const { offsetX, offsetY } = e;
     const target = mouse2nodeIndex(offsetX, offsetY);
     onClick(target);
-    // if (!target || (selectionStore.locked && target != selectionStore.locked)) {
-    //     selectionStore.locked = false;
-    //     clearSelection();
-    //     return;
-    // }
-    // else {
-    //     selectionStore.locked = target;
-    // }
 }
 
 // 标签
@@ -494,6 +558,28 @@ function removeLock(node) {
     if (selectionStore.locked.length == 0) {
         clearSelection();
     }
+}
+
+function edgeColor(edge) {
+    if (!edge.type) {
+        return null;
+    }
+    else {
+        return "#5e3c99";
+    }
+}
+
+// const showGlyph = computed(() => {
+//     return selectionStore.locked.length >= 1 && selectionStore.locked[0].category == 0;
+// });
+
+function showGlyph(node) {
+    return node.category == 1 && showGlyph && isHighlight(node) && selectionStore.locked.length >= 1 && selectionStore.locked[0].category == 0 && connMtx[selectionStore.locked[0].id][node.id] && connMtx[selectionStore.locked[0].id][node.id].type!=0;
+    
+}
+
+function hasEvidence(node){
+    return lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name]&&lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name][names[node.name]]!=null|| lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name]&&lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name][names[node.name]]!=null
 }
 </script>
 
