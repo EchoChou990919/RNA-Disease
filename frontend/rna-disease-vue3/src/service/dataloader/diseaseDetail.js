@@ -1,33 +1,42 @@
 import { loadNodeLinks } from "./nodelinks";
 
-import axios from "axios";
+// import axios from "axios";
 import _ from "lodash";
+
+import diseaseAttrs from "/public/diseaseAttrs.json";
+import w_result from "/public/w_result.json";
 
 let attrsCache=null;
 let resultCache=null;
 
-export async function loadDiseaseAttrs(){
-    if(attrsCache){
-        return attrsCache;
-    }
-    const res = await axios.get("/diseaseAttrs.json");
-    attrsCache = res.data;
-    return attrsCache;
+export function loadDiseaseAttrs(){
+    // if(attrsCache){
+    //     return attrsCache;
+    // }
+    // const res = await axios.get("/diseaseAttrs.json");
+    // attrsCache = res.data;
+    // return attrsCache;
+    return diseaseAttrs;
 }
 
-export async function loadWResult(){
-    if(resultCache){
-        return resultCache;
-    }
-    const res = await axios.get("/w_result.json");
-    resultCache = res.data;
-    return resultCache;
+export function loadWResult(){
+    // if(resultCache){
+    //     return resultCache;
+    // }
+    // const res = await axios.get("/w_result.json");
+    // resultCache = res.data;
+    // return resultCache;
+    return w_result;
 }
 
-export async function loadDiseaseDetail(){
-    const nodelinks=await loadNodeLinks();
-    const diseaseAttrs=await loadDiseaseAttrs();
-    const w_result=await loadWResult();
+export function doid2name(diseaseAttr){
+    return _(diseaseAttr).map(item=>[item.DOID,item.Name]).fromPairs().value();
+}
+
+export function loadDiseaseDetail(){
+    const nodelinks= loadNodeLinks();
+    const diseaseAttrs= loadDiseaseAttrs();
+    const w_result= loadWResult();
     const DISEASE_CATEGORY=1;
     const disease_nodes=nodelinks.nodes.filter(node=>node.category==DISEASE_CATEGORY);
     const disease_attr_with_id=disease_nodes.map(disease=>{

@@ -1,7 +1,10 @@
-import dagre from 'dagre';
+import * as dagre from 'dagre';
 import * as d3 from "d3";
+import _ from "lodash";
 
 export function dagLayout(nodes, edges, opts = {}) {
+    nodes=_.cloneDeep(nodes);
+    edges=_.cloneDeep(edges);
     const {
         id = item => item.id,
         edge_id = item => item,

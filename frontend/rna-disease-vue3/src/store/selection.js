@@ -4,9 +4,13 @@ export const SelectionStore = defineStore({
     id: "selection",
     state: function () {
         return {
-            locked: null,
+            locked: [],
             hovered: null,
-            edge: null
+            edge: null,
+            case_i: null,
+            case_j: null,
+            subNet: null,
         }
-    }
+    },
+
 });
