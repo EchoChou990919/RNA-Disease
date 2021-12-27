@@ -518,7 +518,7 @@ const showEdgesNew = computed(() => {
     const otherEdges = otherNodes
         .map(n => connTable[n.id]
             .map(processEdge(n))
-            .filter(e => firstMidNodes.has(e.target.id))
+            .filter(e => firstMidNodes.has(e.target.id)&&e.type==0)
         )
         .flat();
     // console.log(otherNodes, firstMidNodes, otherEdges);
