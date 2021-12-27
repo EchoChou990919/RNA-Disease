@@ -21,5 +21,8 @@ export default defineConfig({
     commonjsOptions:{
       ignoreTryCatch:false
     }
+  },
+  json:{
+    stringify:true
   }
 })
