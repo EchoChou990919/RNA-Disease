@@ -51,7 +51,7 @@
                     enter-active-class="transition-all duration-200 ease-in-out"
                     leave-active-class="transition-all duration-200 ease-in-out"
                 >
-                    <div v-if="node.locked||node.showEvidence">
+                    <div v-if="node.locked || node.showEvidence">
                         <div v-if="node.showDAG" class="tooltip-dag">
                             <disease-similarity-vue
                                 v-if="selectionStore.locked[0].category == 0 && node.category == 0"
@@ -88,7 +88,7 @@
             <line
                 v-if="renderDone"
                 v-for="edge in showEdgesNew"
-                :stroke-width="(edge.type==0?2:2) / transform.k"
+                :stroke-width="(edge.type == 0 ? 2 : 2) / transform.k"
                 :key="edge.source.id + '-' + edge.target.id"
                 :x1="x(edge.source.x)"
                 :y1="y(edge.source.y)"
@@ -114,11 +114,10 @@
                         1: 'red',
                     }"
                     :label_opacity="0.5"
-                    :class="{'animate-pulse':hasEvidence(node)}"
+                    :class="{ 'animate-pulse': hasEvidence(node) }"
                 />
                 <symbol-vue
                     v-else
-                    
                     :x="x(node.x || 0)"
                     :y="y(node.y || 0)"
                     :size="(2 + node.degree / 12) / transform.k"
@@ -429,10 +428,10 @@ function onClick(node) {
         return;
     }
     else {
-        if(_.find(selectionStore.locked, n => n.id == node.id)) {
+        if (_.find(selectionStore.locked, n => n.id == node.id)) {
             return;
         }
-        if(!isHighlight(node)) {
+        if (!isHighlight(node)) {
             return;
         }
         selectionStore.locked.push(node);
@@ -441,34 +440,90 @@ function onClick(node) {
 }
 
 const showEdgesNew = computed(() => {
-    let showNodes = [];
-    if (selectionStore.locked.length == 0) {
-        if (selectionStore.hovered) {
-            showNodes = [selectionStore.hovered];
-        }
-        // showNodes = [selectionStore.hovered];
+    // let showNodes = [];
+    // if (selectionStore.locked.length == 0) {
+    //     if (selectionStore.hovered) {
+    //         showNodes = [selectionStore.hovered];
+    //     }
+    //     // showNodes = [selectionStore.hovered];
+    // }
+    // else {
+    //     // if (selectionStore.locked.length == 1) {
+    //     //     const lockedNodes = selectionStore.locked[0];
+    //     //     if (selectionStore.hovered) {
+    //     //         showNodes = [lockedNodes, selectionStore.hovered];
+    //     //     }
+    //     //     else {
+    //     //         showNodes = [lockedNodes];
+    //     //     }
+    //     // }
+    //     // else {
+    //     //     showNodes = selectionStore.locked.slice(0, 1);
+    //     // }
+    //     if (selectionStore.hovered) {
+    //         showNodes = [...selectionStore.locked, selectionStore.hovered];
+    //     }
+    //     else {
+    //         showNodes = selectionStore.locked;
+    //     }
+    // }
+
+    const showNodes = _([...selectionStore.locked, selectionStore.hovered]).filter(n => n != null).uniqBy("id").value();
+
+    if (showNodes.length == 0) {
+        return [];
     }
-    else {
-        // if (selectionStore.locked.length == 1) {
-        //     const lockedNodes = selectionStore.locked[0];
-        //     if (selectionStore.hovered) {
-        //         showNodes = [lockedNodes, selectionStore.hovered];
-        //     }
-        //     else {
-        //         showNodes = [lockedNodes];
-        //     }
-        // }
-        // else {
-        //     showNodes = selectionStore.locked.slice(0, 1);
-        // }
-        if (selectionStore.hovered) {
-            showNodes = [...selectionStore.locked, selectionStore.hovered];
-        }
-        else {
-            showNodes = selectionStore.locked;
+
+    function processEdge(node) {
+        return e => {
+            const { index, source, target } = e;
+            const edge = edges.value[index];
+            if(node==edge.source){
+                return edge;
+            }
+            else{
+                return {
+                    ...edge,
+                    source: edge.target,
+                    target: edge.source,
+                }
+            }
         }
     }
-    showNodes = _.uniqBy(showNodes, 'id');
+
+    // const processEdge = e => {
+    //     const { index, source, target } = e;
+
+    //     // let res = null;
+    //     // if (source == firstNode.id) {
+    //     //     res = edges.value[index];
+    //     // }
+    //     // else {
+    //     //     res = {
+    //     //         ...edges.value[index],
+    //     //         source: edges.value[index].target,
+    //     //         target: edges.value[index].source,
+    //     //     }
+    //     // }
+    //     return res;
+    // }
+
+    // showNodes = _.uniqBy(showNodes, 'id');
+    const firstNode = showNodes[0];
+    const otherNodes = showNodes.slice(1);
+    const firstEdges = connTable[firstNode.id]
+        .map(processEdge(firstNode))
+        .filter(e => e.source != e.target);
+    const firstMidNodes = new Set(firstEdges.map(e => e.target.id));
+    const otherEdges = otherNodes
+        .map(n => connTable[n.id]
+            .map(processEdge(n))
+            .filter(e => firstMidNodes.has(e.target.id))
+        )
+        .flat();
+    // console.log(otherNodes, firstMidNodes, otherEdges);
+    return _.union([...firstEdges, ...otherEdges].filter(e => e.source != e.target));
+
     let filter = e => true;
     if (showNodes.length >= 2) {
         let targetNodes = _(showNodes).map(node => {
@@ -478,7 +533,7 @@ const showEdgesNew = computed(() => {
         // console.log("midNodes", midNodes, targetNodes);
         filter = e => midNodes.has(e.target.id);
     }
-    return _(showNodes).map((node,idx) => {
+    return _(showNodes).map((node, idx) => {
         const isFirstLocked = selectionStore.locked.findIndex(n => n.id == node.id) == 0;
         return connTable[node.id].map(e => {
             const { index, source, target } = e;
@@ -496,10 +551,10 @@ const showEdgesNew = computed(() => {
             }
             return {
                 idx,
-                // isFirstLocked,
+                isFirstLocked,
                 ...res
             };
-        }).filter(edge => edge.source != edge.target).filter(filter).filter((edge)=>edge.idx==0||edge.type==0);
+        }).filter(edge => edge.source != edge.target).filter(filter).filter((edge) => edge.idx == 0 || edge.type == 0);
     }).flatten().union().value();
 });
 
@@ -574,12 +629,12 @@ function edgeColor(edge) {
 // });
 
 function showGlyph(node) {
-    return node.category == 1 && showGlyph && isHighlight(node) && selectionStore.locked.length >= 1 && selectionStore.locked[0].category == 0 && connMtx[selectionStore.locked[0].id][node.id] && connMtx[selectionStore.locked[0].id][node.id].type!=0;
-    
+    return node.category == 1 && showGlyph && isHighlight(node) && selectionStore.locked.length >= 1 && selectionStore.locked[0].category == 0 && connMtx[selectionStore.locked[0].id][node.id] && connMtx[selectionStore.locked[0].id][node.id].type != 0;
+
 }
 
-function hasEvidence(node){
-    return lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name]&&lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name][names[node.name]]!=null|| lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name]&&lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name][names[node.name]]!=null
+function hasEvidence(node) {
+    return lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name] && lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name][names[node.name]] != null || lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name] && lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name][names[node.name]] != null
 }
 </script>
 

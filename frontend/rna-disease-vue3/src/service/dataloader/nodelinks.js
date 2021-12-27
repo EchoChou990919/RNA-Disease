@@ -42,11 +42,15 @@ export function net2connTable(net=nodeLinks) {
     }
     const table = {};
     const edges = net.edges;
+    const nodes=net.nodes;
     for (const index in edges) {
         const edge = edges[index];
         const { source, target, value } = edge;
+        const sourceNode = nodes.find(n => n.id == source);
+        const targetNode = nodes.find(n => n.id == target);
         const link = {
             ...edge,
+            sourceNode,targetNode,
             index
         };
 
@@ -61,6 +65,7 @@ export function net2connTable(net=nodeLinks) {
             ...edge,
             source: target,
             target: source,
+            sourceNode:targetNode, targetNode:sourceNode,
             index
         };
         if (_.has(table, target)) {
