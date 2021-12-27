@@ -20,6 +20,13 @@ export default defineConfig({
   build:{
     commonjsOptions:{
       ignoreTryCatch:false
+    },
+    rollupOptions:{
+      output:{
+        manualChunks:{
+          nodelinks: ["lodash","/public/newNodeLinks.json"]
+        }
+      }
     }
   },
   json:{
