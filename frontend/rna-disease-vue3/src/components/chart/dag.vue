@@ -87,7 +87,6 @@
             :y="point.y"
             :inner-radius="0"
             :outer-radius="r"
-            :tag="'g'"
             @mouseenter="onMouseenter(point)"
             @mouseleave="onMouseleave"
         />

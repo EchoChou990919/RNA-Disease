@@ -1,10 +1,5 @@
 <template>
-    <component 
-        :is="tag" 
-        :viewBox="viewBox"
-        :transform="transform"
-        v-bind="$attrs"
-    >
+    <!-- <component :is="tag" :viewBox="viewBox" :transform="transform" v-bind="$attrs">
         <arc-vue
             v-for="(arc,idx) in arcs"
             v-bind="arc"
@@ -12,7 +7,16 @@
             :outer-radius="outerRadius"
             :fill="arc.color"
         />
-    </component>
+    </component>-->
+    <svg viewBox="-100 -100 200 200" :x="x-outerRadius" :y="y-outerRadius" :width="2*outerRadius" :height="2*outerRadius">
+        <arc-vue
+            v-for="(arc,idx) in arcs"
+            v-bind="arc"
+            :inner-radius="100*innerRadius/outerRadius"
+            :outer-radius="100"
+            :fill="arc.color"
+        />
+    </svg>
 </template>
 
 <script setup>
@@ -37,13 +41,13 @@ const props = defineProps({
         type: String,
         default: "svg"
     },
-    innerRadius:{
-        type:[Number, String],
-        default:0
+    innerRadius: {
+        type: [Number, String],
+        default: 0
     },
-    outerRadius:{
-        type:[Number, String],
-        default:50
+    outerRadius: {
+        type: [Number, String],
+        default: 50
     },
 });
 const arcs = computed(() => {
@@ -59,11 +63,11 @@ const arcs = computed(() => {
     });
     return res;
 })
-const viewBox=computed(()=>{
-    return props.tag=='svg'?'-50 -50 100 100':null;
+const viewBox = computed(() => {
+    return props.tag == 'svg' ? '-50 -50 100 100' : null;
 })
 
-const transform=computed(()=>{
-    return props.tag=='svg'?null:`translate(${props.x},${props.y})`;
+const transform = computed(() => {
+    return props.tag == 'svg' ? null : `translate(${props.x},${props.y})`;
 })
 </script>
