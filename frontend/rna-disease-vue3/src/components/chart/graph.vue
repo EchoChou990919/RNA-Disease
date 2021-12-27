@@ -522,7 +522,10 @@ const showEdgesNew = computed(() => {
         )
         .flat();
     // console.log(otherNodes, firstMidNodes, otherEdges);
-    return _.union([...firstEdges, ...otherEdges].filter(e => e.source != e.target));
+    const otherMidNodes=new Set(otherEdges.map(e=>e.target.id));
+    const midNodes=new Set(_.intersection([...firstMidNodes],[...otherMidNodes]));
+    const firstEdgesMid=otherNodes.length>0?firstEdges.filter(e=>midNodes.has(e.target.id)):firstEdges;
+    return _.union([...firstEdgesMid, ...otherEdges].filter(e => e.source != e.target));
 
     let filter = e => true;
     if (showNodes.length >= 2) {
