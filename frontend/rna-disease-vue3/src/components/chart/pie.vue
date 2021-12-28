@@ -31,7 +31,7 @@ const props = defineProps({
         default: d => d
     },
     colors: {
-        default: function (data, value, idx) {
+        default: ()=>function (data, value, idx) {
             return d3.schemeCategory10[idx];
         }
     },
