@@ -135,26 +135,6 @@
                     :opacity="node.highlight == nodeHighlightToken ? 1 : 0.1"
                 />
             </g>
-            <!-- <component
-                v-if="renderDone"
-                :is="node.category == 1 && showGlyph ? perdictGlyphVue : symbolVue"
-                v-for="(node,index) in nodes"
-                :key="node.id"
-                :x="x(node.x || 0)"
-                :y="y(node.y || 0)"
-                :size="(2 + node.degree / 12) / transform.k"
-                :fill="colors[node.category]"
-                :symbol="symbols[node.category]"
-                :opacity="node.highlight == nodeHighlightToken ? 1 : 0.1"
-                :perdict_value="connMtx[selectionStore.locked[0].id][node.id].value || 0"
-                :perdict_label="connMtx[selectionStore.locked[0].id][node.id].value >= 0.5"
-                :truth_label="connMtx[selectionStore.locked[0].id][node.id].type == 2 ? 1 : 0"
-                :palette="{
-                    0: 'blue',
-                    1: 'red',
-                }"
-                :label_opacity="0.5"
-            />-->
         </g>
         <g>
             <!-- 密度图 -->
@@ -270,6 +250,7 @@ forceWorker.onmessage = (e) => {
             break;
         case "end":
             nodes.value = e.data.nodes;
+            nodeLinks.nodes = e.data.nodes;
             highlight(nodes.value);
             edges.value = e.data.edges;
             quadtree.addAll(nodes.value);
