@@ -74,7 +74,7 @@ const d = computed(() => {
         return d.w;
     });
 
-    for (var item = 0; item < 10; item++) {
+    for (var item = 0; item < Math.min(10,data_w.length); item++) {
         var i = data_w[item].id;
 
         data.push({
