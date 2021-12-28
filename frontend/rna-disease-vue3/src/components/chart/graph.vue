@@ -64,6 +64,10 @@
                         </div>
 
                         <div v-if="node.showEvidence" class="tooltip-detail overflow-auto">
+                            <connect-vue
+                                :lncRNA_id="selectionStore.locked[0].id"
+                                :disease_id="node.id"
+                            ></connect-vue>
                             <disease-evidence-vue
                                 :lncRNA="selectionStore.locked[0].name"
                                 :disease="names[node.name]"
@@ -177,6 +181,7 @@ import symbolVue from "./shapes/symbol.vue";
 import tooltipVue from "./shapes/tooltip.vue";
 import diseaseSimilarityVue from "./diseaseSimilarity.vue";
 import linkHorizontalVue from "./shapes/linkHorizontal.vue";
+import connectVue from "./connect.vue";
 import diseaseEvidenceVue from "../diseaseEvidence.vue";
 import perdictGlyphVue from "./shapes/perdictGlyph.vue";
 
