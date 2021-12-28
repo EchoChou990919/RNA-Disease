@@ -1,4 +1,5 @@
 <template>
+<!-- <div class="animate__animated animate__bounce animate__infinite	">animate__animated animate__bounce</div> -->
     <transition-group name="tooltip">
         <tooltip-vue
             v-for="node in labels"
@@ -120,7 +121,9 @@
                         1: 'red',
                     }"
                     :label_opacity="0.5"
-                    :class="{ 'animate-pulse': hasEvidence(node) }"
+                    :class="{
+                        'animate__animated animate__flash animate__infinite':hasEvidence(node)
+                    }"
                 />
                 <symbol-vue
                     v-else
@@ -194,6 +197,8 @@ import { loadInc2Di } from "@/service/dataloader/lnc2Di";
 import { loadDiseaseAttrs, doid2name } from "@/service/dataloader/diseaseDetail";
 import ForceWorker from "@/service/worker/force.worker?worker";
 import { useZoom, offset2svg, svg2offset } from "@/utils/zoom";
+
+import 'animate.css';
 
 defineProps(["class"]);
 
