@@ -33,6 +33,8 @@
                     V
                 </div>
                 <search-box-vue></search-box-vue>
+                <!-- <n-switch v-model:value="active" :round="false">
+                </n-switch> -->
             </n-space>
         </n-layout-header>
         <n-layout has-sider>
@@ -45,9 +47,10 @@
                 @update:collapsed="left_slider_collapsed = $event"
                 content-style="padding: 12px;"
             >
-                <div v-show="!left_slider_collapsed">
+            <n-scrollbar style="height:calc(100vh - 88px)">
+                <div v-show="!left_slider_collapsed" >
                     <suspense>
-                        <template #default>
+                        <template #default>  
                             <left-panel />
                         </template>
                     </suspense>
@@ -81,18 +84,22 @@
 </template>
 
 <script setup>
-import { NLayout, NLayoutSider, NLayoutContent, NLayoutFooter, NLayoutHeader, NSpin } from 'naive-ui';
-import { ref } from "vue";
+import { NLayout, NLayoutSider, NLayoutContent, NLayoutFooter, NLayoutHeader, NSpin ,NSwitch,NScrollbar} from 'naive-ui';
+import { ref ,computed} from "vue";
 
 import SearchBoxVue from '../components/control/SearchBox.vue';
 import LeftPanel from "../components/control/selectPanel/panel.vue";
 import graphVue from '../components/chart/graph.vue';
 // import DAGVue from '../components/chart/dag.vue';
 import Dag from '../components/chart/dag.vue';
+import connectVue from '../components/chart/connect.vue';
 
 const header_height = "64px";
 const left_slider_collapsed = ref(false);
 const right_slider_collapsed = ref(false);
+// const active=ref(false);
+
+
 </script>
 
 <style>

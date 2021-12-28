@@ -18,7 +18,9 @@
     "pinia": "^2.0.6",
     "svg-pan-zoom": "^3.6.1",
     "toposort": "^2.0.2",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "echarts": "^5.2.2",
+    "vue-echarts": "^6.0.0"
   },
   "devDependencies": {
     "@vicons/fluent": "^0.11.0",
