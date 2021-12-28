@@ -1,7 +1,8 @@
 <template>
-    <tooltip-vue v-if="tooltip" :x="tooltip.x" :y="tooltip.y">
-        <n-space>
-            <div>{{ tooltip.name }}</div>
+    <tooltip-vue v-if="tooltip" :x="tooltip.x" :y="tooltip.y" class="text-black">
+        <n-space vertical>
+            <div class="font-bold text-green-600">{{ tooltip.name }}</div>
+            <div>{{ names[tooltip.name] }}</div>
         </n-space>
     </tooltip-vue>
     <svg
@@ -113,6 +114,7 @@ import pieVue from "./pie.vue";
 import _ from "lodash";
 import { computed, reactive, ref, watch } from "vue";
 import { loadCase } from "@/service/dataloader/dag";
+import { loadDiseaseAttrs, doid2name } from "@/service/dataloader/diseaseDetail";
 import { dagLayout, pack, filterNode2edges } from "@/utils/dagLayout";
 import { useZoom, offset2svg, svg2offset } from "@/utils/zoom";
 
@@ -124,6 +126,8 @@ const selectionStore = SelectionStore();
 const el = ref(null);
 const { transform } = useZoom(el);
 
+const detail = loadDiseaseAttrs();
+const names = doid2name(detail.diseases);
 
 const width = 200;
 const height = 200;

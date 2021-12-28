@@ -2,6 +2,7 @@
     <transition-group name="tooltip">
         <tooltip-vue
             v-for="node in labels"
+            :show-line="true"
             :key="node.id"
             :x="d3position2offset(node.x, node.y).x"
             :y="d3position2offset(node.x, node.y).y"
@@ -9,7 +10,7 @@
                 color: colors[node.category]
             }"
             :offset-x="10"
-            :offset-y="0"
+            :offset-y="1"
             :drag="node.locked"
             @pan_begin="panning = true; onClick(node)"
             @pan_end="panning = false"
@@ -34,6 +35,7 @@
                             :label_opacity="0.5"
                         />
                         <div>{{ node.name }}</div>
+                        <div v-if="node.category==1">({{ names[node.name] }})</div>
                     </n-space>
                     <n-button text v-if="node.locked" @click="removeLock(node)">
                         <n-icon>
@@ -166,7 +168,7 @@
 import * as d3 from "d3";
 import _ from "lodash";
 import { NDivider, NIcon } from "naive-ui";
-import { ref, reactive, onMounted, computed, watch, watchEffect } from "vue";
+import { ref, reactive, onMounted, computed, watch, watchEffect, nextTick } from "vue";
 import dagVue from "./dag.vue";
 
 import { Dismiss16Filled as Dismiss } from "@vicons/fluent";
@@ -227,8 +229,6 @@ const nodes = ref(nodeLinks.nodes); //节点
 const edges = ref(nodeLinks.edges); //边
 const paths = ref([]);              //密度图
 
-const showEdges = ref([]);
-
 const x = d3.scaleLinear().domain(RANGE_X).range([VIEW_RANGE[0], VIEW_RANGE[2]]);
 const y = d3.scaleLinear().domain(RANGE_Y).range([VIEW_RANGE[1], VIEW_RANGE[3]]);
 const rx = d3.scaleLinear().domain([VIEW_RANGE[0], VIEW_RANGE[2]]).range(RANGE_X);
@@ -251,6 +251,7 @@ forceWorker.postMessage({
     height,
     width,
     view_range: VIEW_RANGE,
+    alphaMin: 0.1,
 });
 forceWorker.onmessage = (e) => {
     switch (e.data.type) {
@@ -299,7 +300,7 @@ function isHighlight(node) {
 function clearSelection() {
     selectionStore.locked = [];
     selectionStore.hovered = null;
-    highlight(nodes.value);
+    // highlight(nodes.value);
     // showEdges.value = [];
     // highlight(nodes.value);
     selectionStore.case_i = null;
@@ -416,6 +417,8 @@ function onMouseEnter(node) {
         return;
     }
     selectionStore.hovered = node;
+    // highlight([...selectionStore.locked, selectionStore.hovered, ...showEdgesNew.value.map(e => e.target)]);
+
 }
 
 function onMouseLeave() {
@@ -435,7 +438,7 @@ function onClick(node) {
             return;
         }
         selectionStore.locked.push(node);
-        highlight([node, ...showEdgesNew.value.map(e => e.target)]);
+        // highlight([...selectionStore.locked, selectionStore.hovered, ...showEdgesNew.value.map(e => e.target)]);
     }
 }
 
@@ -478,10 +481,10 @@ const showEdgesNew = computed(() => {
         return e => {
             const { index, source, target } = e;
             const edge = edges.value[index];
-            if(node==edge.source){
+            if (node == edge.source) {
                 return edge;
             }
-            else{
+            else {
                 return {
                     ...edge,
                     source: edge.target,
@@ -511,21 +514,23 @@ const showEdgesNew = computed(() => {
     // showNodes = _.uniqBy(showNodes, 'id');
     const firstNode = showNodes[0];
     const otherNodes = showNodes.slice(1);
+    const otherNode_set=new Set(otherNodes.map(n=>n.id));
     const firstEdges = connTable[firstNode.id]
         .map(processEdge(firstNode))
         .filter(e => e.source != e.target);
-    const firstMidNodes = new Set(firstEdges.map(e => e.target.id));
+    const firstMidNodes = new Set(firstEdges.filter(e => e.type == 0).map(e => e.target.id));
     const otherEdges = otherNodes
         .map(n => connTable[n.id]
             .map(processEdge(n))
-            .filter(e => firstMidNodes.has(e.target.id)&&e.type==0)
+            .filter(e => firstMidNodes.has(e.target.id) && e.type == 0)
         )
         .flat();
     // console.log(otherNodes, firstMidNodes, otherEdges);
-    const otherMidNodes=new Set(otherEdges.map(e=>e.target.id));
-    const midNodes=new Set(_.intersection([...firstMidNodes],[...otherMidNodes]));
-    const firstEdgesMid=otherNodes.length>0?firstEdges.filter(e=>midNodes.has(e.target.id)):firstEdges;
-    return _.union([...firstEdgesMid, ...otherEdges].filter(e => e.source != e.target));
+    const otherMidNodes = new Set(otherEdges.map(e => e.target.id));
+    const midNodes = new Set(_.intersection([...firstMidNodes], [...otherMidNodes]));
+    const firstEdgesMid = otherNodes.length > 0 ? firstEdges.filter(e => midNodes.has(e.target.id)) : firstEdges;
+    const directEdges = firstEdges.filter(e=>otherNode_set.has(e.target.id));
+    return _.union([...directEdges,...firstEdgesMid, ...otherEdges].filter(e => e.source != e.target));
 
     let filter = e => true;
     if (showNodes.length >= 2) {
@@ -616,6 +621,7 @@ function removeLock(node) {
     if (selectionStore.locked.length == 0) {
         clearSelection();
     }
+    highlight([...selectionStore.locked, selectionStore.hovered, ...showEdgesNew.value.map(e => e.target)].filter(e => e != null));
 }
 
 function edgeColor(edge) {
@@ -639,6 +645,15 @@ function showGlyph(node) {
 function hasEvidence(node) {
     return lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name] && lncDisConnMtx.lncRNADisease[selectionStore.locked[0].name][names[node.name]] != null || lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name] && lncDisConnMtx.lncRNA2Cancer[selectionStore.locked[0].name][names[node.name]] != null
 }
+
+watchEffect(() => {
+    if (selectionStore.locked.length == 0 && selectionStore.hovered == null) {
+        highlight(nodes.value);
+    }
+    else {
+        highlight([...selectionStore.locked, selectionStore.hovered, ...showEdgesNew.value.map(e => e.target)].filter(e => e != null));
+    }
+})
 </script>
 
 <style scoped>

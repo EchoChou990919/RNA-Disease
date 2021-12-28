@@ -1,30 +1,57 @@
 <template>
-    <div
-        class="p-1 rounded border bg-white shadow"
-        :style="{
-            position: 'absolute',
-            left: `${x + offsetX + boxOffset.x}px`,
-            top: `${y + offsetY + boxOffset.y}px`,
-            'z-index': `${z_index}`,
-            ...style,
-        }"
-        ref="el"
-    >
-        <div
-            @dragstart="onDragStart"
-            @dragend="onDragEnd"
-            :class="{ 'cursor-move': drag }"
-            draggable="true"
+    <div>
+        <svg
+            v-if="showLine"
+            class="absolute pointer-events-none"
+            :style="{
+                left: `${x}px`,
+                top: `${y}px`,
+                transform: `scale(${(offsetX + boxOffset.x)/Math.abs(offsetX + boxOffset.x)},${(offsetY + boxOffset.y)/Math.abs(offsetY + boxOffset.y)}) translate(${(offsetX + boxOffset.x)>0?0:-(offsetX+boxOffset.x)}px,${(offsetY + boxOffset.y)>0?0:-(offsetY+boxOffset.y)}px)`,
+                'z-index': `${z_index}`,
+            }"
+            :viewBox="`0 0 ${Math.abs(offsetX + boxOffset.x)} ${Math.abs(offsetY + boxOffset.y)}`"
+            preserveAspectRatio ="none"
+            :width='Math.abs(offsetX + boxOffset.x)'
+            :height='Math.abs(offsetY + boxOffset.y)'
         >
-            <slot name="header"></slot>
+            <line 
+                :x1="0" 
+                :y1="0" 
+                :x2="Math.abs(offsetX + boxOffset.x)" 
+                :y2="Math.abs(offsetY + boxOffset.y)" 
+                stroke="black">
+            </line>
+        </svg>
+
+        <div
+            class="p-1 rounded border bg-white shadow"
+            :style="{
+                position: 'absolute',
+                left: `${x + offsetX + boxOffset.x}px`,
+                top: `${y + offsetY + boxOffset.y}px`,
+                'z-index': `${z_index}`,
+                ...style,
+            }"
+            ref="el"
+        >
+            <div
+                @dragstart="onDragStart"
+                @dragend="onDragEnd"
+                :class="{ 'cursor-move': drag }"
+                draggable="true"
+            >
+                <slot name="header"></slot>
+            </div>
+            <slot></slot>
         </div>
-        <slot></slot>
     </div>
 </template>
 
 <script setup>
 import { ref, reactive, computed } from 'vue';
 import { useTooltip } from '@/utils/tooltip';
+import linkHorizontalVue from './linkHorizontal.vue';
+import linkVerticalVue from './linkVertical.vue';
 const props = defineProps({
     x: {},
     y: {},
@@ -38,6 +65,9 @@ const props = defineProps({
     drag: {
         default: false
     },
+    showLine:{
+        default:false
+    }
 });
 const el = ref(null);
 const emits = defineEmits(["pan_begin", "pan_end"]);
@@ -52,7 +82,7 @@ let z_index = ref(z.value);
 async function onDragStart(e) {
     if (!props.drag) return;
     emits("pan_begin");
-    z_index.value=z.value++;
+    z_index.value = z.value++;
     panning.value = true;
     startPox.x = e.clientX;
     startPox.y = e.clientY;

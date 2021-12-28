@@ -10,6 +10,7 @@ onmessage = function (event) {
     const RANGE_X = event.data.range_x;
     const RANGE_Y = event.data.range_y;
     const VIEW_RANGE= event.data.view_range;
+    const alphaMin=event.data.alphaMin||0.001;
 
     const width = event.data.width;
     const height = event.data.height;
@@ -24,6 +25,7 @@ onmessage = function (event) {
         .force("center", d3.forceCenter(0, 0))
         .force("x", d3.forceX())
         .force("y", d3.forceY())
+        .alphaMin(alphaMin)
         .stop();
 
     let densityCalc = d3
