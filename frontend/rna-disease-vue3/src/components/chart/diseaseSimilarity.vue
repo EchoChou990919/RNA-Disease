@@ -9,7 +9,7 @@
             </div>
         </n-space>
         <div v-if="similarity">
-            相似性: {{_.round(similarity*100)}}%
+            Similarity: {{_.round(similarity*100)}}%
         </div>
     </div>
     <dag-vue :colors="colors" :case_i="case_i" :case_j="case_j" :net="subNet" v-bind="$attrs"></dag-vue>
