@@ -250,6 +250,7 @@ forceWorker.onmessage = (e) => {
             break;
         case "end":
             nodes.value = e.data.nodes;
+            nodeLinks.nodes = e.data.nodes;
             highlight(nodes.value);
             edges.value = e.data.edges;
             quadtree.addAll(nodes.value);
