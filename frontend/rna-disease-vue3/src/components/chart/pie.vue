@@ -1,13 +1,4 @@
 <template>
-    <!-- <component :is="tag" :viewBox="viewBox" :transform="transform" v-bind="$attrs">
-        <arc-vue
-            v-for="(arc,idx) in arcs"
-            v-bind="arc"
-            :inner-radius="innerRadius"
-            :outer-radius="outerRadius"
-            :fill="arc.color"
-        />
-    </component>-->
     <svg viewBox="-100 -100 200 200" :x="x-outerRadius" :y="y-outerRadius" :width="2*outerRadius" :height="2*outerRadius">
         <arc-vue
             v-for="(arc,idx) in arcs"
@@ -62,12 +53,5 @@ const arcs = computed(() => {
         }
     });
     return res;
-})
-const viewBox = computed(() => {
-    return props.tag == 'svg' ? '-50 -50 100 100' : null;
-})
-
-const transform = computed(() => {
-    return props.tag == 'svg' ? null : `translate(${props.x},${props.y})`;
 })
 </script>
