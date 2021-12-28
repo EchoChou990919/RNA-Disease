@@ -1,31 +1,15 @@
 import { loadNodeLinks } from "./nodelinks";
-
-// import axios from "axios";
 import _ from "lodash";
 
 import diseaseAttrs from "/public/diseaseAttrs.json";
 import w_result from "/public/w_result.json";
 
-let attrsCache=null;
-let resultCache=null;
 
 export function loadDiseaseAttrs(){
-    // if(attrsCache){
-    //     return attrsCache;
-    // }
-    // const res = await axios.get("/diseaseAttrs.json");
-    // attrsCache = res.data;
-    // return attrsCache;
     return diseaseAttrs;
 }
 
 export function loadWResult(){
-    // if(resultCache){
-    //     return resultCache;
-    // }
-    // const res = await axios.get("/w_result.json");
-    // resultCache = res.data;
-    // return resultCache;
     return w_result;
 }
 

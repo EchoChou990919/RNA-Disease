@@ -1,17 +1,11 @@
-// import axios from "axios";
+
 import Graph from 'graphology';
 
 import diseaseNet from "/public/diseaseNet.json";
 
-let netCache = null;
+
 
 export function loadDiseaseNet() {
-    // if (netCache) {
-    //     return netCache;
-    // }
-    // const response = await axios.get("/diseaseNet.json");
-    // netCache = response.data;
-    // return response.data;
     return diseaseNet
 }
 

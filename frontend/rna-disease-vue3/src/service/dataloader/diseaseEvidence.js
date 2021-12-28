@@ -1,6 +1,3 @@
-// import axios from "axios";
-
-// let cache=null;
 import evidence from "/public/evidence.json";
 
 const connMtx={
@@ -23,11 +20,5 @@ for (const record of evidence.lncRNA2Cancer){
 export const lncDisConnMtx=connMtx;
 
 export function loadDiseaseEvidence(){
-    // if(cache){
-    //     return cache;
-    // }
-    // const response = await axios.get(`/evidence.json`);
-    // cache=response.data;
-    // return cache;
     return evidence;
 }

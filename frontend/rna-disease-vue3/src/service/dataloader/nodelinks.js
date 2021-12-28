@@ -1,4 +1,3 @@
-// import axios from "axios";
 import _ from "lodash";
 
 import nodeLinks from "/public/newNodeLinks.json";
@@ -27,12 +26,6 @@ export const connMtx=connMtx_t;
 
 
 export function loadNodeLinks() {
-    // if (netCache) {
-    //     return netCache;
-    // }
-    // const response = await axios.get(`/nodeLinks.json`);
-    // netCache=response.data;
-    // return response.data;
     return nodeLinks;
 }
 

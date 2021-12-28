@@ -350,69 +350,6 @@ function onMouseMove(e) {
     }
 }
 
-// 实现悬浮效果
-// const hovered = ref(null);
-// function onMouseMove(e) {
-
-//     const { offsetX, offsetY } = e;
-//     top.value = offsetY;
-//     left.value = offsetX;
-//     const target = mouse2nodeIndex(offsetX, offsetY);
-//     if (selectionStore.locked) {
-//         if (!target) {
-//             return;
-//         }
-//         else if (!isHighlight(target)) {
-//             selectionStore.hovered = null;
-//         }
-//         else {
-//             selectionStore.hovered = target;
-//             if (selectionStore.locked.category == 0 && target.category == 0) {
-//                 const sourceName = selectionStore.locked.name;
-//                 const targetName = target.name;
-//                 const sourceInc = inc2Di[sourceName];
-//                 const targetInc = inc2Di[targetName];
-//                 const res = subGraph(diseaseNet, _.union(sourceInc, targetInc), {
-//                     id: i => i.doid
-//                 });
-//                 // console.log(sourceName, targetName, sourceInc, targetInc, res);
-//                 selectionStore.case_i = sourceInc;
-//                 selectionStore.case_j = targetInc;
-//                 selectionStore.subNet = res;
-//             }
-
-//         }
-//         return;
-//     }
-//     else {
-//         selectionStore.hovered = target;
-//     }
-//     if (!target) {
-//         clearSelection();
-//         return;
-//     }
-//     showEdges.value = connTable[target.id].map(e => {
-//         const { index, source, target } = e;
-//         const edge = edges.value[index];
-//         let res = null;
-//         if (edge.source.id == source) {
-//             res = edge;
-//         }
-//         else {
-//             res = {
-//                 ...edge,
-//                 source: edge.target,
-//                 target: edge.source,
-//             }
-//         }
-//         return res;
-//     }).filter(edge =>
-//         edge.source != edge.target
-//     );
-//     const highlightTarget = [target, ...showEdges.value.map(e => e.target)]
-//     highlight(highlightTarget);
-// }
-
 function onMouseEnter(node) {
     if (selectionStore.locked.length > 0) {
         if (isHighlight(node)) {
@@ -424,7 +361,6 @@ function onMouseEnter(node) {
         return;
     }
     selectionStore.hovered = node;
-    // highlight([...selectionStore.locked, selectionStore.hovered, ...showEdgesNew.value.map(e => e.target)]);
 
 }
 
@@ -450,33 +386,6 @@ function onClick(node) {
 }
 
 const showEdgesNew = computed(() => {
-    // let showNodes = [];
-    // if (selectionStore.locked.length == 0) {
-    //     if (selectionStore.hovered) {
-    //         showNodes = [selectionStore.hovered];
-    //     }
-    //     // showNodes = [selectionStore.hovered];
-    // }
-    // else {
-    //     // if (selectionStore.locked.length == 1) {
-    //     //     const lockedNodes = selectionStore.locked[0];
-    //     //     if (selectionStore.hovered) {
-    //     //         showNodes = [lockedNodes, selectionStore.hovered];
-    //     //     }
-    //     //     else {
-    //     //         showNodes = [lockedNodes];
-    //     //     }
-    //     // }
-    //     // else {
-    //     //     showNodes = selectionStore.locked.slice(0, 1);
-    //     // }
-    //     if (selectionStore.hovered) {
-    //         showNodes = [...selectionStore.locked, selectionStore.hovered];
-    //     }
-    //     else {
-    //         showNodes = selectionStore.locked;
-    //     }
-    // }
 
     const showNodes = _([...selectionStore.locked, selectionStore.hovered]).filter(n => n != null).uniqBy("id").value();
 
@@ -501,24 +410,6 @@ const showEdgesNew = computed(() => {
         }
     }
 
-    // const processEdge = e => {
-    //     const { index, source, target } = e;
-
-    //     // let res = null;
-    //     // if (source == firstNode.id) {
-    //     //     res = edges.value[index];
-    //     // }
-    //     // else {
-    //     //     res = {
-    //     //         ...edges.value[index],
-    //     //         source: edges.value[index].target,
-    //     //         target: edges.value[index].source,
-    //     //     }
-    //     // }
-    //     return res;
-    // }
-
-    // showNodes = _.uniqBy(showNodes, 'id');
     const firstNode = showNodes[0];
     const otherNodes = showNodes.slice(1);
     const otherNode_set = new Set(otherNodes.map(n => n.id));
@@ -538,39 +429,6 @@ const showEdgesNew = computed(() => {
     const firstEdgesMid = otherNodes.length > 0 ? firstEdges.filter(e => midNodes.has(e.target.id)) : firstEdges;
     const directEdges = firstEdges.filter(e => otherNode_set.has(e.target.id));
     return _.union([...directEdges, ...firstEdgesMid, ...otherEdges].filter(e => e.source != e.target));
-
-    let filter = e => true;
-    if (showNodes.length >= 2) {
-        let targetNodes = _(showNodes).map(node => {
-            return _(connTable[node.id]).map(edge => edge.target).uniq().value();
-        }).value();
-        let midNodes = new Set(_.intersection(...targetNodes));
-        // console.log("midNodes", midNodes, targetNodes);
-        filter = e => midNodes.has(e.target.id);
-    }
-    return _(showNodes).map((node, idx) => {
-        const isFirstLocked = selectionStore.locked.findIndex(n => n.id == node.id) == 0;
-        return connTable[node.id].map(e => {
-            const { index, source, target } = e;
-            const edge = edges.value[index];
-            let res = null;
-            if (edge.source.id == source) {
-                res = edge;
-            }
-            else {
-                res = {
-                    ...edge,
-                    source: edge.target,
-                    target: edge.source,
-                }
-            }
-            return {
-                idx,
-                isFirstLocked,
-                ...res
-            };
-        }).filter(edge => edge.source != edge.target).filter(filter).filter((edge) => edge.idx == 0 || edge.type == 0);
-    }).flatten().union().value();
 });
 
 // 实现点击效果
@@ -612,16 +470,6 @@ const labels = computed(() => {
     }), node => node.name);
 })
 
-// function showDAG(node){
-//     if(node.category==0){
-//         if(selectionStore)
-//     }
-// }
-
-// const showDAG = computed(() => {
-//     return selectionStore.locked && selectionStore.case_i && selectionStore.case_j && selectionStore.locked.category == 0;
-
-// });
 
 function removeLock(node) {
     selectionStore.locked = selectionStore.locked.filter(e => e.id != node.id);
@@ -640,9 +488,6 @@ function edgeColor(edge) {
     }
 }
 
-// const showGlyph = computed(() => {
-//     return selectionStore.locked.length >= 1 && selectionStore.locked[0].category == 0;
-// });
 
 function showGlyph(node) {
     return node.category == 1 && showGlyph && isHighlight(node) && selectionStore.locked.length >= 1 && selectionStore.locked[0].category == 0 && connMtx[selectionStore.locked[0].id][node.id] && connMtx[selectionStore.locked[0].id][node.id].type != 0;

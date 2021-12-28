@@ -112,15 +112,13 @@ import pieVue from "./pie.vue";
 
 
 import _ from "lodash";
-import { computed, reactive, ref, watch } from "vue";
-import { loadCase } from "@/service/dataloader/dag";
+import { computed, ref } from "vue";
 import { loadDiseaseAttrs, doid2name } from "@/service/dataloader/diseaseDetail";
-import { dagLayout, pack, filterNode2edges } from "@/utils/dagLayout";
-import { useZoom, offset2svg, svg2offset } from "@/utils/zoom";
+import { dagLayout, filterNode2edges } from "@/utils/dagLayout";
+import { useZoom, svg2offset } from "@/utils/zoom";
 
 import { SelectionStore } from "@/store/selection";
 
-const selectionStore = SelectionStore();
 
 // defineProps(["class"])
 const el = ref(null);

@@ -9,6 +9,9 @@ export default defineConfig({
     vue(),
     WindiCSS()
   ],
+  esbuild:{
+    pure: ["console.log"], minify: true
+  },
   resolve:{
     alias:[
       {
