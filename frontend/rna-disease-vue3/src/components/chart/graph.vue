@@ -35,8 +35,23 @@
                             }"
                             :label_opacity="0.5"
                         />
+                        <pie-vue
+                            v-if="node.category == 0"
+                            :data="[connTable[node.id].filter(e=>e.type==1).length, connTable[node.id].filter(e=>e.type==2).length, connTable[node.id].filter(e=>e.type==3).length]"
+                            :colors="(a,b,index)=>{
+                                return {
+                                    0: 'green',
+                                    1: 'blue',
+                                    2: 'red',
+                                }[index]
+                            }"
+                            :inner-radius="0"
+                            :outer-radius="Math.sqrt(300)/2"
+                            :x="x(node.x || 0)"
+                            :y="y(node.y || 0)"
+                        />
                         <div>{{ node.name }}</div>
-                        <div v-if="node.category==1">({{ names[node.name] }})</div>
+                        <div v-if="node.category == 1">({{ names[node.name] }})</div>
                     </n-space>
                     <n-button text v-if="node.locked" @click="removeLock(node)">
                         <n-icon>
@@ -167,6 +182,7 @@ import linkHorizontalVue from "./shapes/linkHorizontal.vue";
 import connectVue from "./connect.vue";
 import diseaseEvidenceVue from "../diseaseEvidence.vue";
 import perdictGlyphVue from "./shapes/perdictGlyph.vue";
+import pieVue from "./pie.vue";
 
 import { SelectionStore } from "@/store/selection";
 import { loadNodeLinks, net2connTable, connMtx } from "@/service/dataloader/nodelinks";
@@ -505,7 +521,7 @@ const showEdgesNew = computed(() => {
     // showNodes = _.uniqBy(showNodes, 'id');
     const firstNode = showNodes[0];
     const otherNodes = showNodes.slice(1);
-    const otherNode_set=new Set(otherNodes.map(n=>n.id));
+    const otherNode_set = new Set(otherNodes.map(n => n.id));
     const firstEdges = connTable[firstNode.id]
         .map(processEdge(firstNode))
         .filter(e => e.source != e.target);
@@ -520,8 +536,8 @@ const showEdgesNew = computed(() => {
     const otherMidNodes = new Set(otherEdges.map(e => e.target.id));
     const midNodes = new Set(_.intersection([...firstMidNodes], [...otherMidNodes]));
     const firstEdgesMid = otherNodes.length > 0 ? firstEdges.filter(e => midNodes.has(e.target.id)) : firstEdges;
-    const directEdges = firstEdges.filter(e=>otherNode_set.has(e.target.id));
-    return _.union([...directEdges,...firstEdgesMid, ...otherEdges].filter(e => e.source != e.target));
+    const directEdges = firstEdges.filter(e => otherNode_set.has(e.target.id));
+    return _.union([...directEdges, ...firstEdgesMid, ...otherEdges].filter(e => e.source != e.target));
 
     let filter = e => true;
     if (showNodes.length >= 2) {
