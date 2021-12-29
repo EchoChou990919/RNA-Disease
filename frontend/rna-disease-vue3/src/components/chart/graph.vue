@@ -511,10 +511,10 @@ watchEffect(() => {
 <style scoped>
 .tooltip-dag {
     /* @apply 2xl:(max-w-lg max-h-lg) max-w-[10rem] max-h-[10rem]; */
-    @apply 2xl:(w-lg h-lg) w-[10rem] h-[10rem];
+    @apply w-lg h-lg;
 }
 .tooltip-detail {
-    @apply 2xl:(max-w-lg max-h-lg) max-w-[10rem] max-h-[10rem];
+    @apply max-w-lg max-h-lg;
 }
 
 .tooltip-enter-from,
