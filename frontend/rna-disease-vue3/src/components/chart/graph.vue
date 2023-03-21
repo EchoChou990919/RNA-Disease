@@ -361,6 +361,9 @@ const el = ref(null);
 const panning = ref(false);
 const { transform, zoom } = useZoom(el, {
   dblClickZoomEnabled: false,
+  beforePan: () => {
+    panning.value = true;
+  },
 });
 
 onMounted(() => zoom.value.zoom(2));
